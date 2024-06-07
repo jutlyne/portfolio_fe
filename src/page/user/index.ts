@@ -15,7 +15,7 @@ export default defineComponent({
     SkillHeader
   },
   setup() {
-    const isLoading = ref<boolean>(true)
+    const isLoading = ref<boolean>(false)
     const needPaginate = ref<boolean>(false)
     const totalItem = ref<number>(0)
     const currentPage = ref<number>(1)
