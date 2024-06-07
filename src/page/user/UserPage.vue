@@ -1,15 +1,18 @@
 <template>
   <NavHeader />
-  <LoadingItem v-show="isLoading" />
-  <div v-show="!isLoading" style="margin-top: 4.5rem">
-    <RouterView />
+  <div class="user-content">
+    <SkillHeader v-if="categories && categories.length" :data="categories" />
+    <LoadingItem v-show="isLoading" />
+    <div v-show="!isLoading">
+      <RouterView />
+    </div>
+    <PaginateItem
+      v-if="needPaginate"
+      :total="totalItem"
+      :current="currentPage"
+      :onPageChange="onPageChange"
+    />
   </div>
-  <PaginateItem
-    v-if="needPaginate"
-    :total="totalItem"
-    :current="currentPage"
-    :onPageChange="onPageChange"
-  />
   <FooterItem />
 </template>
 

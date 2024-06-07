@@ -8,7 +8,7 @@
         <a href="#" class="item">
           <span class="item-title">{{ d.title }}</span>
           <span class="item-sort-text">
-            {{ d.body }}
+            {{ $filters.str_limit(d.body) }}
           </span>
           <span class="read-more">
             Đọc thêm

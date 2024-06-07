@@ -1,5 +1,4 @@
 <template>
-  <SkillHeader :data="categories" />
   <TimeLine :data="blogs" :totalData="totalItem" />
 </template>
 

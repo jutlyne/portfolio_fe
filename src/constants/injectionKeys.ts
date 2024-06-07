@@ -3,5 +3,6 @@ export const injectionKeys = {
   needPaginate: Symbol(),
   totalItem: Symbol(),
   currentPage: Symbol(),
-  onPageChange: Symbol()
+  onPageChange: Symbol(),
+  categories: Symbol()
 }

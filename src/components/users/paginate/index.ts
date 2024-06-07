@@ -1,3 +1,4 @@
+import { pageSize } from '@/constants/constant'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -15,6 +16,8 @@ export default defineComponent({
     }
   },
   setup() {
-    return {}
+    return {
+      pageSize
+    }
   }
 })
