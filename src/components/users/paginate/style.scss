@@ -1,0 +1,42 @@
+.pagination {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+    li {
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.5rem;
+
+        span {
+            color: #eee !important;
+            font-size: 13px !important;
+        }
+
+        button,
+        a {
+            color: #eee !important;
+        }
+
+        &.ant-pagination-item-active {
+
+            button,
+            a {
+                color: black !important;
+            }
+        }
+
+        &.ant-pagination-jump-next-custom-icon,
+        &.ant-pagination-jump-prev-custom-icon {
+            margin-bottom: 5px;
+
+            a {
+                display: flex;
+            }
+        }
+
+        &.ant-pagination-options {
+            display: none;
+        }
+    }
+}

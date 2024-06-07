@@ -1,0 +1,48 @@
+.nav-header {
+    top: 0;
+    gap: 1rem;
+    z-index: 999;
+    position: fixed;
+    background: transparent;
+    justify-content: flex-end;
+    width: calc(100vw - 57rem);
+    border-bottom: 1px solid rgba(203, 213, 225, .1) !important;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, .75);
+
+    .ant-menu-item {
+        font-weight: 600;
+        line-height: 2rem;
+        font-size: 18px;
+        color: #fff;
+        border: none;
+        padding: 0;
+
+        &:hover span {
+            --tw-text-opacity: 1;
+            color: rgb(56 189 248/var(--tw-text-opacity));
+        }
+
+        &.ant-menu-item-selected {
+            background-color: transparent;
+            --tw-text-opacity: 1;
+            color: rgb(56 189 248/var(--tw-text-opacity));
+        }
+
+        .social {
+            font-size: 1.5rem;
+        }
+
+        &:has(.social) {
+            display: flex;
+
+            &:has(.social-border) {
+                --tw-border-opacity: 1;
+                border-left: 1px solid rgb(30 41 59/var(--tw-border-opacity));
+                padding-left: 1.8rem;
+            }
+        }
+    }
+}

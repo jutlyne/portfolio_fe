@@ -1,0 +1,30 @@
+.button-skill {
+    font-size: 18px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #36D1DC 0%, #5B86E5 51%, #36D1DC 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 5px #eee;
+    border-radius: 10px;
+    font-weight: bold;
+
+    span {
+        font-weight: bold;
+    }
+
+    &:hover,
+    &:focus {
+        background-position: right center;
+        color: #fff !important;
+        text-decoration: none;
+    }
+}
