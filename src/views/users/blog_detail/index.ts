@@ -1,11 +1,8 @@
-import { defineComponent } from 'vue'
-import { LineOutlined } from '@ant-design/icons-vue'
 import paginationControls from '@/composables/paginationControls'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: {
-    LineOutlined
-  },
+  components: {},
   setup() {
     const { setCategory, activePaginate } = paginationControls()
     setCategory([])

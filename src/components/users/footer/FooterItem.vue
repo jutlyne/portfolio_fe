@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="font-large">
     <span>Copyright © 2024 JutLy</span>
     <span class="dmca">
       <a

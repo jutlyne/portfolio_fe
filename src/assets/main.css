@@ -1,4 +1,5 @@
 @import './base.css';
+@import './font-size.css';
 
 body {
   font-size: 18px;

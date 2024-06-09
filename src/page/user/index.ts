@@ -20,6 +20,7 @@ export default defineComponent({
     const totalItem = ref<number>(0)
     const currentPage = ref<number>(1)
     const categories = ref<string[]>([])
+    const skillTag = ref<string>('')
     const onPageChange: Ref<() => void> = ref(() => {})
 
     provide(injectionKeys.isLoading, isLoading)
@@ -28,6 +29,7 @@ export default defineComponent({
     provide(injectionKeys.currentPage, currentPage)
     provide(injectionKeys.onPageChange, onPageChange)
     provide(injectionKeys.categories, categories)
+    provide(injectionKeys.skillTag, skillTag)
 
     return {
       isLoading,
