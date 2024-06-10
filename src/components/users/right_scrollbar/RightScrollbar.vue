@@ -9,7 +9,7 @@
               <img src="https://i.imgur.com/i4he2Or.jpeg" alt="" />
             </div>
             <h3 class="">
-              {{ $filters.str_limit(item.title, 40) }}
+              {{ $filters.str_limit(item.title, 30) }}
             </h3>
           </RouterLink>
         </div>

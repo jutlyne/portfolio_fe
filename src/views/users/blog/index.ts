@@ -56,6 +56,7 @@ export default defineComponent({
       if (route.query?.ref) {
         store.commit('blogs/setCurrentPage', 1)
         store.commit('blogs/setTagRef', '')
+        tagRef.value = ''
         router.push({ name: 'blog' })
       }
 
