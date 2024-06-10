@@ -1,4 +1,4 @@
-.user-content {
+.user-content:has(.blog-detail-container) {
     max-width: 100rem !important;
 }
 

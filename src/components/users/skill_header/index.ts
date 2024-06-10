@@ -1,5 +1,6 @@
 import { injectionKeys } from '@/constants/injectionKeys'
 import { defineComponent, inject, type PropType, type Ref } from 'vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   components: {},
@@ -10,7 +11,8 @@ export default defineComponent({
     }
   },
   setup() {
-    const skillTag = inject<Ref<string | null>>(injectionKeys.skillTag)!
+    const store = useStore()
+    const tagRef = inject<Ref<string | null>>(injectionKeys.skillTag)!
 
     const formatString = (str: string) => {
       return str.toLowerCase().replace(/\s+/g, '-')
@@ -21,18 +23,24 @@ export default defineComponent({
       if (skill && skill !== 'All') {
         tag = formatString(skill)
       }
-      skillTag.value = tag
+
+      tagRef.value = tag
+      store.commit('blogs/setTagRef', tag)
+    }
+
+    const getTag = () => {
+      return tagRef.value || store.state.blogs.tagRef || ''
     }
 
     const getActiveClass = (str: string) => {
-      return formatString(str) == skillTag.value || (formatString(str) == 'all' && !skillTag.value)
+      return formatString(str) == getTag() || (formatString(str) == 'all' && !getTag())
         ? 'active'
         : ''
     }
 
     return {
       handleSkillClick,
-      skillTag,
+      store,
       formatString,
       getActiveClass
     }

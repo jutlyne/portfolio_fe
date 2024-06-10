@@ -1,7 +1,7 @@
 <template>
   <div class="blog-header">
     <h1>
-      <span v-if="skillTag"> Chuyên mục #{{ skillTag }} | </span>
+      <span v-if="store.state.blogs.tagRef"> Chuyên mục #{{ store.state.blogs.tagRef }} | </span>
       <span> JutLy Blog </span>
     </h1>
     <p class="font-large">Không chỉ thông tin, mà còn là kiến thức chất lượng, sâu sắc.</p>

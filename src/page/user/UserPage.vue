@@ -10,7 +10,7 @@
     <PaginateItem
       v-if="needPaginate"
       :total="totalItem"
-      :currentPage="currentPage"
+      :currentPage="store.state.blogs.currentPage"
       :onPageChange="onPageChange"
     />
   </div>
