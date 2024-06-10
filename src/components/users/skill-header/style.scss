@@ -33,6 +33,12 @@
     text-align: center;
     margin-bottom: 3rem;
 
+    p {
+        --tw-text-opacity: 1;
+        color: rgb(148 163 184/var(--tw-text-opacity));
+        font-weight: 600;
+    }
+
     h1 span {
         --tw-text-opacity: 1;
         color: rgb(226 232 240/var(--tw-text-opacity));
