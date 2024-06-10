@@ -1,6 +1,6 @@
 <template>
   <a-menu
-    class="nav-header"
+    class="nav-header font-large"
     v-model:selectedKeys="current"
     theme="dark"
     mode="horizontal"

@@ -1,20 +1,20 @@
 <template>
   <a-timeline class="timeline-container" mode="alternate">
     <template v-for="d in data" :key="d">
-      <a-timeline-item class="timeline-item">
+      <a-timeline-item class="timeline-item font-medium">
         <template #dot>
           <img class="dot" src="/dot.gif" alt="" />
         </template>
-        <a href="#" class="item">
-          <span class="item-title">{{ d.title }}</span>
-          <span class="item-sort-text">
+        <RouterLink :to="'/blog/' + d.id" class="item">
+          <span class="item-title font-large">{{ d.title }}</span>
+          <span class="item-sort-text font-medium">
             {{ $filters.str_limit(d.body) }}
           </span>
           <span class="read-more">
             Đọc thêm
-            <RightOutlined class="arrow-right" />
+            <RightOutlined class="arrow-right font-small" />
           </span>
-        </a>
+      </RouterLink>
       </a-timeline-item>
     </template>
   </a-timeline>

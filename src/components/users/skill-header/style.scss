@@ -1,5 +1,4 @@
 .button-skill {
-    font-size: 18px;
     width: 100px;
     height: 45px;
     display: flex;
@@ -16,6 +15,7 @@
     box-shadow: 0 0 5px #eee;
     border-radius: 10px;
     font-weight: bold;
+    text-transform: capitalize;
 
     span {
         font-weight: bold;
@@ -26,5 +26,24 @@
         background-position: right center;
         color: #fff !important;
         text-decoration: none;
+    }
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    p {
+        --tw-text-opacity: 1;
+        color: rgb(148 163 184/var(--tw-text-opacity));
+        font-weight: 600;
+    }
+
+    h1 span {
+        --tw-text-opacity: 1;
+        color: rgb(226 232 240/var(--tw-text-opacity));
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: bold;
     }
 }

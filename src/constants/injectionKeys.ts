@@ -4,5 +4,6 @@ export const injectionKeys = {
   totalItem: Symbol(),
   currentPage: Symbol(),
   onPageChange: Symbol(),
-  categories: Symbol()
+  categories: Symbol(),
+  skillTag: Symbol()
 }
