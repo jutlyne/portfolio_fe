@@ -7,8 +7,8 @@
         </template>
         <RouterLink :to="'/blog/' + d.id" class="item">
           <span class="item-title font-large">{{ d.title }}</span>
-          <span class="item-sort-text font-medium">
-            {{ $filters.str_limit(d.body) }}
+          <span class="item-sort-text font-medium line-clamp-2">
+            {{ d.body }}
           </span>
           <span class="read-more">
             Đọc thêm

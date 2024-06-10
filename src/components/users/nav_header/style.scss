@@ -53,3 +53,12 @@
         }
     }
 }
+
+@media screen and (max-width: 720px) {
+    .header-container {
+        .nav-header {
+            padding-top: .7rem;
+            padding-bottom: .7rem;
+        }
+    }
+}

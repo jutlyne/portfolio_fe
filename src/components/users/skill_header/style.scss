@@ -1,12 +1,11 @@
 .button-skill {
-    width: 100px;
-    height: 45px;
+    width: unset;
+    height: unset;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to right, #f4c4f3 0%, #fc67fa 51%, #f4c4f3 100%);
-    margin: 10px;
-    padding: 15px 45px;
+    padding: 8px 28px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -50,5 +49,15 @@
         font-size: 2rem;
         line-height: 2.5rem;
         font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .blog-header {
+        margin-bottom: 2rem;
+
+        h1 {
+            margin-bottom: .1rem;
+        }
     }
 }

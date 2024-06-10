@@ -2,14 +2,14 @@
   <div class="scrollbar scrollbar-right">
     <div class="related-blogs">
       <h2 class="font-large">Có thể bạn sẽ thích</h2>
-      <div>
+      <div class="related-item">
         <div class="group" v-for="item in items" :key="item">
           <RouterLink :to="'/blog/' + item.id">
             <div class="image">
               <img src="https://i.imgur.com/i4he2Or.jpeg" alt="" />
             </div>
-            <h3 class="">
-              {{ $filters.str_limit(item.title, 30) }}
+            <h3 class="item-title line-clamp-2">
+              {{ item.title }}
             </h3>
           </RouterLink>
         </div>

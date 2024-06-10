@@ -14,7 +14,7 @@ export const getDetail = async (id: number) => {
   return await safeRead(api.get('/posts/' + id))
 }
 
-export const getListByTag = async (tags: string[], limit = 15) => {
+export const getListByTag = async (tags: string[], limit = 16) => {
   return await safeRead(
     api.get('/posts/tag/' + tags[0], {
       params: {

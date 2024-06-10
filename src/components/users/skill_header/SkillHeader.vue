@@ -6,7 +6,7 @@
     </h1>
     <p class="font-large">Không chỉ thông tin, mà còn là kiến thức chất lượng, sâu sắc.</p>
   </div>
-  <a-flex gap="10" justify="center" align="flex-start">
+  <a-flex class="custom-skill" wrap="wrap" gap="10" justify="center" align="flex-start">
     <a-button
       class="button-skill font-large"
       :class="getActiveClass(d)"
