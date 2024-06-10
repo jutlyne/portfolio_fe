@@ -1,6 +1,7 @@
 <template>
   <a-pagination
     class="pagination font-medium"
+    :current="currentPage"
     :defaultPageSize="pageSize"
     @change="onPageChange"
     :total="total"

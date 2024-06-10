@@ -1,15 +1,16 @@
 <template>
   <NavHeader />
+  <HotNotice />
   <div class="user-content">
     <SkillHeader v-if="categories && categories.length" :data="categories" />
-    <LoadingItem v-show="isLoading" />
+    <LoadingItem v-if="isLoading" />
     <div v-show="!isLoading">
       <RouterView />
     </div>
     <PaginateItem
       v-if="needPaginate"
       :total="totalItem"
-      :current="currentPage"
+      :currentPage="currentPage"
       :onPageChange="onPageChange"
     />
   </div>

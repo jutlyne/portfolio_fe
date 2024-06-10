@@ -1,6 +1,15 @@
 <template>
-  <div>
-    <p>123</p>
+  <div class="blog-detail-container">
+    <div class="scrollbar scrollbar-left">1</div>
+    <div class="detail-content">
+      <div class="action-group">
+        <RouterLink to="/blog">
+          <LeftOutlined class="arrow-left font-small" />
+          Quay về
+        </RouterLink>
+      </div>
+    </div>
+    <RightScrollbar :items="releatedBlogs" />
   </div>
 </template>
 

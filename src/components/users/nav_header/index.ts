@@ -20,7 +20,7 @@ export default defineComponent({
         key: 'blog',
         label: 'Blogs',
         title: 'Blogs',
-        to: '/blog'
+        to: 'blog'
       },
       {
         key: 'facebook',
@@ -44,7 +44,7 @@ export default defineComponent({
 
     const handleMenuClick = ({ item }: MenuEvent) => {
       if (item.to && route.name != item.to) {
-        router.push({ path: item.to })
+        router.push({ name: item.to, query: { ref: 1 } })
       } else if (item.url) {
         window.open(item.url, '_blank')
       }

@@ -9,3 +9,17 @@ export const getList = async (params?: BlogQueryInterface) => {
     })
   )
 }
+
+export const getDetail = async (id: number) => {
+  return await safeRead(api.get('/posts/' + id))
+}
+
+export const getListByTag = async (tags: string[], limit = 15) => {
+  return await safeRead(
+    api.get('/posts/tag/' + tags[0], {
+      params: {
+        limit
+      }
+    })
+  )
+}
