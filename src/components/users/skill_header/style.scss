@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, #f4c4f3 0%, #fc67fa 51%, #f4c4f3 100%);
+    background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);
     padding: 8px 28px;
     text-align: center;
     text-transform: uppercase;
@@ -18,7 +18,13 @@
     border: none;
 
     &.active {
-        background-image: linear-gradient(to right, #ff00cc 0%, #333399 51%, #ff00cc 100%);
+        background-image: linear-gradient(to right, #6441A5 0%, #2a0845  51%, #6441A5  100%);
+        &:hover,
+        &:focus {
+            background-position: right center;
+            color: #fff !important;
+            text-decoration: none;
+        }
     }
 
     span {

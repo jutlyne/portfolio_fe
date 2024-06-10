@@ -1,4 +1,4 @@
-import { computed, defineComponent, inject, onBeforeMount, ref, watch, type Ref } from 'vue'
+import { defineComponent, inject, onBeforeMount, ref, watch, type Ref } from 'vue'
 import TimeLine from '@/components/users/time_line/TimeLine.vue'
 import SkillHeader from '@/components/users/skill_header/SkillHeader.vue'
 import NavHeader from '@/components/users/nav_header/NavHeader.vue'
