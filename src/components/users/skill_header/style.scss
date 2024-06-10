@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right, #36D1DC 0%, #5B86E5 51%, #36D1DC 100%);
+    background-image: linear-gradient(to right, #f4c4f3 0%, #fc67fa 51%, #f4c4f3 100%);
     margin: 10px;
     padding: 15px 45px;
     text-align: center;
@@ -12,10 +12,15 @@
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-    box-shadow: 0 0 5px #eee;
+    box-shadow: 0 0 3px #eee;
     border-radius: 10px;
     font-weight: bold;
     text-transform: capitalize;
+    border: none;
+
+    &.active {
+        background-image: linear-gradient(to right, #ff00cc 0%, #333399 51%, #ff00cc 100%);
+    }
 
     span {
         font-weight: bold;

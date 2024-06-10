@@ -1,10 +1,11 @@
-import { defineComponent, provide, ref, type Ref } from 'vue'
-import NavHeader from '@/components/users/nav-header/NavHeader.vue'
+import { defineComponent, provide, ref, type Ref, reactive } from 'vue'
+import NavHeader from '@/components/users/nav_header/NavHeader.vue'
 import FooterItem from '@/components/users/footer/FooterItem.vue'
 import LoadingItem from '@/components/users/loading/LoadingItem.vue'
 import { injectionKeys } from '@/constants/injectionKeys'
 import PaginateItem from '@/components/users/paginate/PaginateItem.vue'
-import SkillHeader from '@/components/users/skill-header/SkillHeader.vue'
+import SkillHeader from '@/components/users/skill_header/SkillHeader.vue'
+import HotNotice from '@/components/users/hot_notice/HotNotice.vue'
 
 export default defineComponent({
   components: {
@@ -12,7 +13,8 @@ export default defineComponent({
     FooterItem,
     LoadingItem,
     PaginateItem,
-    SkillHeader
+    SkillHeader,
+    HotNotice
   },
   setup() {
     const isLoading = ref<boolean>(false)

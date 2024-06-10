@@ -1,0 +1,22 @@
+.user-content {
+    max-width: 100rem !important;
+}
+
+.blog-detail-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(14, minmax(0, 1fr));
+
+    .detail-content {
+        grid-column: span 8/span 8;
+
+        .action-group a {
+            font-weight: 700;
+            color: rgb(226 232 240/var(--tw-text-opacity));
+
+            &:hover {
+                color: rgb(255 255 255/var(--tw-text-opacity));
+            }
+        }
+    }
+}

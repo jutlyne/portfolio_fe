@@ -1,5 +1,5 @@
 import axios from 'axios'
-import router from '@/router'; // import Vue Router
+import router from '@/router' // import Vue Router
 
 const baseApiUrl = import.meta.env.VITE_BASE_API_URL
 
@@ -15,12 +15,14 @@ api.interceptors.request.use(function (config) {
 })
 
 api.interceptors.response.use(
-  response => response,
-  error => {
-    if (error?.code == 'ERR_NETWORK') {
-      router.replace({ name: '404' });
+  (response) => response,
+  (error) => {
+    console.log(error)
+
+    if (error.response?.status == 404) {
+      router.replace({ name: '404' })
     }
-    return Promise.reject(error);
+    return Promise.reject(error)
   }
 )
 

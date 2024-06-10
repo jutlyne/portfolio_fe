@@ -1,0 +1,16 @@
+.notice {
+    --tw-bg-opacity: 1;
+    text-align: center;
+    margin-top: 5.1rem;
+    background: rgb(79 70 229 / var(--tw-bg-opacity));
+    padding: 0.7rem 0;
+
+    p {
+        margin-bottom: 0;
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255/var(--tw-text-opacity));
+        font-weight: 600;
+        line-height: 1.5rem;
+        text-transform: capitalize;
+    }
+}

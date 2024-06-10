@@ -7,7 +7,7 @@ export default defineComponent({
       type: Number,
       required: true
     },
-    current: {
+    currentPage: {
       type: Number,
       required: true
     },
