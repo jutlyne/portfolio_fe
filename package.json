@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "engines" : { 
-    "npm" : ">=10",
-    "node" : ">=20"
+  "engines": {
+    "npm": ">=10",
+    "node": ">=20"
   },
   "scripts": {
     "dev": "vite",
@@ -24,7 +24,9 @@
     "vue": "^3.4.21",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vuex": "^4.1.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

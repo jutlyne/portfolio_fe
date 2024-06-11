@@ -1,5 +1,11 @@
-.user-content {
+.user-content:has(.blog-detail-container) {
     max-width: 100rem !important;
+}
+
+.arrow-left {
+    svg {
+        margin-bottom: 1px;
+    }
 }
 
 .blog-detail-container {
@@ -8,7 +14,7 @@
     grid-template-columns: repeat(14, minmax(0, 1fr));
 
     .detail-content {
-        grid-column: span 8/span 8;
+        grid-column: span 10/span 10;
 
         .action-group a {
             font-weight: 700;
@@ -18,5 +24,11 @@
                 color: rgb(255 255 255/var(--tw-text-opacity));
             }
         }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .blog-detail-container {
+        display: block;
     }
 }

@@ -8,10 +8,14 @@ import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css'
 import { limitString } from './constants/constant'
 
+import { store } from './store'
+
 const app = createApp(App)
 
 app.use(router)
 app.use(Antd)
+
+app.use(store)
 
 app.config.globalProperties.$filters = {
   str_limit(value: string, size = limitString) {

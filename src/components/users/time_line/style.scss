@@ -76,3 +76,28 @@
         }
     }
 }
+
+@media screen and (max-width: 720px) {
+    .timeline-container {
+        margin-top: 3rem;
+
+        &.ant-timeline-alternate {
+            .ant-timeline-item-tail,
+            .ant-timeline-item-head,
+            .ant-timeline-item-head-custom {
+                inset-inline-start: 0;
+            }
+
+            .ant-timeline-item-left,
+            .ant-timeline-item-right {
+                .ant-timeline-item-content {
+                    inset-inline-start: unset;
+                    width: unset;
+                    text-align: start;
+                    margin-inline-start: 10px;
+                }
+            }
+            
+        }
+    }
+}

@@ -5,6 +5,7 @@
     :defaultPageSize="pageSize"
     @change="onPageChange"
     :total="total"
+    show-less-items
   />
 </template>
 

@@ -1,14 +1,10 @@
 import { defineComponent, h, ref, watch } from 'vue'
-import { FacebookOutlined, InstagramOutlined, TwitterOutlined } from '@ant-design/icons-vue'
+import { FacebookOutlined, InstagramOutlined, GithubOutlined } from '@ant-design/icons-vue'
 import type { MenuEvent, MenuItem } from '@/interfaces/MenuInterface'
 import { useRoute, useRouter, type RouteRecordName } from 'vue-router'
 
 export default defineComponent({
-  components: {
-    FacebookOutlined,
-    InstagramOutlined,
-    TwitterOutlined
-  },
+  components: {},
   setup() {
     const route = useRoute()
     const router = useRouter()
@@ -31,14 +27,14 @@ export default defineComponent({
       {
         key: 'instagram',
         icon: () => h(InstagramOutlined, { class: 'social' }),
-        url: 'https://www.facebook.com/JutLyNee',
+        url: 'https://www.instagram.com/jut_ly',
         title: 'Instagram'
       },
       {
-        key: 'twitter',
-        icon: () => h(TwitterOutlined, { class: 'social' }),
-        url: 'https://www.facebook.com/JutLyNee',
-        title: 'Twitter'
+        key: 'github',
+        icon: () => h(GithubOutlined, { class: 'social' }),
+        url: 'https://github.com/jutlyne',
+        title: 'Github'
       }
     ])
 

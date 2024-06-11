@@ -39,3 +39,9 @@
         }
     }
 }
+
+@media screen and (max-width: 720px) {
+    .pagination {
+        margin-bottom: 2rem;
+    }
+}

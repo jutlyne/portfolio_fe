@@ -12,11 +12,9 @@
 
 .lds-spinner {
     color: currentColor;
-    width: 100%;
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 7rem);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: -5rem;
 }
 
 .lds-spinner div {
