@@ -45,8 +45,10 @@ export default defineComponent({
         const tag = getTag()
         const data = await getList({ limit, skip, tag })
 
-        blogs.value = data.posts
-        totalItem.value = data.total
+        if (data) {
+          blogs.value = data.posts
+          totalItem.value = data.total
+        }
       } finally {
         isLoading.value = false
       }

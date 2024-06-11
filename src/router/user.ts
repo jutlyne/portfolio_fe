@@ -1,21 +1,33 @@
+import { ROUTE_TYPE } from '@/constants/constant'
+
 const Blog = () => import('../views/users/blog/BlogView.vue')
 const BlogDetail = () => import('../views/users/blog_detail/BlogDetailView.vue')
 const NotFound = () => import('../views/error/404/NotFoundView.vue')
+const InternalError = () => import('../views/error/500/InternalErrorView.vue')
 
 export default [
   {
-    path: '/',
-    redirect: '/blog'
+    path: '',
+    redirect: '/blog',
+    meta: {
+      routeType: ROUTE_TYPE.UNAUTH
+    }
   },
   {
-    path: '/blog',
+    path: 'blog',
     name: 'blog',
-    component: Blog
+    component: Blog,
+    meta: {
+      routeType: ROUTE_TYPE.UNAUTH
+    }
   },
   {
-    path: '/blog/:id',
+    path: 'blog/:id',
     name: 'detail',
-    component: BlogDetail
+    component: BlogDetail,
+    meta: {
+      routeType: ROUTE_TYPE.UNAUTH
+    }
   },
   {
     path: '/error/404',
@@ -23,7 +35,8 @@ export default [
     component: NotFound
   },
   {
-    path: '/:pathMatch(.*)*',
-    redirect: '/error/404'
+    path: '/error/500',
+    name: '500',
+    component: InternalError
   }
 ]
