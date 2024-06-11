@@ -48,8 +48,8 @@ export default defineComponent({
       onFetchData.value = true
       try {
         const response = await login(values)
-        if (response) {
-          const tokenSplit = response[0]?.data?.token.split('.')
+        if (response && response?.result?.data) {
+          const tokenSplit = response?.result?.data?.token.split('.')
           if (tokenSplit && tokenSplit.length == 3) {
             localStorage.setItem('adminAccessToken', `${tokenSplit[0]}.${tokenSplit[1]}`)
             cookies.set('adminSignature', tokenSplit[2])

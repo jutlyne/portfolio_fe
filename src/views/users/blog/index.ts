@@ -44,8 +44,7 @@ export default defineComponent({
 
         const tag = getTag()
         const data = await getList({ limit, skip, tag })
-
-        if (data) {
+        if (Object.keys(data).length !== 0) {
           blogs.value = data.posts
           totalItem.value = data.total
         }
@@ -72,7 +71,6 @@ export default defineComponent({
     }
 
     watch(tagRef, async () => {
-      // store.commit('blogs/setCurrentPage', 1)
       await fetchBlogData(pageSize, 0)
     })
 

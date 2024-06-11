@@ -25,12 +25,8 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     console.log('error', error)
-
-    if (error.response?.status == 404) {
-      router.push({ name: '404' })
-    } else {
-      router.push({ name: '500' })
-    }
+    const statusCode = error.response?.status ?? 500
+    router.push({ name: 'error', params: { statusCode } })
 
     return Promise.reject(error)
   }

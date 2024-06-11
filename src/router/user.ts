@@ -2,8 +2,7 @@ import { ROUTE_TYPE } from '@/constants/constant'
 
 const Blog = () => import('../views/users/blog/BlogView.vue')
 const BlogDetail = () => import('../views/users/blog_detail/BlogDetailView.vue')
-const NotFound = () => import('../views/error/404/NotFoundView.vue')
-const InternalError = () => import('../views/error/500/InternalErrorView.vue')
+const ResponseView = () => import('../views/error/response_status/ResponseView.vue')
 
 export default [
   {
@@ -30,13 +29,8 @@ export default [
     }
   },
   {
-    path: '/error/404',
-    name: '404',
-    component: NotFound
-  },
-  {
-    path: '/error/500',
-    name: '500',
-    component: InternalError
+    path: '/error/:statusCode',
+    name: 'error',
+    component: ResponseView
   }
 ]
