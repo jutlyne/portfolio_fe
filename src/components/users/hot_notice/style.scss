@@ -1,32 +1,32 @@
 .notice {
-    --tw-bg-opacity: 1;
-    text-align: center;
-    margin-top: 4.7rem;
-    background-image: linear-gradient(to right, #000046 0%, #1CB5E0  51%, #000046  100%);
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    padding: 0.7rem 0;
+  --tw-bg-opacity: 1;
+  text-align: center;
+  margin-top: 4.7rem;
+  background-image: linear-gradient(to right, #000046 0%, #1cb5e0 51%, #000046 100%);
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  padding: 0.7rem 0;
 
-    &:hover {
-        background-position: right center;
-        color: #fff;
-        text-decoration: none;
-    }
+  &:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
 
-    p {
-        margin-bottom: 0;
-        --tw-text-opacity: 1;
-        color: rgb(255 255 255/var(--tw-text-opacity));
-        font-weight: 600;
-        line-height: 1.5rem;
-        text-transform: capitalize;
-        cursor: default;
-    }
+  p {
+    margin-bottom: 0;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    cursor: default;
+  }
 }
 
 @media screen and (max-width: 720px) {
-    .notice {
-        margin-top: 3.45rem;
-    }
+  .notice {
+    margin-top: 3.45rem;
+  }
 }

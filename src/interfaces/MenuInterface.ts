@@ -13,7 +13,7 @@ export type MenuItem = {
   key: string
   icon?: () => ReturnType<typeof h>
   label?: string
-  title: string 
+  title: string
   to?: string
   url?: string
 }

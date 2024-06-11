@@ -5,7 +5,7 @@ body {
   font-size: 18px;
   --tw-text-opacity: 1;
   --tw-bg-opacity: 1;
-  background: rgb(15 23 42/var(--tw-bg-opacity));
+  background: rgb(15 23 42 / var(--tw-bg-opacity));
   --scrollbarBG: transparent;
   --thumbBG: #5a6072;
 }
@@ -24,14 +24,14 @@ a,
 
 .scrollbar::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  height: .5rem;
-  width: .5rem;
+  height: 0.5rem;
+  width: 0.5rem;
 }
 
 .scrollbar::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
   --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105/var(--tw-bg-opacity));
-  border-radius: .25rem;
-  border: .125rem solid var(--scrollbarBG)
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+  border-radius: 0.25rem;
+  border: 0.125rem solid var(--scrollbarBG);
 }

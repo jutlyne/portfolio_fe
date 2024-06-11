@@ -1,12 +1,12 @@
 .user-content {
-    max-width: 80rem;
-    margin: 2.5rem auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  max-width: 80rem;
+  margin: 2.5rem auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media screen and (max-width: 720px) {
-    .user-content {
-        margin: 1.5rem auto;
-    }
+  .user-content {
+    margin: 1.5rem auto;
+  }
 }
