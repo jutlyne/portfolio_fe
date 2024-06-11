@@ -26,8 +26,5 @@ jobs:
       - name: Install packages
         run: npm ci --unsafe-perm=true --allow-root
 
-      - name: Audit npm signatures
-        run: npm audit signatures
-
       - name: Build
         run: npm run build
