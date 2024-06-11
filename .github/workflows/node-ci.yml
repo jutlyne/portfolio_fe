@@ -1,0 +1,33 @@
+name: Github Actions
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build-job:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [lts, 20]
+    container:
+      image: node:${{ matrix.node-version }}
+      options: --user root
+      volumes:
+        - .:/app
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Install packages
+        run: npm ci --unsafe-perm=true --allow-root
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build

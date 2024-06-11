@@ -1,32 +1,32 @@
 .font-large {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .font-medium {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .font-small {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 @media screen and (max-width: 720px) {
-    .font-large {
-        font-size: 16px;
-    }
-    
-    .font-medium {
-        font-size: 13px;
-    }
-    
-    .font-small {
-        font-size: 11px;
-    }
+  .font-large {
+    font-size: 16px;
+  }
+
+  .font-medium {
+    font-size: 13px;
+  }
+
+  .font-small {
+    font-size: 11px;
+  }
 }
