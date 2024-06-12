@@ -3,10 +3,11 @@
     <ParticleItem />
     <section class="page-title">
       <a-row class="title-container">
-        <a-col :span="16">
+        <a-col :span="16" class="max-width-md">
           <h1>
             <span>H</span>
             <span>i</span>
+            <span>,</span>
             <br />
             <span>M</span>
             <span>ì</span>
@@ -16,8 +17,9 @@
             <span>l</span>
             <span>à</span>
             &nbsp;
-            <span>*</span>
-            <span>*</span>
+            <span class="color-red">K</span>
+            <span>ỳ</span>
+            <span>,</span>
             <br />
             <span>w</span>
             <span>e</span>
@@ -35,7 +37,7 @@
           </h1>
           <p>Backend Developer</p>
           <a-button class="button">Liên hệ Facebook</a-button>
-          <a-button class="button">Nhắn cho mình</a-button>
+          <a-button class="button">Nhắn messenger cho mình</a-button>
         </a-col>
         <a-col :span="8" class="skill">
           <div>
