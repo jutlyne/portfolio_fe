@@ -52,6 +52,10 @@ export default defineComponent({
       }
     })
 
+    watch(route, () => {
+      current.value = [route.name]
+    })
+
     return {
       current,
       items,
