@@ -1,5 +1,6 @@
 import { ROUTE_TYPE } from '@/constants/constant'
 
+const Home = () => import('../views/users/home/HomeView.vue')
 const Blog = () => import('../views/users/blog/BlogView.vue')
 const BlogDetail = () => import('../views/users/blog_detail/BlogDetailView.vue')
 const ResponseView = () => import('../views/error/response_status/ResponseView.vue')
@@ -7,7 +8,8 @@ const ResponseView = () => import('../views/error/response_status/ResponseView.v
 export default [
   {
     path: '',
-    redirect: '/blog',
+    name: 'home',
+    component: Home,
     meta: {
       routeType: ROUTE_TYPE.UNAUTH
     }
