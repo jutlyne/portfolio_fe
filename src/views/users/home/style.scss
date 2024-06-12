@@ -1,0 +1,91 @@
+.user-content:has(.home-container) {
+    max-width: 101rem !important;
+}
+
+.home-container {
+
+    .title-container {
+        min-height: calc(100vh - 4.5rem);
+        align-items: center;
+
+        h1 {
+            font-size: 119px;
+            line-height: 1em;
+            color: rgb(241 245 249/var(--tw-text-opacity));
+            word-spacing: -25px;
+            margin-bottom: 1rem;
+
+            span {
+                font-weight: bold;
+                transition-duration: .2s;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                display: inline-block;
+                cursor: context-menu;
+
+                &:hover {
+                    color: rgb(34 211 238/var(--tw-text-opacity));
+                    --tw-translate-y: -8px;
+                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+                }
+            }
+        }
+
+        .skill {
+            text-align: center;
+
+            .skill-item {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+                transition-property: opacity;
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                transition-duration: 1s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        p {
+            font-size: 20px;
+            color: rgb(203 213 225/var(--tw-text-opacity));
+            font-weight: bold;
+            margin-left: 10px;
+            width: fit-content;
+            border-radius: 5px;
+            transition-duration: .2s;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+
+            &:hover {
+                color: #f42a52;
+                box-shadow: 0 1px 0 4px rgba(255, 56, 96, .1), inset 0 -2em 0 rgba(255, 56, 96, .1);
+            }
+        }
+
+        .button {
+            background-image: linear-gradient(to right, #6441A5 0%, #2a0845 51%, #6441A5 100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            border-radius: 10px;
+            height: unset;
+            box-shadow: 0 0 5px #eee;
+
+            &:hover {
+                background-position: right center;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
