@@ -89,3 +89,33 @@
         }
     }
 }
+
+@media screen and (max-width: 1440px) {
+    .home-container .title-container h1 {
+        font-size: 80px;
+        word-spacing: -15px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .home-container .title-container h1 {
+        font-size: 70px;
+    }
+
+    .home-container .title-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-container .title-container .skill>div {
+        height: 20rem;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .home-container .title-container .skill .skill-item {
+        inset: unset;
+    }
+}
