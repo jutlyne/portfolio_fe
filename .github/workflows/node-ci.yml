@@ -31,3 +31,33 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  deploy-job:
+    timeout-minutes: 10
+    needs: build-job
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+
+    steps:
+      - name: Executing remote ssh commands using ssh key and checkout source
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.SSH_ROOT_DIR }}
+            git pull
+          script_stop: true
+
+      - name: Build and restart service
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.SSH_ROOT_DIR }}
+            npm run build
+            pm2 restart node
+          script_stop: true

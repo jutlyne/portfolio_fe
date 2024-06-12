@@ -1,7 +1,9 @@
 <template>
   <header class="header-container">
     <a-flex class="logo-container" gap="middle" align="center">
-      <img src="https://i.imgur.com/f2ePKVX.png" alt="" srcset="" />
+      <RouterLink to="/">
+        <img src="https://i.imgur.com/f2ePKVX.png" alt="" srcset="" />
+      </RouterLink>
     </a-flex>
 
     <a-menu

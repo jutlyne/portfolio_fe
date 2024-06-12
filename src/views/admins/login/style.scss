@@ -1,0 +1,51 @@
+.form-auth {
+    color: #fff;
+    margin: auto;
+    max-width: 50rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+
+    .login-form {
+        padding: 1.5rem 2rem;
+        border: 1px solid #fff;
+        border-radius: 10px;
+
+        .title {
+            text-align: center;
+            color: #fff;
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0;
+
+            button {
+                padding: .5rem 2rem;
+                height: unset;
+                background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                color: white;
+                border-radius: 5px;
+                background-size: 200% auto;
+
+                &:hover {
+                    background-position: right center;
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                &:disabled {
+                    background-image: linear-gradient(to right, #616161 0%, #9bc5c3 51%, #616161 100%);
+                }
+            }
+        }
+    }
+}

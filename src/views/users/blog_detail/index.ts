@@ -25,7 +25,9 @@ export default defineComponent({
 
       try {
         const data = await getDetail(id)
-        releatedBlogs.value = (await getListByTag(data.tags)).posts
+        if (Object.keys(data).length !== 0) {
+          releatedBlogs.value = (await getListByTag(data.tags)).posts
+        }
       } finally {
         isLoading.value = false
       }
