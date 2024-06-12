@@ -59,5 +59,4 @@ jobs:
           script: |
             cd ${{ secrets.SSH_ROOT_DIR }}
             npm run build
-            pm2 restart node
           script_stop: true
