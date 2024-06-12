@@ -58,5 +58,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ${{ secrets.SSH_ROOT_DIR }}
+            npm ci --unsafe-perm=true --allow-root
             npm run build
           script_stop: true
