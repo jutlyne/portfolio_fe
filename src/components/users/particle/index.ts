@@ -7,7 +7,10 @@ export default defineComponent({
       background: {
         color: {
           value: 'transparent'
-        }
+        },
+        position: '50% 50%',
+        repeat: 'no-repeat',
+        size: 'cover'
       },
       fpsLimit: 120,
       interactivity: {
@@ -70,7 +73,10 @@ export default defineComponent({
           value: { min: 1, max: 1 }
         }
       },
-      detectRetina: true
+      detectRetina: true,
+      fullScreen: {
+        enable: false
+      }
     }
 
     const particlesLoaded = async (container: any) => {

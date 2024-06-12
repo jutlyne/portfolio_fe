@@ -4,7 +4,19 @@
 
 .home-container {
 
+    .page-title {
+        position: relative;
+    }
+
+    #tsparticles {
+        position : absolute;
+        width:100%;
+        height:100%;
+        z-index:-1;
+    }
+
     .title-container {
+        background-color: inherit;
         min-height: calc(100vh - 4.5rem);
         align-items: center;
 

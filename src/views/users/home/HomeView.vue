@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
-    <ParticleItem />
     <section class="page-title">
+      <ParticleItem />
       <a-row class="title-container">
         <a-col :span="16" class="max-width-md">
           <h1>
@@ -36,8 +36,8 @@
             <span>r</span>
           </h1>
           <p>Backend Developer</p>
-          <a-button class="button">Liên hệ Facebook</a-button>
-          <a-button class="button">Nhắn messenger cho mình</a-button>
+          <a-button class="button" @click="blankUrl('https://www.facebook.com/JutLyNee')">Liên hệ Facebook</a-button>
+          <a-button class="button" @click="blankUrl('https://m.me/JutLyNee')">Nhắn messenger cho mình</a-button>
         </a-col>
         <a-col :span="8" class="skill">
           <div>

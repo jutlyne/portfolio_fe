@@ -1,4 +1,5 @@
 import ParticleItem from '@/components/users/particle/ParticleItem.vue'
+import paginationControls from '@/composables/paginationControls'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
@@ -8,6 +9,10 @@ export default defineComponent({
   setup() {
     const currentIndex = ref<number>(1)
     const direction = ref<number>(1)
+
+    const { setCategory, activePaginate } = paginationControls()
+    setCategory([])
+    activePaginate(false)
 
     const startClassTransition = () => {
       setInterval(() => {
@@ -23,10 +28,15 @@ export default defineComponent({
       }, 1000)
     }
 
+    const blankUrl = (url: string) => {
+      window.open(url, '_blank')
+    }
+
     startClassTransition()
 
     return {
-      currentIndex
+      currentIndex,
+      blankUrl
     }
   }
 })

@@ -2,7 +2,7 @@
   <header class="header-container">
     <a-flex class="logo-container" gap="middle" align="center">
       <RouterLink to="/">
-        <img src="https://i.imgur.com/f2ePKVX.png" alt="" srcset="" />
+        <img src="/logo.svg" alt="" srcset="" />
       </RouterLink>
     </a-flex>
 
