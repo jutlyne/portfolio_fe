@@ -4,7 +4,7 @@
       <span v-if="store.state.blogs.tagRef"> Chuyên mục #{{ store.state.blogs.tagRef }} | </span>
       <span> JutLy Blog </span>
     </h1>
-    <p class="font-large">Không chỉ thông tin, mà còn là kiến thức chất lượng, sâu sắc.</p>
+    <p class="font-large">The best way to learn is to share.</p>
   </div>
   <a-flex class="custom-skill" wrap="wrap" gap="10" justify="center" align="flex-start">
     <a-button
