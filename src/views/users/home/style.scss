@@ -1,5 +1,5 @@
 .user-content:has(.home-container) {
-    max-width: 101rem !important;
+    max-width: 100% !important;
 }
 
 .home-container {
@@ -9,149 +9,30 @@
     }
 
     #tsparticles {
-        position : absolute;
-        width:100%;
-        height:100%;
-        z-index:-1;
-    }
-
-    .title-container {
-        background-color: inherit;
-        min-height: calc(100vh - 4.5rem);
-        align-items: center;
-
-        h1 {
-            font-size: 119px;
-            line-height: 1em;
-            color: rgb(241 245 249/var(--tw-text-opacity));
-            word-spacing: -25px;
-            margin-bottom: 1rem;
-
-            span {
-                font-weight: bold;
-                transition-duration: .2s;
-                transition-property: all;
-                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-                display: inline-block;
-                cursor: context-menu;
-
-                &.color-red {
-                    color: #d35400;
-                }
-
-                &:hover {
-                    color: rgb(34 211 238/var(--tw-text-opacity));
-                    --tw-translate-y: -8px;
-                    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-                }
-            }
-        }
-
-        .skill {
-            text-align: center;
-
-            .skill-item {
-                position: absolute;
-                inset: 0;
-                opacity: 0;
-                transition-property: opacity;
-                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-                transition-duration: 1s;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                &.active {
-                    opacity: 1;
-                }
-            }
-        }
-
-        p {
-            font-size: 20px;
-            color: rgb(203 213 225/var(--tw-text-opacity));
-            font-weight: bold;
-            margin-left: 10px;
-            width: fit-content;
-            border-radius: 5px;
-            transition-duration: .2s;
-            transition-property: all;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-
-            &:hover {
-                color: #f42a52;
-                box-shadow: 0 1px 0 4px rgba(255, 56, 96, .1), inset 0 -2em 0 rgba(255, 56, 96, .1);
-            }
-        }
-
-        .button {
-            background-image: linear-gradient(to right, #6441A5 0%, #2a0845 51%, #6441A5 100%);
-            margin: 10px;
-            padding: 15px 45px;
-            text-align: center;
-            transition: 0.5s;
-            background-size: 200% auto;
-            color: white;
-            border-radius: 10px;
-            height: unset;
-            box-shadow: 0 0 5px #eee;
-
-            &:hover {
-                background-position: right center;
-                color: #fff;
-                text-decoration: none;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1440px) {
-    .home-container .title-container h1 {
-        font-size: 80px;
-        word-spacing: -10px;
-    }
-}
-
-@media screen and (max-width: 960px) {
-    .home-container .title-container h1 {
-        font-size: 70px;
-    }
-
-    .home-container .title-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home-container .title-container .skill>div {
-        height: 20rem;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        margin-top: 30px;
-    }
-
-    .home-container .title-container .skill .skill-item {
-        inset: unset;
-    }
-
-    .home-container .max-width-md {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 560px) {
-    .home-container .title-container h1 {
-        font-size: 40px;
-        word-spacing: -6px;
-        line-height: 2.5rem;
-    }
-
-    .home-container .title-container p {
-        margin-left: 0;
-    }
-
-    .home-container .title-container .button {
-        margin-left: 0;
+        position: absolute;
         width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    section {
+        padding-bottom: 4rem;
+
+        &.page-profile {
+            padding-bottom: 0;
+        }
+
+        &:not(:first-of-type) {
+            padding-top: 3rem;
+            border-top: 1px solid rgba(203, 213, 225, 0.1);
+        }
+
+        &>[class*="-container"] {
+            background-color: inherit;
+            min-height: calc(100vh - 14rem);
+            align-items: center;
+            max-width: 98rem;
+            margin: 0 auto;
+        }
     }
 }
