@@ -21,6 +21,7 @@
 
     .profile-image {
         margin: auto;
+        padding: 0 10px;
 
         div.img {
             text-align: center;
@@ -34,6 +35,11 @@
                 height: 100%;
                 object-fit: cover;
                 border-radius: 10px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
             }
         }
     }

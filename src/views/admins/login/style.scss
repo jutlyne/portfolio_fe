@@ -49,3 +49,10 @@
         }
     }
 }
+
+@media screen and (max-width: 375px) {
+    .form-auth .login-form {
+        padding: .5rem 1rem;
+
+    }
+}
