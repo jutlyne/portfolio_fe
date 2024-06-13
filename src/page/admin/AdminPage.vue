@@ -1,6 +1,6 @@
 <template>
   <div class="admin-container">
-    <a-layout v-if="this.$route.meta.routeType == routeType.AUTH">
+    <a-layout v-if="isAuthRoute">
       <NavHeaderItem />
       <a-layout-content style="padding: 0 50px">
         <a-layout style="padding: 24px 0; background: #fff">
