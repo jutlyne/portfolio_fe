@@ -29,7 +29,7 @@
 
       <a-col :span="8" class="profile-image">
         <div class="img">
-          <img src="https://i.imgur.com/VC2Dlih.jpeg" alt="" />
+          <img src="/profile.webp" alt="" />
         </div>
       </a-col>
     </a-row>
