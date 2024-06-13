@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "06:00"
+      timezone: "Asia/Ho_Chi_Minh"
+    ignore:
+      - dependency-name: "vue"
+        versions: ["< 3.0.0"]
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "deps"
+    rebase-strategy: "auto"
+    open-pull-requests-limit: 5
