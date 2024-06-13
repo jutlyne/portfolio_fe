@@ -66,6 +66,7 @@ export default defineComponent({
     })
 
     onPageChange.value = async (page: number, pageSize: number) => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       const skip = pageSize * (page - 1)
       await fetchBlogData(pageSize, skip)
     }
