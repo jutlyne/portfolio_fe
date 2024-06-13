@@ -75,7 +75,12 @@
         color: white;
         border-radius: 10px;
         height: unset;
-        box-shadow: 0 0 5px #eee;
+        box-shadow: 0 0 2px #eee;
+        border: none;
+
+        span {
+            font-weight: 600;
+        }
 
         &:hover {
             background-position: right center;
@@ -88,7 +93,7 @@
 @media screen and (max-width: 1440px) {
     .home-container .title-container h1 {
         font-size: 80px;
-        word-spacing: -18px;
+        word-spacing: -12px;
     }
 }
 
