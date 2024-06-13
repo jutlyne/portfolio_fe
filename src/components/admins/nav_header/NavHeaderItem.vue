@@ -11,4 +11,4 @@
   </a-layout-header>
 </template>
 
-<script src="./index.ts" />
+<script lang="ts" src="./index.ts" default />

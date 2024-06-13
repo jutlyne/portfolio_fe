@@ -17,4 +17,4 @@
   </a-layout-sider>
 </template>
 
-<script src="./index.ts" />
+<script lang="ts" src="./index.ts" default />
