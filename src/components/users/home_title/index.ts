@@ -1,5 +1,5 @@
-import ParticleItem from '@/components/users/particle/ParticleItem.vue'
 import { defineComponent, ref } from 'vue'
+import ParticleItem from '@/components/users/particle/ParticleItem.vue'
 
 export default defineComponent({
   components: {
@@ -14,11 +14,7 @@ export default defineComponent({
         currentIndex.value += direction.value
 
         if (currentIndex.value > 4) {
-          currentIndex.value = 4
-          direction.value = -1
-        } else if (currentIndex.value < 1) {
           currentIndex.value = 1
-          direction.value = 1
         }
 
         setTimeout(() => {
