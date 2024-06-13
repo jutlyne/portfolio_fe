@@ -15,7 +15,7 @@
         line-height: 1.5em;
         margin-bottom: 0.9rem;
         color: rgb(148 163 184/var(--tw-text-opacity));
-        padding-right: 15px;
+        padding-right: 20px;
         text-align: justify;
 
         span {
@@ -72,9 +72,17 @@
         font-size: 14px;
     }
 
-    .profile-container .profile-image div.img {
-        max-width: 14rem;
-        height: 18rem;
+    .profile-container .profile-image {
+        padding: 0;
+
+        div.img {
+            max-width: 14rem;
+            height: unset;
+    
+            img:hover {
+                transform: unset;
+            }
+        }
     }
 }
 
