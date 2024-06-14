@@ -1,0 +1,46 @@
+.ant-select-tree-treenode {
+    font-size: 15px;
+    width: 100%;
+}
+
+.create-blog-container {
+    .form-item {
+        &:last-child {
+            .ant-col {
+                align-items: center;
+
+                button {
+                    font-size: 16px;
+                    height: unset;
+                }
+            }
+        }
+
+        label {
+            font-size: 17px;
+            margin-right: 1.5rem;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+
+        .select-multiple {
+            &>div {
+                font-size: 16px;
+                padding: 5px 10px;
+            }
+
+            .ant-select-selection-search {
+                margin-inline-start: 0px;
+
+                .ant-select-selection-search-input {
+                    color: #000;
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+}

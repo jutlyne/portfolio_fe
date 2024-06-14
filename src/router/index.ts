@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import user from './user'
 import admin from './admin'
 import { ROUTE_TYPE } from '@/constants/constant'
+import { useCookies } from 'vue3-cookies'
 
 const UserPage = () => import('../page/user/UserPage.vue')
 const AdminPage = () => import('../page/admin/AdminPage.vue')
@@ -28,7 +29,9 @@ const router = createRouter({
 })
 
 const isAuthenticated = () => {
-  return !!localStorage.getItem('adminAccessToken')
+  const { cookies } = useCookies()
+
+  return !!localStorage.getItem('adminAccessToken') && !!cookies.get('adminSignature')
 }
 
 router.beforeEach((to, from, next) => {
@@ -42,7 +45,7 @@ router.beforeEach((to, from, next) => {
   if (requiresAuth && !isAuthenticated()) {
     next({ name: 'admin.login' })
   } else if (isUnauthRoute && isAuthenticated()) {
-    next({ name: 'admin.blog' })
+    next({ name: 'admin.blog.index' })
   } else {
     next()
   }

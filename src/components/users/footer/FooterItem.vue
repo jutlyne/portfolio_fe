@@ -1,5 +1,5 @@
 <template>
-  <footer class="font-large">
+  <a-layout-footer class="font-large">
     <span>Copyright © 2024 JutLy</span>
     <span class="dmca">
       <a
@@ -12,7 +12,7 @@
           alt="DMCA.com Protection Status"
       /></a>
     </span>
-  </footer>
+  </a-layout-footer>
 </template>
 
 <style lang="scss" src="./style.scss" />

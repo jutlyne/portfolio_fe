@@ -16,4 +16,5 @@ export type MenuItem = {
   title: string
   to?: string
   url?: string
+  children?: MenuItem[]
 }

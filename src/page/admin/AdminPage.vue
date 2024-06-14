@@ -10,9 +10,7 @@
           </a-layout-content>
         </a-layout>
       </a-layout-content>
-      <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
-      </a-layout-footer>
+      <a-layout-footer style="text-align: center"> Copyright © 2024 JutLy </a-layout-footer>
     </a-layout>
 
     <section v-else>
