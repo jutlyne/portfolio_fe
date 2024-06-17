@@ -19,6 +19,10 @@ export default defineComponent({
     rules: {
       type: Array as PropType<InputRuleInterface[]>,
       required: false
+    },
+    other: {
+      type: Object,
+      required: false
     }
   },
   setup() {

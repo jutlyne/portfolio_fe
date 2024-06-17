@@ -1,5 +1,22 @@
 .admin-container {
-  .ant-layout-content {
+  .layout-content-parent {
+    padding: 50px;
+    padding-bottom: 0;
+
+    &>.layout {
+      padding: 24px 0;
+      background: #fff;
+    }
+  }
+
+  .layout-content {
     padding: 3rem 4rem 0 4rem !important;
+    min-height: calc(100vh - 10rem);
+
+    &:has(.lds-spinner) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

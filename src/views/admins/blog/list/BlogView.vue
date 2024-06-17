@@ -1,5 +1,7 @@
 <template>
   <div class="list-blog-container">
+    <ModalConfirm :modalText="modalContent" :handleOk="handleConfirmDelete" ref="modalRef" />
+
     <a-table
       bordered
       :data-source="dataSource"
@@ -12,13 +14,10 @@
     >
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'operation'">
-          <a-popconfirm
-            v-if="dataSource.length"
-            title="Sure to delete?"
-            @confirm="onDelete(record.key)"
-          >
-            <a>Delete</a>
-          </a-popconfirm>
+          <a-space warp>
+            <a-button type="primary" @click="openModal(record.id)">Edit</a-button>
+            <a-button type="primary" danger @click="openModal(record.id)">Delete</a-button>
+          </a-space>
         </template>
         <template v-else-if="column.dataIndex === 'tags'">
           <span>

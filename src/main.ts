@@ -20,7 +20,7 @@ app.use(Antd)
 
 app.use(Particles, {
   init: async (engine) => {
-    await loadFull(engine) // you can load the full tsParticles library from "tsparticles" if you need it
+    await loadFull(engine)
   }
 })
 

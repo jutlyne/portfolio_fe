@@ -75,7 +75,7 @@ export default defineComponent({
         cookies.set('adminSignature', tokenSplit[2])
         api.defaults.headers.Authorization = `Bearer ${data?.token}`
         message.success('Login Success!', 2.5)
-        router.push({ name: 'admin.blog' })
+        router.push({ name: 'admin.blog.index' })
       }
     }
 
