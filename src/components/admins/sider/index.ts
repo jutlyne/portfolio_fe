@@ -37,8 +37,6 @@ export default defineComponent({
     }
 
     watch(route, () => {
-      console.log(route)
-
       selectedKeys.value = [route.name]
     })
 

@@ -9,8 +9,18 @@ export interface TablePaginateInterface {
 }
 
 export interface DataItem {
-  key: string
-  name: string
-  age: number
-  address: string
+  id: number | null
+  body: string
+  title: string
+  userId: number
+  views: string
+  tags: string[]
+}
+
+export interface CreateBlogInterface {
+  title: string
+  short_text: string
+  content: string
+  tags: string[]
+  image: File | null
 }

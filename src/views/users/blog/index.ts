@@ -58,7 +58,7 @@ export default defineComponent({
         store.commit('blogs/setCurrentPage', 1)
         store.commit('blogs/setTagRef', '')
         tagRef.value = ''
-        router.push({ name: 'blog' })
+        router.replace('blog')
       }
 
       const skip = (store.state.blogs.currentPage - 1) * pageSize

@@ -6,7 +6,6 @@
       :wrapper-col="wrapperCol"
       layout="horizontal"
       :model="formState"
-      ref="formRef"
     >
       <a-form-item label="Title" class="form-item">
         <a-input v-model:value="formState.title" />
@@ -54,7 +53,7 @@
       </a-form-item>
 
       <a-form-item label="Content" class="form-item">
-        <Editor api-key="rr4xnx9xcz21p1s5dv53fh139v0bolzqeefklm16rpauljzw" :init="initEditor" />
+        <Editor v-model="formState.content" :api-key="editorAPIKey" :init="configEditor" />
       </a-form-item>
 
       <a-form-item class="form-item" :wrapper-col="{ span: 24 }">
