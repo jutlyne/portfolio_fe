@@ -15,7 +15,7 @@
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'operation'">
           <a-space warp>
-            <a-button type="primary" @click="openModal(record.id)">Edit</a-button>
+            <a-button type="primary" @click="edit(record.id)">Edit</a-button>
             <a-button type="primary" danger @click="openModal(record.id)">Delete</a-button>
           </a-space>
         </template>

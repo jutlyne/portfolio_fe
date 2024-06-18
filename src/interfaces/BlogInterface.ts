@@ -22,5 +22,5 @@ export interface CreateBlogInterface {
   short_text: string
   content: string
   tags: string[]
-  image: File | null
+  image: File | string | null
 }

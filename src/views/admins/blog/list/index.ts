@@ -6,6 +6,7 @@ import { pageSizeAdmin } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
 import { message } from 'ant-design-vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
@@ -13,6 +14,7 @@ export default defineComponent({
     ModalConfirm
   },
   setup() {
+    const router = useRouter()
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
     const modalContent = 'Are you sure you want to delete?'
     const modalRef = ref<InstanceType<typeof ModalConfirm> | null>(null)
@@ -101,6 +103,10 @@ export default defineComponent({
       modalRef.value?.toggleOpen()
     }
 
+    const edit = (id: number) => {
+      router.push({ name: 'admin.blog.edit', params: { id } })
+    }
+
     onBeforeMount(() => {
       fetchData(true)
     })
@@ -115,7 +121,8 @@ export default defineComponent({
       modalContent,
       modalRef,
       openModal,
-      handleConfirmDelete
+      handleConfirmDelete,
+      edit
     }
   }
 })
