@@ -2,6 +2,7 @@ import { ROUTE_TYPE } from '@/constants/constant'
 
 const Blog = () => import('../views/admins/blog/list/BlogView.vue')
 const BlogCreate = () => import('../views/admins/blog/create/BlogCreateView.vue')
+const BlogEdit = () => import('../views/admins/blog/edit/BlogEditView.vue')
 const Auth = () => import('../views/admins/login/LoginView.vue')
 
 export default [
@@ -31,6 +32,15 @@ export default [
     path: 'blog/create',
     name: 'admin.blog.create',
     component: BlogCreate,
+    meta: {
+      routeParent: 'blog',
+      routeType: ROUTE_TYPE.AUTH
+    }
+  },
+  {
+    path: 'blog/edit/:id',
+    name: 'admin.blog.edit',
+    component: BlogEdit,
     meta: {
       routeParent: 'blog',
       routeType: ROUTE_TYPE.AUTH

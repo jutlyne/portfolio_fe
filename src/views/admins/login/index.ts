@@ -7,6 +7,7 @@ import { useCookies } from 'vue3-cookies'
 import { useRouter } from 'vue-router'
 import { api } from '@/utils/axios'
 import { message } from 'ant-design-vue'
+import { usernameRules, passwordRules } from '@/validations/login'
 
 export default defineComponent({
   components: {
@@ -22,29 +23,6 @@ export default defineComponent({
       username: '',
       password: ''
     })
-
-    const usernameRules = [
-      {
-        required: true,
-        whitespace: true,
-        message: 'Nhập vào tên đăng nhập!'
-      },
-      {
-        min: 6,
-        message: 'Tên đăng nhập phải lớn hơn 6 ký tự!'
-      }
-    ]
-    const passwordRules = [
-      {
-        required: true,
-        whitespace: true,
-        message: 'Nhập vào mật khẩu!'
-      },
-      {
-        min: 6,
-        message: 'Mật khẩu phải lớn hơn 6 ký tự!'
-      }
-    ]
 
     const onFinish = async (values: FormLoginStateInterface) => {
       onFetchData.value = true
