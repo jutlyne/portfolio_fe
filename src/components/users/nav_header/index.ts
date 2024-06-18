@@ -18,6 +18,12 @@ export default defineComponent({
         title: 'Blogs',
         to: 'blog'
       },
+      // {
+      //   key: 'resume',
+      //   label: 'Resume',
+      //   title: 'Resume',
+      //   to: 'resume'
+      // },
       {
         key: 'facebook',
         icon: () => h(FacebookOutlined, { class: 'social social-border' }),
@@ -40,7 +46,8 @@ export default defineComponent({
 
     const handleMenuClick = ({ item }: MenuEvent) => {
       if (item.to && route.name != item.to) {
-        router.push({ name: item.to, query: { ref: 1 } })
+        const query = item.to == 'blog' ? { ref: 1 } : {}
+        router.push({ name: item.to, query })
       } else if (item.url) {
         window.open(item.url, '_blank')
       }
