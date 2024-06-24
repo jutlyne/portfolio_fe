@@ -44,10 +44,10 @@ export default defineComponent({
       }
     ])
 
-    const handleMenuClick = ({ item }: MenuEvent) => {
+    const handleMenuClick = async ({ item }: MenuEvent) => {
       if (item.to && route.name != item.to) {
         const query = item.to == 'blog' ? { ref: 1 } : {}
-        router.push({ name: item.to, query })
+        await router.push({ name: item.to, query })
       } else if (item.url) {
         window.open(item.url, '_blank')
       }

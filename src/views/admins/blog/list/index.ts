@@ -104,8 +104,8 @@ export default defineComponent({
       modalRef.value?.toggleOpen()
     }
 
-    const edit = (id: number) => {
-      router.push({ name: 'admin.blog.edit', params: { id } })
+    const edit = async (id: number) => {
+      await router.push({ name: 'admin.blog.edit', params: { id } })
     }
 
     onBeforeMount(() => {

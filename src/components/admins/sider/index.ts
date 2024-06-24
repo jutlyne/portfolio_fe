@@ -32,8 +32,8 @@ export default defineComponent({
       }
     ])
 
-    const handleSiderClick = ({ item }: MenuEvent) => {
-      router.push({ name: item.to })
+    const handleSiderClick = async ({ item }: MenuEvent) => {
+      await router.push({ name: item.to })
     }
 
     watch(route, () => {

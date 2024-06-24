@@ -4,7 +4,7 @@ import type { FormLoginStateInterface } from '@/interfaces/FormInterface'
 import InputForm from '@/components/input/InputForm.vue'
 import { login } from '@/api/auth'
 import { useRouter } from 'vue-router'
-import { api, saveTokenInfo } from '@/utils/axios'
+import { saveTokenInfo } from '@/utils/axios'
 import { message } from 'ant-design-vue'
 import { usernameRules, passwordRules } from '@/validations/login'
 
@@ -29,7 +29,7 @@ export default defineComponent({
       const { errorResult, result } = await login(values)
 
       if (result && result?.data) {
-        handleSuccessfulLogin(result.data)
+        await handleSuccessfulLogin(result.data)
       }
 
       if (errorResult) {
@@ -44,12 +44,11 @@ export default defineComponent({
       return onFetchData.value
     })
 
-    const handleSuccessfulLogin = (data: { token: string; refreshToken: string }) => {
+    const handleSuccessfulLogin = async (data: { token: string; refreshToken: string }) => {
       saveTokenInfo(data.token, data.refreshToken)
 
-      api.defaults.headers.Authorization = `Bearer ${data?.token}`
       message.success('Login Success!', 2.5)
-      router.push({ name: 'admin.blog.index' })
+      await router.push({ name: 'admin.blog.index' })
     }
 
     const handleLoginError = (errorResult: any) => {
