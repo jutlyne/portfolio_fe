@@ -4,6 +4,7 @@ import { useCookies } from 'vue3-cookies'
 import { validErrorStatus } from '@/constants/constant'
 import { HttpStatusCode } from 'axios'
 import { refreshToken } from '@/api/auth'
+import { message } from 'ant-design-vue'
 
 const baseApiUrl = import.meta.env.VITE_BASE_API_URL
 const { cookies } = useCookies()
@@ -33,16 +34,22 @@ const handleResponseError = async (error: { response: { status: number } }) => {
   const statusCode = error.response?.status ?? HttpStatusCode.InternalServerError
 
   if (validErrorStatus.includes(statusCode)) {
-    router.push({ name: 'error', params: { statusCode } })
+    await router.push({ name: 'error', params: { statusCode } })
   }
 
   if (statusCode === HttpStatusCode.Unauthorized) {
     const token = getRefreshToken()
-    const { result } = await refreshToken(token)
-
+    const { result, errorResult } = await refreshToken(token)
     if (result?.data?.token && result?.data?.refreshToken) {
       saveTokenInfo(result.data.token, result.data.refreshToken, true)
       return true
+    }
+
+    if (errorResult) {
+      message.loading('Vui lòng đăng nhập lại!', 1.5).then(async () => {
+        clearTokenInfo()
+        await router.push({ name: 'admin.login' })
+      })
     }
   }
 
@@ -70,10 +77,19 @@ const saveTokenInfo = (token: string, refreshToken: string, isRefresh = false) =
     cookies.set('adminRefreshTokenSignature', refreshTokenSignature, expiresInDate)
     cookies.set('adminRefreshTokenExpiresIn', expiresInDate.toString(), expiresInDate)
   }
+
+  api.defaults.headers['Authorization'] = `Bearer ${token}`
+}
+
+const clearTokenInfo = () => {
+  localStorage.clear()
+  cookies.keys().map((key: string) => {
+    cookies.remove(key)
+  })
 }
 
 api.interceptors.request.use((config) => config)
 
 api.interceptors.response.use((response) => response, handleResponseError)
 
-export { api, saveTokenInfo }
+export { api, saveTokenInfo, clearTokenInfo }
