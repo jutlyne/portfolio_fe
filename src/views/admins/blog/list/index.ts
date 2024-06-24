@@ -7,6 +7,7 @@ import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
 import { message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
+import { getProfile } from '@/api/auth'
 
 export default defineComponent({
   components: {
@@ -109,6 +110,7 @@ export default defineComponent({
 
     onBeforeMount(() => {
       fetchData(true)
+      getProfile()
     })
 
     return {
