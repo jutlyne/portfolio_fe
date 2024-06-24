@@ -3,9 +3,8 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import type { FormLoginStateInterface } from '@/interfaces/FormInterface'
 import InputForm from '@/components/input/InputForm.vue'
 import { login } from '@/api/auth'
-import { useCookies } from 'vue3-cookies'
 import { useRouter } from 'vue-router'
-import { api } from '@/utils/axios'
+import { api, saveTokenInfo } from '@/utils/axios'
 import { message } from 'ant-design-vue'
 import { usernameRules, passwordRules } from '@/validations/login'
 
@@ -16,7 +15,6 @@ export default defineComponent({
     InputForm
   },
   setup() {
-    const { cookies } = useCookies()
     const router = useRouter()
     const onFetchData = ref<boolean>(false)
     const formState = reactive<FormLoginStateInterface>({
@@ -46,15 +44,12 @@ export default defineComponent({
       return onFetchData.value
     })
 
-    const handleSuccessfulLogin = (data: { token: string }) => {
-      const tokenSplit = data?.token.split('.')
-      if (tokenSplit && tokenSplit.length === 3) {
-        localStorage.setItem('adminAccessToken', `${tokenSplit[0]}.${tokenSplit[1]}`)
-        cookies.set('adminSignature', tokenSplit[2])
-        api.defaults.headers.Authorization = `Bearer ${data?.token}`
-        message.success('Login Success!', 2.5)
-        router.push({ name: 'admin.blog.index' })
-      }
+    const handleSuccessfulLogin = (data: { token: string; refreshToken: string }) => {
+      saveTokenInfo(data.token, data.refreshToken)
+
+      api.defaults.headers.Authorization = `Bearer ${data?.token}`
+      message.success('Login Success!', 2.5)
+      router.push({ name: 'admin.blog.index' })
     }
 
     const handleLoginError = (errorResult: any) => {

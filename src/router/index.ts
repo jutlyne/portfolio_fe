@@ -31,7 +31,7 @@ const router = createRouter({
 const isAuthenticated = () => {
   const { cookies } = useCookies()
 
-  return !!localStorage.getItem('adminAccessToken') && !!cookies.get('adminSignature')
+  return !!localStorage.getItem('adminAccessToken') && !!cookies.get('adminAccessTokenSignature')
 }
 
 router.beforeEach((to, from, next) => {
