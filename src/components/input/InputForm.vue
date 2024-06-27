@@ -17,7 +17,7 @@
       class="input"
       v-if="name == 'password'"
       v-model:value="formState.password"
-      autocomplete="password"
+      autocomplete="off"
     >
       <template v-if="$slots.icon" #prefix>
         <slot name="icon"></slot>
