@@ -1,9 +1,9 @@
 import { ROUTE_TYPE } from '@/constants/constant'
 
-const Blog = () => import('../views/admins/blog/list/BlogView.vue')
-const BlogCreate = () => import('../views/admins/blog/create/BlogCreateView.vue')
-const BlogEdit = () => import('../views/admins/blog/edit/BlogEditView.vue')
-const Auth = () => import('../views/admins/login/LoginView.vue')
+const Blog = () => import('../pages/admins/blog/list/ListPage.vue')
+const BlogCreate = () => import('../pages/admins/blog/create/CreatePage.vue')
+const BlogEdit = () => import('../pages/admins/blog/edit/EditPage.vue')
+const Auth = () => import('../pages/admins/login/LoginPage.vue')
 
 export default [
   {

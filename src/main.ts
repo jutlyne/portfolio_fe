@@ -12,8 +12,11 @@ import Particles from '@tsparticles/vue3'
 
 import { store } from './store'
 import { loadFull } from 'tsparticles'
+import { authenticateMiddleware } from './middleware/auth'
 
 const app = createApp(App)
+
+router.beforeEach(authenticateMiddleware)
 
 app.use(router)
 app.use(Antd)

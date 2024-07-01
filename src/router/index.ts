@@ -1,11 +1,9 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import user from './user'
 import admin from './admin'
-import { ROUTE_TYPE } from '@/constants/constant'
-import { useCookies } from 'vue3-cookies'
 
-const UserPage = () => import('../page/user/UserPage.vue')
-const AdminPage = () => import('../page/admin/AdminPage.vue')
+const UserLayout = () => import('../layouts/user/UserLayout.vue')
+const AdminLayout = () => import('../layouts/admin/AdminLayout.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,12 +11,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: UserPage,
+      component: UserLayout,
       children: user
     },
     {
       path: '/admin/',
-      component: AdminPage,
+      component: AdminLayout,
       children: admin
     },
     {
@@ -26,29 +24,6 @@ const router = createRouter({
       redirect: '/error/404'
     }
   ] as RouteRecordRaw[]
-})
-
-const isAuthenticated = () => {
-  const { cookies } = useCookies()
-
-  return !!localStorage.getItem('adminAccessToken') && !!cookies.get('adminAccessTokenSignature')
-}
-
-router.beforeEach((to, from, next) => {
-  if (!to.path.startsWith('/admin/')) {
-    return next()
-  }
-
-  const requiresAuth = to.matched.some((record) => record.meta.routeType === ROUTE_TYPE.AUTH)
-  const isUnauthRoute = to.matched.some((record) => record.meta.routeType === ROUTE_TYPE.UNAUTH)
-
-  if (requiresAuth && !isAuthenticated()) {
-    next({ name: 'admin.login' })
-  } else if (isUnauthRoute && isAuthenticated()) {
-    next({ name: 'admin.blog.index' })
-  } else {
-    next()
-  }
 })
 
 export default router
