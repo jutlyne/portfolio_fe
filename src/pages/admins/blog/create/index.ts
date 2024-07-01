@@ -1,6 +1,5 @@
 import { defineComponent, reactive } from 'vue'
 import type { CreateBlogInterface } from '@/interfaces/BlogInterface'
-import { useRouter } from 'vue-router'
 import FormBlog from '../_form/FormBlog.vue'
 
 export default defineComponent({
@@ -8,7 +7,6 @@ export default defineComponent({
     FormBlog
   },
   setup() {
-    const router = useRouter()
     const formState = reactive<CreateBlogInterface>({
       title: '',
       short_text: '',
@@ -18,7 +16,6 @@ export default defineComponent({
     })
     const handleFinish = () => {
       console.log(formState)
-      // router.push({ name: 'admin.blog.index' })
     }
 
     return {

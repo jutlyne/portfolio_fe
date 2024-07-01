@@ -28,7 +28,7 @@ export default defineComponent({
 
       const { errorResult, result } = await login(values)
 
-      if (result && result?.data) {
+      if (result?.data) {
         await handleSuccessfulLogin(result.data)
       }
 

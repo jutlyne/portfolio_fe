@@ -56,7 +56,8 @@ export default defineComponent({
 
     const fetchData = async (loadingPage = false) => {
       tableLoading.value = true
-      loadingPage ? (isLoading.value = true) : ''
+      handleLoading(loadingPage)
+
       try {
         const skip = (currentPage.value - 1) * pageSizeAdmin
         const response = await getList({ limit: pageSizeAdmin, skip })
@@ -66,7 +67,13 @@ export default defineComponent({
         message.error('Failed to load data')
       } finally {
         tableLoading.value = false
-        loadingPage ? (isLoading.value = false) : ''
+        handleLoading(loadingPage)
+      }
+    }
+
+    const handleLoading = (loading: boolean) => {
+      if (loading) {
+        isLoading.value = true
       }
     }
 
