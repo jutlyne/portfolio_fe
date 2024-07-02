@@ -14,6 +14,12 @@ import { store } from './store'
 import { loadFull } from 'tsparticles'
 import { authenticateMiddleware } from './middleware/auth'
 
+import { inject } from '@vercel/analytics';
+ 
+inject({
+  mode: 'production',
+});
+
 const app = createApp(App)
 
 router.beforeEach(authenticateMiddleware)
