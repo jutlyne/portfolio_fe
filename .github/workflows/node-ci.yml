@@ -39,25 +39,28 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
 
     steps:
-      - name: Executing remote ssh commands using ssh key and checkout source
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ${{ secrets.SSH_ROOT_DIR }}
-            git pull
-          script_stop: true
+      - name: Ping webhook
+        run: |
+          curl -n ${{ secrets.VERCEL_WEBHOOK }}
+      # - name: Executing remote ssh commands using ssh key and checkout source
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USER }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd ${{ secrets.SSH_ROOT_DIR }}
+      #       git pull
+      #     script_stop: true
 
-      - name: Build and restart service
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ${{ secrets.SSH_ROOT_DIR }}
-            npm ci --unsafe-perm=true --allow-root
-            npm run build
-          script_stop: true
+      # - name: Build and restart service
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     username: ${{ secrets.SSH_USER }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd ${{ secrets.SSH_ROOT_DIR }}
+      #       npm ci --unsafe-perm=true --allow-root
+      #       npm run build
+      #     script_stop: true
