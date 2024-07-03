@@ -14,11 +14,11 @@ import { store } from './store'
 import { loadFull } from 'tsparticles'
 import { authenticateMiddleware } from './middleware/auth'
 
-import { inject } from '@vercel/analytics';
- 
+import { inject } from '@vercel/analytics'
+
 inject({
-  mode: 'production',
-});
+  mode: import.meta.env.DEV ? 'development' : 'production'
+})
 
 const app = createApp(App)
 
