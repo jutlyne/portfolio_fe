@@ -16,16 +16,16 @@ export default [
     }
   },
   {
-    path: 'blog',
-    name: 'blog',
+    path: 'blogs',
+    name: 'blogs.index',
     component: Blog,
     meta: {
       routeType: ROUTE_TYPE.UNAUTH
     }
   },
   {
-    path: 'blog/:id',
-    name: 'detail',
+    path: 'blogs/:id',
+    name: 'blogs.show',
     component: BlogDetail,
     meta: {
       routeType: ROUTE_TYPE.UNAUTH

@@ -3,7 +3,7 @@
     <a-col :md="24" :lg="18">
       <div class="detail-content">
         <div class="action-group">
-          <RouterLink to="/blog">
+          <RouterLink to="/blogs">
             <LeftOutlined class="arrow-left font-small" />
             Quay về
           </RouterLink>

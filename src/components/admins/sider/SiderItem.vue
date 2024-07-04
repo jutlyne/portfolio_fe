@@ -1,14 +1,18 @@
 <template>
-  <a-layout-sider width="200" style="background: #fff">
+  <a-layout-sider class="sider-container" v-model:collapsed="collapsed" collapsible>
+    <div class="logo">
+      <img src="/logo.svg" alt="" />
+    </div>
     <a-menu
       v-model:selectedKeys="selectedKeys"
       v-model:openKeys="openKeys"
-      mode="inline"
       :items="menuItem"
-      style="height: 100%"
+      theme="dark"
+      mode="inline"
       @click="handleSiderClick"
       class="menu-item"
-    />
+    >
+    </a-menu>
   </a-layout-sider>
 </template>
 

@@ -1,13 +1,12 @@
 import { defineComponent, inject, onBeforeMount, ref, type Ref } from 'vue'
 import { CheckOutlined } from '@ant-design/icons-vue'
-import { deleteBlog, getList } from '@/api/blog'
+import { addComment, deleteComment, getList } from '@/api/comment'
 import type { DataItem, TablePaginateInterface } from '@/interfaces/BlogInterface'
 import { pageSizeAdmin } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
 import { message } from 'ant-design-vue'
-import { useRouter } from 'vue-router'
-import { getProfile } from '@/api/auth'
+import type { CommentInterface, StoreCommentInterface } from '@/interfaces/CommentInterface'
 
 export default defineComponent({
   components: {
@@ -15,11 +14,13 @@ export default defineComponent({
     ModalConfirm
   },
   setup() {
-    const router = useRouter()
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
     const modalContent = 'Are you sure you want to delete?'
+    const modalInputPlaceholder = ref<string | null>(null)
     const modalRef = ref<InstanceType<typeof ModalConfirm> | null>(null)
+    const handleOk = ref<() => Promise<void>>()
     const tableLoading = ref<boolean>(true)
+    const replyInput = ref<string>('')
     const dataSource: Ref<DataItem[]> = ref([])
     const targetId = ref<number | null>(null)
     const currentPage = ref<number>(0)
@@ -28,31 +29,13 @@ export default defineComponent({
       pageSize: pageSizeAdmin
     })
 
-    const colors = [
-      'volcano',
-      'geekblue',
-      'green',
-      'magenta',
-      'red',
-      'cyan',
-      'blue',
-      'purple',
-      'orange',
-      'gold',
-      'lime'
-    ]
-
     const columns = [
-      { title: 'ID', dataIndex: 'id', width: '70px' },
-      { title: 'Title', dataIndex: 'body', ellipsis: true },
-      { title: 'Tags', dataIndex: 'tags', width: '300px' },
-      { title: 'Operation', dataIndex: 'operation', width: '250px' }
+      { title: 'ID', dataIndex: 'id' },
+      { title: 'Title', ellipsis: true, dataIndex: 'body', width: '30%' },
+      { title: 'Blog title', ellipsis: true, dataIndex: 'postId' },
+      { title: 'Username', dataIndex: 'username' },
+      { title: 'Operation', dataIndex: 'operation' }
     ]
-
-    const getRandomColor = () => {
-      const randomIndex = Math.floor(Math.random() * colors.length)
-      return colors[randomIndex]
-    }
 
     const fetchData = async (
       pagination: TablePaginateInterface | null = null,
@@ -69,8 +52,13 @@ export default defineComponent({
         const skip = currentPageValue * pageSizeAdmin
         const response = await getList({ limit: pageSizeAdmin, skip })
 
-        dataSource.value = response.posts
         paginationConfig.value.total = response.total
+        dataSource.value = response.comments.map((comment: CommentInterface) => ({
+          id: comment.id,
+          body: comment.body,
+          postId: comment.postId,
+          username: comment.user.username
+        }))
       } catch (error) {
         message.error('Failed to load data')
       } finally {
@@ -80,54 +68,78 @@ export default defineComponent({
     }
 
     const handleLoading = (loading: boolean, value: boolean) => {
-      if (loading && typeof loading == 'boolean') {
+      if (loading && typeof loading === 'boolean') {
         isLoading.value = value
       }
     }
 
-    const handleConfirmDelete = async () => {
+    const handleAction = async (
+      successMessage: string,
+      errorMessage: string,
+      actionFunction?: any
+    ) => {
       try {
         modalRef.value?.toggleConfirmLoading()
-        if (targetId.value !== null) {
-          await deleteBlog(targetId.value)
-          await fetchData()
-        }
-
-        message.success('Success!')
+        typeof actionFunction == 'function' ? await actionFunction : ''
+        await fetchData()
+        message.success(successMessage)
       } catch (error) {
-        message.error('Failed to delete blog')
+        message.error(errorMessage)
       } finally {
         modalRef.value?.toggleConfirmLoading()
         modalRef.value?.toggleOpen()
       }
     }
 
-    const openModal = (id: number) => {
-      targetId.value = id
-      modalRef.value?.toggleOpen()
+    const handleConfirmDelete = async () => {
+      await handleAction(
+        'Success!',
+        'Failed to delete blog',
+        deleteComment(targetId.value as number)
+      )
     }
 
-    const edit = async (id: number) => {
-      await router.push({ name: 'admin.blogs.edit', params: { id } })
+    const handleReplyComment = async () => {
+      const params: StoreCommentInterface = {
+        body: replyInput.value,
+        postId: targetId.value as number,
+        userId: 1
+      }
+      await handleAction('Success!', 'Failed to add comment', addComment(params))
+    }
+
+    const openModal = (id: number) => {
+      modalInputPlaceholder.value = null
+      targetId.value = id
+      modalRef.value?.toggleOpen()
+      handleOk.value = handleConfirmDelete
+    }
+
+    const openModalReply = (id: number) => {
+      replyInput.value = ''
+      modalInputPlaceholder.value = 'Reply comment'
+      targetId.value = id
+      modalRef.value?.toggleOpen()
+      handleOk.value = handleReplyComment
     }
 
     onBeforeMount(() => {
       fetchData(null, true)
-      getProfile()
     })
 
     return {
       dataSource,
       columns,
-      getRandomColor,
       tableLoading,
       fetchData,
       paginationConfig,
       modalContent,
       modalRef,
       openModal,
-      handleConfirmDelete,
-      edit
+      openModalReply,
+      replyInput,
+      modalInputPlaceholder,
+      handleOk
     }
   }
 })

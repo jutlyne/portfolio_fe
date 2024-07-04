@@ -48,7 +48,7 @@ export default defineComponent({
       saveTokenInfo(data.token, data.refreshToken)
 
       message.success('Login Success!', 2.5)
-      await router.push({ name: 'admin.blog.index' })
+      await router.push({ name: 'admin.blogs.index' })
     }
 
     const handleLoginError = (errorResult: any) => {

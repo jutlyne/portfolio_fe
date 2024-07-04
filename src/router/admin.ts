@@ -4,6 +4,7 @@ const Blog = () => import('../pages/admins/blog/list/ListPage.vue')
 const BlogCreate = () => import('../pages/admins/blog/create/CreatePage.vue')
 const BlogEdit = () => import('../pages/admins/blog/edit/EditPage.vue')
 const Auth = () => import('../pages/admins/login/LoginPage.vue')
+const Comment = () => import('../pages/admins/comment/list/ListPage.vue')
 
 export default [
   {
@@ -20,8 +21,8 @@ export default [
     }
   },
   {
-    path: 'blog',
-    name: 'admin.blog.index',
+    path: 'blogs',
+    name: 'admin.blogs.index',
     component: Blog,
     meta: {
       routeParent: 'blog',
@@ -29,8 +30,8 @@ export default [
     }
   },
   {
-    path: 'blog/create',
-    name: 'admin.blog.create',
+    path: 'blogs/create',
+    name: 'admin.blogs.create',
     component: BlogCreate,
     meta: {
       routeParent: 'blog',
@@ -38,11 +39,20 @@ export default [
     }
   },
   {
-    path: 'blog/edit/:id',
-    name: 'admin.blog.edit',
+    path: 'blogs/edit/:id',
+    name: 'admin.blogs.edit',
     component: BlogEdit,
     meta: {
       routeParent: 'blog',
+      routeType: ROUTE_TYPE.AUTH
+    }
+  },
+  {
+    path: 'comments',
+    name: 'admin.comments.index',
+    component: Comment,
+    meta: {
+      routeParent: 'comment',
       routeType: ROUTE_TYPE.AUTH
     }
   }
