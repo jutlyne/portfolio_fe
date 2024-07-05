@@ -1,18 +1,24 @@
-import { defineComponent, inject, onBeforeMount, ref, type Ref } from 'vue'
+import { defineComponent, inject, onBeforeMount, reactive, ref, type Ref } from 'vue'
 import { CheckOutlined } from '@ant-design/icons-vue'
 import { deleteBlog, getList } from '@/api/blog'
-import type { DataItem, TablePaginateInterface } from '@/interfaces/BlogInterface'
+import type {
+  DataItem,
+  SearchStateInterface,
+  TablePaginateInterface
+} from '@/interfaces/BlogInterface'
 import { pageSizeAdmin } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
 import { message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
 import { getProfile } from '@/api/auth'
+import SearchComponent from '@/components/admins/search/SearchComponent.vue'
 
 export default defineComponent({
   components: {
     CheckOutlined,
-    ModalConfirm
+    ModalConfirm,
+    SearchComponent
   },
   setup() {
     const router = useRouter()
@@ -67,7 +73,12 @@ export default defineComponent({
       try {
         const currentPageValue = currentPage.value ? currentPage.value - 1 : currentPage.value
         const skip = currentPageValue * pageSizeAdmin
-        const response = await getList({ limit: pageSizeAdmin, skip })
+        const params = {
+          limit: pageSizeAdmin,
+          skip,
+          ...searchState
+        }
+        const response = await getList(params)
 
         dataSource.value = response.posts
         paginationConfig.value.total = response.total
@@ -111,6 +122,12 @@ export default defineComponent({
       await router.push({ name: 'admin.blogs.edit', params: { id } })
     }
 
+    const searchState = reactive<SearchStateInterface>({})
+
+    const handleSearch = () => {
+      fetchData()
+    }
+
     onBeforeMount(() => {
       fetchData(null, true)
       getProfile()
@@ -127,7 +144,9 @@ export default defineComponent({
       modalRef,
       openModal,
       handleConfirmDelete,
-      edit
+      edit,
+      searchState,
+      handleSearch
     }
   }
 })

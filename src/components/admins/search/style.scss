@@ -1,0 +1,37 @@
+.gutter-row {
+    margin-bottom: 1rem;
+
+    &:last-child .gutter-box {
+        text-align: right;
+    }
+
+    .gutter-box {
+        &>div {
+            width: 100%;
+        }
+
+        .ant-picker {
+            gap: 10px;
+
+            .ant-picker-suffix {
+                position: absolute;
+                right: 10px;
+            }
+        }
+
+        input,
+        button {
+            height: unset;
+            font-size: 16px;
+        }
+
+        .ant-select-single .ant-select-selector {
+            height: 35.43px;
+
+            .ant-select-selection-placeholder,
+            .ant-select-selection-item {
+                line-height: 33px;
+            }
+        }
+    }
+}

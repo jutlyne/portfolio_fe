@@ -16,9 +16,11 @@ import { authenticateMiddleware } from './middleware/auth'
 
 import { inject } from '@vercel/analytics'
 
-inject({
-  mode: import.meta.env.DEV ? 'development' : 'production'
-})
+if (!import.meta.env.DEV) {
+  inject({
+    mode: 'production'
+  })
+}
 
 const app = createApp(App)
 
@@ -46,5 +48,7 @@ app.config.globalProperties.$filters = {
     return value.substr(0, size) + '...'
   }
 }
+
+app.config.globalProperties.$isLocalEnvironment = import.meta.env.DEV;
 
 app.mount('#app')

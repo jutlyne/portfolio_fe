@@ -1,5 +1,7 @@
 <template>
   <div class="list-container">
+    <SearchComponent :searchState="searchState" :handleSearch="handleSearch" />
+    <br />
     <ModalConfirm :modalText="modalContent" :handleOk="handleConfirmDelete" ref="modalRef" />
 
     <a-table
