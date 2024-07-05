@@ -6,6 +6,7 @@
           v-if="modalInputPlaceholder"
           :placeholder="modalInputPlaceholder"
           v-model:value="replyInput"
+          :maxlength="150"
           allow-clear
         />
       </template>

@@ -76,11 +76,13 @@ export default defineComponent({
     const handleAction = async (
       successMessage: string,
       errorMessage: string,
-      actionFunction?: any
+      actionFunction?: () => Promise<void>
     ) => {
       try {
         modalRef.value?.toggleConfirmLoading()
-        typeof actionFunction == 'function' ? await actionFunction : ''
+        if (typeof actionFunction === 'function') {
+          await actionFunction()
+        }
         await fetchData()
         message.success(successMessage)
       } catch (error) {
@@ -92,20 +94,24 @@ export default defineComponent({
     }
 
     const handleConfirmDelete = async () => {
-      await handleAction(
-        'Success!',
-        'Failed to delete blog',
-        deleteComment(targetId.value as number)
+      await handleAction('Success!', 'Failed to delete blog', () =>
+        deleteComment(targetId.value as number).then(() => Promise.resolve())
       )
     }
 
     const handleReplyComment = async () => {
-      const params: StoreCommentInterface = {
-        body: replyInput.value,
-        postId: targetId.value as number,
-        userId: 1
+      if (replyInput.value) {
+        const params: StoreCommentInterface = {
+          body: replyInput.value,
+          postId: targetId.value as number,
+          userId: 1
+        }
+        await handleAction('Success!', 'Failed to add comment', () =>
+          addComment(params).then(() => Promise.resolve())
+        )
+      } else {
+        modalRef.value?.toggleOpen()
       }
-      await handleAction('Success!', 'Failed to add comment', addComment(params))
     }
 
     const openModal = (id: number) => {
