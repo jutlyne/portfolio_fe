@@ -22,6 +22,7 @@ declare module 'vue' {
     RightScrollbar: typeof import('./src/components/users/right_scrollbar/RightScrollbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchComponent: typeof import('./src/components/admins/search/SearchComponent.vue')['default']
     SiderItem: typeof import('./src/components/admins/sider/SiderItem.vue')['default']
     SkillHeader: typeof import('./src/components/users/skill_header/SkillHeader.vue')['default']
     TimeLine: typeof import('./src/components/users/time_line/TimeLine.vue')['default']

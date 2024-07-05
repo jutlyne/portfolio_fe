@@ -7,5 +7,9 @@
 
     .menu-item {
         font-size: 16px;
+
+        .ant-menu-title-content {
+            text-transform: capitalize;
+        }
     }
 }

@@ -6,7 +6,7 @@
     <a-menu
       v-model:selectedKeys="selectedKeys"
       v-model:openKeys="openKeys"
-      :items="menuItem"
+      :items="menuItemAdmin"
       theme="dark"
       mode="inline"
       @click="handleSiderClick"

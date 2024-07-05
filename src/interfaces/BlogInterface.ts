@@ -24,3 +24,10 @@ export interface CreateBlogInterface {
   tags: string[]
   image: File | string | null
 }
+
+export interface SearchStateInterface {
+  title?: string
+  tag?: string
+  start_date?: string
+  end_date?: string
+}
