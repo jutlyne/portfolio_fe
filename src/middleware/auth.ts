@@ -31,7 +31,7 @@ export const authenticateMiddleware = (
   if (requiresAuth && !isAuthenticated()) {
     next({ name: 'admin.login' })
   } else if (isUnauthRoute && isAuthenticated()) {
-    next({ name: 'admin.blog.index' })
+    next({ name: 'admin.blogs.index' })
   } else {
     next()
   }

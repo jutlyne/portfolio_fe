@@ -1,14 +1,21 @@
 import { clearTokenInfo } from '@/utils/axios'
 import { message } from 'ant-design-vue'
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import ModalConfirm from '../modal/ModalConfirm.vue'
 
 export default defineComponent({
-  components: {},
+  components: {
+    ModalConfirm
+  },
   setup() {
     const router = useRouter()
+    const modalContent = 'Logout ?'
+
+    const modalRef = ref<InstanceType<typeof ModalConfirm> | null>(null)
 
     const logout = () => {
+      modalRef.value?.toggleConfirmLoading()
       message.loading('Loading...', 1.5).then(() => {
         clearTokenInfo()
 
@@ -17,8 +24,15 @@ export default defineComponent({
       })
     }
 
+    const openModal = () => {
+      modalRef.value?.toggleOpen()
+    }
+
     return {
-      logout
+      logout,
+      modalContent,
+      openModal,
+      modalRef
     }
   }
 })

@@ -1,6 +1,7 @@
 import type { MenuEvent, MenuItem } from '@/interfaces/MenuInterface'
-import { defineComponent, ref, watch } from 'vue'
+import { defineComponent, h, ref, watch } from 'vue'
 import { useRoute, useRouter, type RouteRecordName } from 'vue-router'
+import { BookOutlined, CommentOutlined } from '@ant-design/icons-vue'
 
 export default defineComponent({
   components: {},
@@ -8,6 +9,7 @@ export default defineComponent({
     const router = useRouter()
     const route = useRoute()
 
+    const collapsed = ref<boolean>(false)
     const selectedKeys = ref<(RouteRecordName | null | undefined)[]>([route.name])
     const openKeys = ref<string[]>([route.meta.routeParent as string])
     const menuItem = ref<MenuItem[]>([
@@ -15,18 +17,33 @@ export default defineComponent({
         key: 'blog',
         label: 'Blogs',
         title: 'Blogs',
+        icon: () => h(BookOutlined),
         children: [
           {
-            key: 'admin.blog.index',
+            key: 'admin.blogs.index',
             label: 'List',
             title: 'List',
-            to: 'admin.blog.index'
+            to: 'admin.blogs.index'
           },
           {
-            key: 'admin.blog.create',
+            key: 'admin.blogs.create',
             label: 'Create',
             title: 'Create',
-            to: 'admin.blog.create'
+            to: 'admin.blogs.create'
+          }
+        ]
+      },
+      {
+        key: 'comment',
+        label: 'Comments',
+        title: 'Comments',
+        icon: () => h(CommentOutlined),
+        children: [
+          {
+            key: 'admin.comments.index',
+            label: 'List',
+            title: 'List',
+            to: 'admin.comments.index'
           }
         ]
       }
@@ -44,7 +61,8 @@ export default defineComponent({
       selectedKeys,
       openKeys,
       menuItem,
-      handleSiderClick
+      handleSiderClick,
+      collapsed
     }
   }
 })

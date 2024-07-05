@@ -5,7 +5,7 @@
         <template #dot>
           <img class="dot" src="/dot.gif" alt="" />
         </template>
-        <RouterLink :to="'/blog/' + d.id" class="item">
+        <RouterLink :to="'/blogs/' + d.id" class="item">
           <span class="item-title font-large">{{ d.title }}</span>
           <span class="item-sort-text font-medium line-clamp-2">
             {{ d.body }}

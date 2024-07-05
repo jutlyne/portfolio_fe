@@ -4,7 +4,7 @@
       <h2 class="font-large">Có thể bạn sẽ thích</h2>
       <a-row class="related-item">
         <a-col class="group" :lg="24" :sm="12" v-for="item in items" :key="item">
-          <RouterLink :to="'/blog/' + item.id">
+          <RouterLink :to="'/blogs/' + item.id">
             <div class="image">
               <img src="https://i.imgur.com/i4he2Or.jpeg" alt="" />
             </div>

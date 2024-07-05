@@ -5,12 +5,14 @@ import NavHeaderItem from '@/components/admins/nav_header/NavHeaderItem.vue'
 import { useRoute } from 'vue-router'
 import LoadingItem from '@/components/users/loading/LoadingItem.vue'
 import { injectionKeys } from '@/constants/injectionKeys'
+import BreadcrumbItem from '@/components/admins/breadcrumb/BreadcrumbItem.vue'
 
 export default defineComponent({
   components: {
     NavHeaderItem,
     SiderItem,
-    LoadingItem
+    LoadingItem,
+    BreadcrumbItem
   },
   setup() {
     const isLoading = ref<boolean>(true)
