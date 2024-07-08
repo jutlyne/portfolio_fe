@@ -6,8 +6,19 @@ import { HttpStatusCode } from 'axios'
 import { refreshToken } from '@/api/auth'
 import { message } from 'ant-design-vue'
 
+let isRefreshing = false
+let refreshSubscribers: ((token: string) => void)[] = []
+
 const baseApiUrl = import.meta.env.VITE_BASE_API_URL
 const { cookies } = useCookies()
+
+const onRefreshed = (token: string) => {
+  refreshSubscribers.map((cb) => cb(token))
+  refreshSubscribers = []
+}
+const addRefreshSubscriber = (cb: (token: string) => void) => {
+  refreshSubscribers.push(cb)
+}
 
 const getAccessToken = () => {
   const token = localStorage.getItem('adminAccessToken')
@@ -30,25 +41,39 @@ const api = axios.create({
   }
 })
 
-const handleResponseError = async (error: { response: { status: number } }) => {
+const handleResponseError = async (error: { response: { status: number }; config: any }) => {
+  const { config } = error
   const statusCode = error.response?.status ?? HttpStatusCode.InternalServerError
 
   if (validErrorStatus.includes(statusCode)) {
     await router.push({ name: 'error', params: { statusCode } })
   }
 
-  if (statusCode === HttpStatusCode.Unauthorized) {
-    const token = getRefreshToken()
-    const { result, errorResult } = await refreshToken(token)
-    if (result?.data?.token && result?.data?.refreshToken) {
-      saveTokenInfo(result.data.token, result.data.refreshToken, true)
-      return true
-    }
+  if (statusCode == HttpStatusCode.Unauthorized && !config._retry) {
+    if (!isRefreshing) {
+      isRefreshing = true
+      config._retry = true
 
-    if (errorResult) {
-      message.loading('Vui lòng đăng nhập lại!', 1.5).then(async () => {
-        clearTokenInfo()
-        await router.push({ name: 'admin.login' })
+      const token = getRefreshToken()
+      const { result, errorResult } = await refreshToken(token)
+      if (result?.data?.token && result?.data?.refreshToken) {
+        saveTokenInfo(result.data.token, result.data.refreshToken, config, true)
+        onRefreshed(result.data.token)
+        return true
+      }
+
+      if (errorResult) {
+        message.loading('Vui lòng đăng nhập lại!', 1.5).then(async () => {
+          clearTokenInfo()
+          await router.push({ name: 'admin.login' })
+        })
+      }
+    } else {
+      return new Promise((resolve) => {
+        addRefreshSubscriber((token) => {
+          config.headers['Authorization'] = `Bearer ${token}`
+          resolve(api(config))
+        })
       })
     }
   }
@@ -56,7 +81,7 @@ const handleResponseError = async (error: { response: { status: number } }) => {
   return Promise.reject(error)
 }
 
-const saveTokenInfo = (token: string, refreshToken: string, isRefresh = false) => {
+const saveTokenInfo = (token: string, refreshToken: string, config?: any, isRefresh = false) => {
   let expiresInDate = new Date()
   expiresInDate.setMonth(expiresInDate.getMonth() + 1)
 
@@ -64,21 +89,29 @@ const saveTokenInfo = (token: string, refreshToken: string, isRefresh = false) =
     expiresInDate = new Date(cookies.get('adminRefreshTokenExpiresIn'))
   }
 
-  const [tokenHeader, tokenPayload, tokenSignature] = token.split('.')
-  const [refreshTokenHeader, refreshTokenPayload, refreshTokenSignature] = refreshToken.split('.')
-
-  if (tokenHeader && tokenPayload && tokenSignature) {
-    localStorage.setItem('adminAccessToken', `${tokenHeader}.${tokenPayload}`)
-    cookies.set('adminAccessTokenSignature', tokenSignature)
-  }
-
-  if (refreshTokenHeader && refreshTokenPayload && refreshTokenSignature) {
-    localStorage.setItem('adminRefreshToken', `${refreshTokenHeader}.${refreshTokenPayload}`)
-    cookies.set('adminRefreshTokenSignature', refreshTokenSignature, expiresInDate)
-    cookies.set('adminRefreshTokenExpiresIn', expiresInDate.toString(), expiresInDate)
-  }
+  setTokenInStorage(token, 'adminAccessToken', 'adminAccessTokenSignature')
+  setTokenInStorage(refreshToken, 'adminRefreshToken', 'adminRefreshTokenSignature', expiresInDate)
+  cookies.set('adminRefreshTokenExpiresIn', expiresInDate.toString(), expiresInDate)
 
   api.defaults.headers['Authorization'] = `Bearer ${token}`
+
+  if (config) {
+    config.headers['Authorization'] = `Bearer ${token}`
+    api(config)
+  }
+}
+
+const setTokenInStorage = (
+  tokenPart: string,
+  localStorageKey: string,
+  cookieKey: string,
+  cookieExpiryDate?: Date
+) => {
+  const [header, payload, signature] = tokenPart.split('.')
+  if (header && payload && signature) {
+    localStorage.setItem(localStorageKey, `${header}.${payload}`)
+    cookies.set(cookieKey, signature, cookieExpiryDate)
+  }
 }
 
 const clearTokenInfo = () => {
