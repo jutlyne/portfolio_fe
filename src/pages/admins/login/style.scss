@@ -20,10 +20,22 @@
             text-transform: uppercase;
         }
 
+        label {
+            color: #fff;
+        }
+
         .button-group {
             text-align: center;
             margin-top: 1rem;
             margin-bottom: 0;
+
+            .ant-col-offset-8 {
+                margin-bottom: 10px;
+            }
+
+            .ant-form-item-control-input-content {
+                flex: unset;
+            }
 
             button {
                 padding: .5rem 2rem;
@@ -47,12 +59,29 @@
                 }
             }
         }
+
+        .ant-form-item-explain-error {
+            max-width: 200px;
+            text-wrap: nowrap;
+        }
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 540px) {
     .form-auth .login-form {
         padding: .5rem 1rem;
+        margin-left: 0;
 
+        .button-group {
+            button {
+                padding: 7px 20px;
+                font-size: 12px;
+            }
+
+            .ant-col-offset-8 {
+                margin-left: 0;
+                margin-inline-start: 0;
+            }
+        }
     }
 }
