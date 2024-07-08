@@ -1,6 +1,6 @@
 <template>
   <RouterView />
-  <SpeedInsights v-if="!$isLocalEnvironment" />
+  <SpeedInsights />
 </template>
 
 <script setup lang="ts">
