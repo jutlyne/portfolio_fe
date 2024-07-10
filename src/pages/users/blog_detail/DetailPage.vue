@@ -1,11 +1,14 @@
 <template>
   <a-row class="blog-detail-container">
-    <a-col :md="24" :lg="18">
+    <a-col :md="24" :lg="6">
+      <AnchorItem :items="anchor" />
+    </a-col>
+    <a-col :md="24" :lg="12">
       <div class="detail-content">
         <div class="action-group">
-          <RouterLink to="/blogs">
+          <RouterLink to="/blogs" class="btn-back">
             <LeftOutlined class="arrow-left font-small" />
-            Quay về
+            <span>Quay về</span>
           </RouterLink>
         </div>
       </div>

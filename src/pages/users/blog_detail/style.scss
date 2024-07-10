@@ -1,5 +1,5 @@
 .user-content:has(.blog-detail-container) {
-  max-width: 100rem !important;
+  max-width: 120rem !important;
 }
 
 .arrow-left {
@@ -9,14 +9,30 @@
 }
 
 .blog-detail-container {
+  .ant-col {
+    padding: 10px;
+  }
+
   .detail-content {
 
     .action-group a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
       font-weight: 700;
       color: rgb(226 232 240 / var(--tw-text-opacity));
 
       &:hover {
         color: rgb(255 255 255 / var(--tw-text-opacity));
+      }
+
+      span {
+        font-weight: 700;
+
+        &:nth-child(1) {
+          height: 12px;
+        }
       }
     }
   }
