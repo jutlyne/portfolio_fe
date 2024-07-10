@@ -61,8 +61,4 @@
   .scrollbar {
     margin-top: 2rem;
   }
-
-  .scrollbar:has(.scrollbar-left) {
-    max-height: unset;
-  }
 }

@@ -30,6 +30,10 @@
 }
 
 @media screen and (max-width: 992px) {
+    .scrollbar,.scrollbar-left:has(.customscroll) {
+      max-height: unset;
+    }
+
     .customscroll {
         height: 14rem;
         overflow: hidden;
