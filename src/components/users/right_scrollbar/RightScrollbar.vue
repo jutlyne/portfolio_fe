@@ -6,7 +6,7 @@
         <a-col class="group" :lg="24" :sm="12" v-for="item in items" :key="item">
           <RouterLink :to="'/blogs/' + item.id">
             <div class="image">
-              <img src="https://i.imgur.com/i4he2Or.jpeg" alt="" />
+              <img src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp" alt="" />
             </div>
             <h3 class="item-title line-clamp-2">
               {{ item.title }}

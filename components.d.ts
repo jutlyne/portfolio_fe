@@ -20,6 +20,7 @@ declare module 'vue' {
     PaginateItem: typeof import('./src/components/users/paginate/PaginateItem.vue')['default']
     ParticleItem: typeof import('./src/components/users/particle/ParticleItem.vue')['default']
     ProfileItem: typeof import('./src/components/users/profile/ProfileItem.vue')['default']
+    ProseItem: typeof import('./src/components/users/prose/ProseItem.vue')['default']
     RightScrollbar: typeof import('./src/components/users/right_scrollbar/RightScrollbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

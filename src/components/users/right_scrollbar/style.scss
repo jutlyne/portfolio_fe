@@ -1,10 +1,12 @@
 .scrollbar {
-  max-height: calc(100vh - 15rem);
+  max-height: calc(100vh - 7rem);
   padding: 5px 15px;
   --tw-bg-opacity: 1;
   background: rgb(30 41 59 / var(--tw-bg-opacity));
   border-radius: 5px;
   overflow-y: scroll;
+  position: sticky;
+  top: 100px;
 
   .related-blogs h2 {
     --tw-text-opacity: 1;
@@ -30,7 +32,8 @@
       }
 
       h3 {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 20px;
         color: rgb(148, 163, 184);
       }
 
@@ -57,8 +60,13 @@
   }
 }
 
+.blog-detail-container .related-blogs .ant-col {
+  padding: 10px 0;
+}
+
 @media screen and (max-width: 992px) {
   .scrollbar {
     margin-top: 2rem;
+    max-height: unset;
   }
 }

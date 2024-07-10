@@ -1,6 +1,6 @@
 <template>
   <a-row class="blog-detail-container">
-    <a-col :md="24" :lg="6">
+    <a-col :md="24" :lg="6" class="w-100-sm">
       <AnchorItem :items="anchor" />
     </a-col>
     <a-col :md="24" :lg="12">
@@ -10,6 +10,9 @@
             <LeftOutlined class="arrow-left font-small" />
             <span>Quay về</span>
           </RouterLink>
+        </div>
+        <div class="rendered-article">
+          <ProseItem />
         </div>
       </div>
     </a-col>

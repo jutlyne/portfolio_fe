@@ -17,7 +17,7 @@
 
         .ant-anchor-link-title {
             color: rgb(148, 163, 184);
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             white-space: wrap;
             line-height: 25px;
@@ -30,10 +30,6 @@
 }
 
 @media screen and (max-width: 992px) {
-    .scrollbar,.scrollbar-left:has(.customscroll) {
-      max-height: unset;
-    }
-
     .customscroll {
         height: 14rem;
         overflow: hidden;
