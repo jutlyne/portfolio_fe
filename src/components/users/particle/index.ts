@@ -79,9 +79,7 @@ export default defineComponent({
       }
     }
 
-    const particlesLoaded = async (container: any) => {
-      console.log('Particles container loaded', container)
-    }
+    const particlesLoaded = async (container: any) => {}
 
     return {
       particlesLoaded,
