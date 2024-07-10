@@ -20,6 +20,18 @@
         margin-top: 1rem;
       }
 
+      &-label {
+        padding: .9rem 1rem 1rem;
+        font-size: 16px;
+        // font-weight: 700;
+        // border-bottom: 1px solid;
+
+        .item:hover {
+          color: rgb(148, 163, 184);
+          background-color: transparent;
+        }
+      }
+
       &-content {
         padding: 1rem;
         transition:
@@ -83,6 +95,7 @@
     margin-top: 3rem;
 
     &.ant-timeline-alternate {
+
       .ant-timeline-item-tail,
       .ant-timeline-item-head,
       .ant-timeline-item-head-custom {

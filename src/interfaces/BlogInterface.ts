@@ -31,3 +31,10 @@ export interface SearchStateInterface {
   start_date?: string
   end_date?: string
 }
+
+export interface BlogAnchorInterface {
+  key: string | number
+  href: string
+  title: string
+  children?: BlogAnchorInterface[]
+}

@@ -1,0 +1,83 @@
+.scrollbar-left {
+    padding: 0;
+}
+
+.anchor-container {
+    .ant-anchor {
+        &>.ant-anchor-link {
+            margin-top: 13px;
+        }
+
+        .ant-anchor-link-active>.ant-anchor-link-title {
+            color: rgb(6 182 212/var(--tw-text-opacity));
+        }
+    }
+
+    .ant-anchor-link {
+
+        .ant-anchor-link-title {
+            color: rgb(148, 163, 184);
+            font-size: 16px;
+            font-weight: 600;
+            white-space: wrap;
+            line-height: 25px;
+        }
+    }
+}
+
+.loadmore {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .customscroll {
+        height: 14rem;
+        overflow: hidden;
+        position: relative;
+
+        .transparent {
+            --tw-gradient-from: #1e293b var(--tw-gradient-from-position);
+            --tw-gradient-to: rgba(30, 41, 59, 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transition-duration: .15s;
+            background-image: linear-gradient(to top, var(--tw-gradient-stops));
+            width: 100%;
+            height: 4rem;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    .loadmore {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+
+        button {
+            background: transparent;
+            border: none;
+            color: rgb(156 163 175/var(--tw-text-opacity));
+            padding: 6px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+
+            span:not(.rotare) {
+                font-weight: 600;
+                font-size: 15px;
+            }
+
+            .rotare {
+                transform: rotate(90deg);
+                margin-top: 3px;
+            }
+        }
+    }
+}

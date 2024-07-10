@@ -5,6 +5,11 @@
         <template #dot>
           <img class="dot" src="/dot.gif" alt="" />
         </template>
+        <template #label>
+          <div class="item">
+            <time datetime="">2023-12-18</time>
+          </div>
+        </template>
         <RouterLink :to="'/blogs/' + d.id" class="item">
           <span class="item-title font-large">{{ d.title }}</span>
           <span class="item-sort-text font-medium line-clamp-2">

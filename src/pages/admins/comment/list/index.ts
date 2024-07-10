@@ -15,7 +15,7 @@ export default defineComponent({
   },
   setup() {
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
-    const modalContent = 'Are you sure you want to delete?'
+    const modalContent = ref<string | null>(null)
     const modalInputPlaceholder = ref<string | null>(null)
     const modalRef = ref<InstanceType<typeof ModalConfirm> | null>(null)
     const handleOk = ref<() => Promise<void>>()
@@ -115,14 +115,16 @@ export default defineComponent({
     }
 
     const openModal = (id: number) => {
+      modalContent.value = 'Delete?'
       modalInputPlaceholder.value = null
       targetId.value = id
       modalRef.value?.toggleOpen()
       handleOk.value = handleConfirmDelete
     }
 
-    const openModalReply = (id: number) => {
+    const openModalReply = (id: number, content: string) => {
       replyInput.value = ''
+      modalContent.value = content
       modalInputPlaceholder.value = 'Reply comment'
       targetId.value = id
       modalRef.value?.toggleOpen()

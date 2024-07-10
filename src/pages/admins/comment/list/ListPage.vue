@@ -25,7 +25,9 @@
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'operation'">
           <a-space warp>
-            <a-button type="primary" primary @click="openModalReply(record.id)">Reply</a-button>
+            <a-button type="primary" primary @click="openModalReply(record.id, record.body)"
+              >Reply</a-button
+            >
             <a-button type="primary" danger @click="openModal(record.id)">Delete</a-button>
           </a-space>
         </template>
