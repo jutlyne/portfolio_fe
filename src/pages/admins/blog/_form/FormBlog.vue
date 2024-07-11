@@ -61,7 +61,7 @@
     </a-form-item>
 
     <a-form-item label="Content" class="form-item">
-      <Editor v-model="formState.content" :api-key="editorAPIKey" :init="configEditor" />
+      <ckeditor :editor="editor" v-model="formState.content" :config="editorConfig"></ckeditor>
     </a-form-item>
 
     <a-form-item class="form-item" :wrapper-col="{ span: 24 }">

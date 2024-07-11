@@ -9,8 +9,6 @@ import {
   type Ref
 } from 'vue'
 import { PlusOutlined } from '@ant-design/icons-vue'
-import Editor from '@tinymce/tinymce-vue'
-import { initEditor } from '@/constants/constant'
 import { message, type UploadChangeParam, type UploadProps } from 'ant-design-vue'
 import type { CreateBlogInterface } from '@/interfaces/BlogInterface'
 import { injectionKeys } from '@/constants/injectionKeys'
@@ -18,6 +16,13 @@ import { getAllTags } from '@/api/tag'
 import type { TagInterface } from '@/interfaces/TagInterface'
 import { validateImage } from '@/utils/file'
 import { formRules } from '@/validations/blog'
+
+import { ClassicEditor } from 'ckeditor5'
+import CKEditor from '@ckeditor/ckeditor5-vue'
+import { editorConfig } from '@/constants/constant'
+
+import 'ckeditor5/ckeditor5.css'
+import 'ckeditor5-premium-features/ckeditor5-premium-features.css'
 
 export default defineComponent({
   props: {
@@ -37,20 +42,22 @@ export default defineComponent({
   },
   components: {
     PlusOutlined,
-    Editor
+    ckeditor: CKEditor.component
   },
   setup(props) {
     const { formState, fileUrl } = toRefs(props)
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
 
     isLoading.value = true
-    const editorAPIKey = import.meta.env.VITE_EDITOR_API_KEY
     const labelCol = { span: 3 }
     const wrapperCol = { span: 21 }
     const treeData = ref([])
 
+    const editor = ClassicEditor
+
     const fetchAllTag = async () => {
       const tagResponse = await getAllTags()
+      isLoading.value = false
       treeData.value = tagResponse.map((tag: TagInterface) => {
         return {
           label: tag.name,
@@ -58,10 +65,6 @@ export default defineComponent({
         }
       })
     }
-
-    const configEditor = initEditor((loading: boolean) => {
-      isLoading.value = loading
-    })
 
     const fileListItem = ref<UploadProps['fileList']>([])
 
@@ -99,13 +102,13 @@ export default defineComponent({
       labelCol,
       wrapperCol,
       treeData,
-      configEditor,
       beforeUpload,
-      editorAPIKey,
       fileListItem,
       isLoading,
       handleChange,
-      formRules
+      formRules,
+      editor,
+      editorConfig
     }
   }
 })

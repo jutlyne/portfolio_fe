@@ -1,6 +1,34 @@
 import { h } from 'vue'
 import { BookOutlined, CommentOutlined, ProfileOutlined } from '@ant-design/icons-vue'
 import type { MenuItem } from '@/interfaces/MenuInterface'
+import {
+  Bold,
+  Essentials,
+  Italic,
+  Paragraph,
+  Undo,
+  Code,
+  Strikethrough,
+  Alignment,
+  Underline,
+  BlockQuote,
+  LegacyList,
+  Heading,
+  Link,
+  MediaEmbed,
+  Image,
+  ImageCaption,
+  FontColor,
+  SourceEditing,
+  FullPage,
+  ImageUpload,
+  ImageInsert,
+  AutoImage,
+  ImageResizeEditing,
+  ImageResizeButtons,
+  ImageToolbar
+} from 'ckeditor5'
+import UploadAdapter from '@/utils/upload-file'
 
 export const pageSize = 5
 export const pageSizeAdmin = 10
@@ -10,24 +38,6 @@ export const ROUTE_TYPE = {
   AUTH: 2
 }
 export const validErrorStatus = [404, 500]
-
-export const initEditor = (updateIsLoading: (loading: boolean) => void) => {
-  return {
-    toolbar_mode: 'sliding',
-    plugins:
-      'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tinycomments tableofcontents footnotes autocorrect typography inlinecss markdown',
-    toolbar:
-      'undo redo | blocks fontfamily | fontsizeinput | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-    tinycomments_mode: 'embedded',
-    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-    font_size_input_default_unit: 'px',
-    setup: (editor: any) => {
-      editor.on('init', () => {
-        updateIsLoading(false)
-      })
-    }
-  }
-}
 
 export const menuItemAdmin: MenuItem[] = [
   {
@@ -72,3 +82,105 @@ export const menuItemAdmin: MenuItem[] = [
     to: 'admin.profile'
   }
 ]
+
+function MyCustomUploadAdapterPlugin(editor: any) {
+  editor.plugins.get('FileRepository').createUploadAdapter = (loader: any) => {
+    // Configure the URL to the upload script in your back-end here!
+    return new UploadAdapter(loader, {
+      uploadUrl: 'http://192.168.3.152:8080/api/upload'
+    })
+  }
+}
+
+export const editorConfig = {
+  plugins: [
+    Undo,
+    Bold,
+    Essentials,
+    Italic,
+    Paragraph,
+    Code,
+    Strikethrough,
+    Underline,
+    Alignment,
+    BlockQuote,
+    LegacyList,
+    Heading,
+    Link,
+    MediaEmbed,
+    Image,
+    FontColor,
+    SourceEditing,
+    FullPage,
+    ImageUpload,
+    MyCustomUploadAdapterPlugin,
+    ImageInsert,
+    ImageResizeEditing,
+    ImageResizeButtons,
+    ImageToolbar,
+    ImageCaption
+  ],
+  image: {
+    resizeUnit: 'px',
+    resizeOptions: [
+      {
+        name: 'resizeImage:original',
+        value: null,
+        icon: 'original'
+      },
+      {
+        name: 'resizeImage:custom',
+        value: 'custom',
+        icon: 'custom'
+      },
+      {
+        name: 'resizeImage:300',
+        value: '300',
+        icon: 'medium'
+      },
+      {
+        name: 'resizeImage:500',
+        value: '500',
+        icon: 'large'
+      }
+    ],
+    toolbar: [
+      'resizeImage:300',
+      'resizeImage:500',
+      'resizeImage:original',
+      'resizeImage:custom',
+      'toggleImageCaption'
+    ]
+  },
+  toolbar: {
+    items: [
+      'undo',
+      'redo',
+      '|',
+      'bold',
+      'italic',
+      'strikethrough',
+      'code',
+      '|',
+      'heading',
+      '|',
+      'fontColor',
+      '|',
+      'link',
+      'blockQuote',
+      '|',
+      'bulletedList',
+      'numberedList',
+      '|',
+      'MediaEmbed',
+      'insertImage',
+      '|',
+      'sourceEditing'
+    ],
+    shouldNotGroupWhenFull: false
+  },
+  menuBar: {
+    isVisible: true
+  }
+  // extraPlugins: [uploader]
+}
