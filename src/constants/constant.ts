@@ -23,10 +23,10 @@ import {
   FullPage,
   ImageUpload,
   ImageInsert,
-  AutoImage,
   ImageResizeEditing,
   ImageResizeButtons,
-  ImageToolbar
+  ImageToolbar,
+  ImageResize
 } from 'ckeditor5'
 import UploadAdapter from '@/utils/upload-file'
 
@@ -118,7 +118,8 @@ export const editorConfig = {
     ImageResizeEditing,
     ImageResizeButtons,
     ImageToolbar,
-    ImageCaption
+    ImageCaption,
+    ImageResize
   ],
   image: {
     resizeUnit: 'px',
@@ -149,7 +150,8 @@ export const editorConfig = {
       'resizeImage:500',
       'resizeImage:original',
       'resizeImage:custom',
-      'toggleImageCaption'
+      'toggleImageCaption',
+      'resizeImage'
     ]
   },
   toolbar: {
