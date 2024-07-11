@@ -242,7 +242,7 @@
     </ol>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">ssh-keygen -t ed25519 -C </span><span class="token string" style="color:rgb(255, 121, 198)">"your_email@example.com"</span><span class="token plain"></span></div></pre>
@@ -257,7 +257,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">Enter </span><span class="token function" style="color:rgb(80, 250, 123)">file</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">in</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">which</span><span class="token plain"> to save the key </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">/c/Users/dutha/.ssh/id_ed25519</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain">:</span></div></pre>
@@ -279,14 +279,14 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">Enter passphrase </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">empty </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">for</span><span class="token plain"> no passphrase</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain">:</span></div></pre>
     </div>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">Enter same passphrase again:</span></div></pre>
@@ -298,7 +298,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">Your identification has been saved </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">in</span><span class="token plain"> /c/Users/dutha/.ssh/id_duthanhduoc10</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">Your public key has been saved </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">in</span><span class="token plain"> /c/Users/dutha/.ssh/id_duthanhduoc10.pub</span></div></pre>
@@ -349,7 +349,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">touch</span><span class="token plain"> /c/Users/dutha/.ssh/config</span></div></pre>
@@ -357,7 +357,7 @@
     <p>Edit file <code>config</code> vừa tạo</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">nano</span><span class="token plain"> /c/Users/dutha/.ssh/config</span></div></pre>
@@ -368,7 +368,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token comment" style="color:rgb(98, 114, 164)">#Default GitHub</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">Host github.com</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">HostName github.com</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">User </span><span class="token function" style="color:rgb(80, 250, 123)">git</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">IdentityFile ~/.ssh/ten_file_private_key_ssh</span></div></pre>
@@ -425,7 +425,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">ssh</span><span class="token plain"> root@ip_address</span></div></pre>
@@ -440,7 +440,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">ssh</span><span class="token plain"> -i /path/to/your/id_rsa root@ip_address</span></div></pre>
@@ -470,7 +470,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">adduser duoc</span></div></pre>
@@ -492,7 +492,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">usermod</span><span class="token plain"> -aG </span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> duoc</span></div></pre>
@@ -506,7 +506,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">su</span><span class="token plain"> - duoc</span></div></pre>
@@ -539,7 +539,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.0.2.123</span></div></pre>
@@ -577,7 +577,7 @@
     <p>Login hoặc chuyển sang user mới tạo nhé</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">su</span><span class="token plain"> - duoc</span></div></pre>
@@ -585,7 +585,7 @@
     <p>Cập nhật các package mới</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt-get</span><span class="token plain"> update</span></div></pre>
@@ -593,7 +593,7 @@
     <p>Cập nhật các package đã cài trong máy</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt-get</span><span class="token plain"> upgrade</span></div></pre>
@@ -610,7 +610,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">curl</span><span class="token plain"> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh </span><span class="token operator">|</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">bash</span><span class="token plain"></span></div></pre>
@@ -628,7 +628,7 @@
     <p>Nếu muốn cài phiên bản 21 thì</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">nvm </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> </span><span class="token number">21</span><span class="token plain"></span></div></pre>
@@ -636,7 +636,7 @@
     <p>Còn nếu muốn cài phiên bản mới nhất thì</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">nvm </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">node</span><span class="token plain"></span></div></pre>
@@ -644,7 +644,7 @@
     <p>Sau khi cài Node.js xong thì để kiểm tra Node.Js version mấy chỉ cần</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">node</span><span class="token plain"> -v</span></div></pre>
@@ -670,7 +670,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">ssh-keygen -t ed25519 -C </span><span class="token string" style="color:rgb(255, 121, 198)">"your_email@example.com"</span><span class="token plain"></span></div></pre>
@@ -682,7 +682,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">cat</span><span class="token plain"> /home/duoc/.ssh/ten_ssh_file.pub</span></div></pre>
@@ -691,7 +691,7 @@
     <p>Sau khi add xong rồi thì anh em chỉ cần clone repo của anh em về VPS</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">git</span><span class="token plain"> clone git@github.com:usernameGithub/tenRepo.git</span></div></pre>
@@ -705,7 +705,7 @@
     <p>Đầu tiên cần cd vào đúng đường dẫn vừa clone về</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token builtin class-name" style="color:rgb(189, 147, 249)">cd</span><span class="token plain"> tenRepo</span></div></pre>
@@ -722,7 +722,7 @@
     </blockquote>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">npm</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">yarn</span><span class="token plain"> -g</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">npm</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> pm2 -g</span></div></pre>
@@ -730,7 +730,7 @@
     <p>Tiến hành cài đặt các package dự án</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">yarn</span><span class="token plain"></span></div></pre>
@@ -742,7 +742,7 @@
     <p>Với Next.Js thì ta cần build dự án</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">yarn</span><span class="token plain"> build</span></div></pre>
@@ -750,7 +750,7 @@
     <p>Tiếp theo chạy dự án Next.Js hoặc Node.Js lên coi thử có lỗi gì không</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">yarn</span><span class="token plain"> start</span></div></pre>
@@ -783,7 +783,7 @@
     </ul>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">pm2 start --name</span><span class="token operator">=</span><span class="token plain">website </span><span class="token function" style="color:rgb(80, 250, 123)">yarn</span><span class="token plain"> -- start</span></div></pre>
@@ -795,7 +795,7 @@
     <p>Muốn xem các tiến trình đang chạy bởi pm2 thì dùng</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">pm2 </span><span class="token function" style="color:rgb(80, 250, 123)">ls</span><span class="token plain"></span></div></pre>
@@ -806,7 +806,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">pm2 save</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">pm2 startup</span></div></pre>
@@ -814,7 +814,7 @@
     <p>Nó sẽ in ra kết quả tương tự như dưới đây</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token plain">PM2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token plain"> Init System found: systemd</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token punctuation" style="color:rgb(248, 248, 242)">[</span><span class="token plain">PM2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">]</span><span class="token plain"> You have to run this </span><span class="token builtin class-name" style="color:rgb(189, 147, 249)">command</span><span class="token plain"> as root. Execute the following command:</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">env</span><span class="token plain"> </span><span class="token assign-left variable environment constant" style="color:rgb(189, 147, 249);font-style:italic">PATH</span><span class="token operator">=</span><span class="token environment constant" style="color:rgb(189, 147, 249)">$PATH</span><span class="token plain">:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u duoc --hp /home/duoc</span></div></pre>
@@ -826,7 +826,7 @@
     <p>Câu lệnh của bạn thì tương tự dưới đây</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">env</span><span class="token plain"> </span><span class="token assign-left variable environment constant" style="color:rgb(189, 147, 249);font-style:italic">PATH</span><span class="token operator">=</span><span class="token environment constant" style="color:rgb(189, 147, 249)">$PATH</span><span class="token plain">:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u duoc --hp /home/duoc</span></div></pre>
@@ -838,7 +838,7 @@
     <p>Thay thế <code>duoc</code> thành username của anh em.</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">systemctl status pm2-duoc</span></div></pre>
@@ -884,7 +884,7 @@
     <p>🔥 Câu lệnh redeploy rút gọn của mình khi login vào vps đúng với username là</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token builtin class-name" style="color:rgb(189, 147, 249)">cd</span><span class="token plain"> Portfolio </span><span class="token operator">&amp;&amp;</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">git</span><span class="token plain"> pull </span><span class="token operator">&amp;&amp;</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">yarn</span><span class="token plain"> build </span><span class="token operator">&amp;&amp;</span><span class="token plain"> pm2 restart portfolio</span></div></pre>
@@ -945,7 +945,7 @@
     <h3 id="cai-dat-nginx">🥈<!-- -->Cài đặt Nginx</h3>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt-get</span><span class="token plain"> update </span><span class="token operator">&amp;&amp;</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt-get</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> nginx</span></div></pre>
@@ -958,7 +958,7 @@
     <p>Để liệt kê các cấu hình app mà <code>ufw</code> biết thì chỉ cần gõ</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw app list</span></div></pre>
@@ -966,7 +966,7 @@
     <p>Các bạn sẽ nhận được danh sách profile dưới đây</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">Available applications:</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  Nginx Full</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  Nginx HTTP</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  Nginx HTTPS</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  OpenSSH</span></div></pre>
@@ -997,7 +997,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw allow </span><span class="token string" style="color:rgb(255, 121, 198)">'Nginx Full'</span><span class="token plain"></span></div></pre>
@@ -1005,7 +1005,7 @@
     <p>Để kiểm tra thay đổi thì gõ</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw status</span></div></pre>
@@ -1021,7 +1021,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token comment" style="color:rgb(98, 114, 164)"># Mở port 22 (ssh), Nginx Full mở rồi không cần mở lại</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw allow </span><span class="token function" style="color:rgb(80, 250, 123)">ssh</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)"># Bật tường lửa, nhưng cái này chỉ bật trong phiên làm việc hiện tại thôi, reboot là nó tự tắt</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw </span><span class="token builtin class-name" style="color:rgb(189, 147, 249)">enable</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)"># Kiểm tra trạng thái tường lửa</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw status</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)"># Yêu cầu tường lửa lên mỗi khi khởi động lại server</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> systemctl </span><span class="token builtin class-name" style="color:rgb(189, 147, 249)">enable</span><span class="token plain"> ufw</span></div></pre>
@@ -1031,7 +1031,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> ufw delete allow </span><span class="token string" style="color:rgb(255, 121, 198)">'Nginx HTTP'</span><span class="token plain"></span></div></pre>
@@ -1040,7 +1040,7 @@
     <p>Để chắc chắn rằng service Nginx đang được chạy, chỉ cần chạy câu lệnh</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">systemctl status nginx</span></div></pre>
@@ -1051,7 +1051,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">● nginx.service - A high performance web server and a reverse proxy server</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    Loaded: loaded </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">/lib/systemd/system/nginx.service</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> enabled</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> vendor preset: enabled</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    Active: active </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">running</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"> since Mon </span><span class="token number">2016</span><span class="token plain">-04-18 </span><span class="token number">16</span><span class="token plain">:14:00 EDT</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> 4min 2s ago</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">  Main PID: </span><span class="token number">12857</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">nginx</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    CGroup: /system.slice/nginx.service</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">      ├─12857 nginx: master process /usr/sbin/nginx -g daemon on</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> master_process on</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">      └─12858 nginx: worker process</span></div></pre>
@@ -1084,7 +1084,7 @@
     <p>Đầu tiên cần di chuyển vào thư mục <code>/etc/nginx/sites-available</code></p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token builtin class-name" style="color:rgb(189, 147, 249)">cd</span><span class="token plain"> /etc/nginx/sites-available</span></div></pre>
@@ -1099,7 +1099,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">touch</span><span class="token plain"> example.com</span></div></pre>
@@ -1107,7 +1107,7 @@
     <p>Mở file và edit bằng <code>nano</code></p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">nano</span><span class="token plain"> example.com</span></div></pre>
@@ -1127,7 +1127,7 @@
     </ul>
     <div class="codeBlock">
       <div class="languageCode">nginx</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-nginx customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">server {</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">        listen 80;</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">        listen [::]:80;</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block">
@@ -1146,7 +1146,7 @@
     <p>Hãy chắc chắn rằng đã thay <code>example.com</code> bằng tên file mà anh em vừa tạo</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">ln</span><span class="token plain"> -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/</span></div></pre>
@@ -1163,7 +1163,7 @@
     <p>Mở nó lên bằng nano</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">nano</span><span class="token plain"> /etc/nginx/nginx.conf</span></div></pre>
@@ -1176,7 +1176,7 @@
     <p>Cuối cùng ta có như thế này</p>
     <div class="codeBlock">
       <div class="languageCode">nginx</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-nginx customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">http {</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    . . .</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block">
@@ -1190,7 +1190,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> nginx -t</span></div></pre>
@@ -1198,7 +1198,7 @@
     <p>Nếu không có vấn đề gì, restart Nginx để enable những thay đổi vừa rồi.</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> systemctl restart nginx</span></div></pre>
@@ -1235,7 +1235,7 @@
     <p>1.Cài Snapd</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt</span><span class="token plain"> update</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> snapd</span></div></pre>
@@ -1246,7 +1246,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">apt-get</span><span class="token plain"> remove certbot</span></div></pre>
@@ -1254,7 +1254,7 @@
     <p>3.Cài Certbot</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> snap </span><span class="token function" style="color:rgb(80, 250, 123)">install</span><span class="token plain"> --classic certbot</span></div></pre>
@@ -1262,7 +1262,7 @@
     <p>4.Chuẩn bị cerbot command</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">ln</span><span class="token plain"> -s /snap/bin/certbot /usr/bin/certbot</span></div></pre>
@@ -1270,7 +1270,7 @@
     <p>5.Cài và lấy chứng chỉ</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> certbot --nginx</span></div></pre>
@@ -1289,7 +1289,7 @@
     <p>Nếu thành công, Certbot sẽ hỏi bạn muốn cấu hình HTTPS như thế nào.</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">Saving debug log to /var/log/letsencrypt/letsencrypt.log</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">Enter email address </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">used </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">for</span><span class="token plain"> urgent renewal and security notices</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">Enter </span><span class="token string" style="color:rgb(255, 121, 198)">'c'</span><span class="token plain"> to cancel</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token plain">: duthanhduoc@gmail.com</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block">
@@ -1320,7 +1320,7 @@
     <p>Để test tiến trình làm mới tự động, anh em có thể chạy câu lệnh dưới</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> certbot renew --dry-run</span></div></pre>
@@ -1355,7 +1355,7 @@
     </p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">nano</span><span class="token plain"> /etc/nginx/sites-enabled/example.com</span></div></pre>
@@ -1363,7 +1363,7 @@
     <p>Nếu đã kích hoạt SSL trong Nginx rồi thì sẽ có cái dòng này</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">listen </span><span class="token number">443</span><span class="token plain"> ssl</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div></pre>
@@ -1371,7 +1371,7 @@
     <p>Thêm cái <code>http2</code> ở phía cuối trước cái dấu <code>;</code> để thành như thế này</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">listen </span><span class="token number">443</span><span class="token plain"> ssl http2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div></pre>
@@ -1379,7 +1379,7 @@
     <p>Cuối cùng thì nó sẽ có dạng như thế này</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token plain">server </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    listen </span><span class="token number">443</span><span class="token plain"> ssl http2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    ssl_certificate </span><span class="token punctuation" style="color:rgb(248, 248, 242)">..</span><span class="token plain">.</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">    ssl_certificate_key </span><span class="token punctuation" style="color:rgb(248, 248, 242)">..</span><span class="token plain">.</span></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"> </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token plain"></span></div></pre>
@@ -1387,7 +1387,7 @@
     <p>Kiểm tra lại file cấu hình có đúng không</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> nginx -t</span></div></pre>
@@ -1395,7 +1395,7 @@
     <p>Restart lại Nginx Server</p>
     <div class="codeBlock">
       <div class="languageCode">bash</div>
-      <button class="copyCode">{{ buttonCopy }}</button>
+      <button class="copyCode">Copy</button>
       <pre
         class="prism-code language-bash customScrollbar"
       ><div class="token-line" style="color:#F8F8F2"><span class="token function" style="color:rgb(80, 250, 123)">sudo</span><span class="token plain"> systemctl restart nginx</span></div></pre>
