@@ -63,6 +63,8 @@
 
 @media screen and (max-width: 720px) {
   .header-container {
+    backdrop-filter: blur(29px);
+
     .logo-container img {
       border-radius: 8px;
       width: 2rem;
