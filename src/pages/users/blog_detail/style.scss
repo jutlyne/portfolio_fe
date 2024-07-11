@@ -1,5 +1,5 @@
 .user-content:has(.blog-detail-container) {
-  max-width: 102rem !important;
+  max-width: 110rem !important;
 }
 
 .arrow-left {
@@ -10,7 +10,7 @@
 
 .blog-detail-container {
   .ant-col {
-    padding: 10px;
+    padding: 16px;
   }
 
   .detail-content {
@@ -41,5 +41,9 @@
 @media screen and (max-width: 992px) {
   .w-100-sm {
     width: 100%;
+  }
+
+  .blog-detail-container .ant-col {
+    padding: 16px 0;
   }
 }
