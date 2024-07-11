@@ -39,6 +39,7 @@ export default defineComponent({
           releatedBlogs.value = (await getListByTag(data.tags)).posts
         }
       } finally {
+        window.scrollTo(0, 0)
         isLoading.value = false
       }
     }

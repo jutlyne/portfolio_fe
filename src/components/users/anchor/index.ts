@@ -15,7 +15,7 @@ export default defineComponent({
   setup() {
     const targetOffset = ref<number | undefined>(undefined)
     onMounted(() => {
-      targetOffset.value = window.innerHeight / 9
+      targetOffset.value = window.innerHeight / 10
     })
 
     return {
