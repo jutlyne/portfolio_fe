@@ -8,7 +8,6 @@
         :affix="false"
         :items="items"
       ></a-anchor>
-      <a href="#cau-hinh-vps-server-cua-ban">aaaaaaaa</a>
       <div class="transparent"></div>
     </div>
     <div class="loadmore">
