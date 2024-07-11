@@ -1,7 +1,14 @@
 <template>
   <div class="scrollbar scrollbar-left">
     <div class="customscroll">
-      <a-anchor wrapperClass="anchor-container" :affix="false" :items="items"></a-anchor>
+      <a-anchor
+        :target-offset="targetOffset"
+        :offsetTop="targetOffset"
+        wrapperClass="anchor-container"
+        :affix="false"
+        :items="items"
+      ></a-anchor>
+      <a href="#cau-hinh-vps-server-cua-ban">aaaaaaaa</a>
       <div class="transparent"></div>
     </div>
     <div class="loadmore">

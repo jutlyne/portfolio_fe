@@ -1,6 +1,6 @@
 import type { BlogAnchorInterface } from '@/interfaces/BlogInterface'
 import { DoubleRightOutlined } from '@ant-design/icons-vue'
-import { defineComponent, type PropType } from 'vue'
+import { defineComponent, onMounted, ref, type PropType } from 'vue'
 
 export default defineComponent({
   components: {
@@ -13,6 +13,13 @@ export default defineComponent({
     }
   },
   setup() {
-    return {}
+    const targetOffset = ref<number | undefined>(undefined)
+    onMounted(() => {
+      targetOffset.value = window.innerHeight / 9
+    })
+
+    return {
+      targetOffset
+    }
   }
 })
