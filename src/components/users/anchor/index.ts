@@ -13,13 +13,23 @@ export default defineComponent({
     }
   },
   setup() {
-    const targetOffset = ref<number | undefined>(undefined)
+    const readmoreActive = ref<boolean>(false)
+    const targetOffset = ref<number>(100)
+
+    const readmore = () => {
+      readmoreActive.value = !readmoreActive.value
+    }
+
     onMounted(() => {
-      targetOffset.value = window.innerHeight / 10
+      if (window.innerWidth >= 992) {
+        targetOffset.value = 125
+      }
     })
 
     return {
-      targetOffset
+      targetOffset,
+      readmore,
+      readmoreActive
     }
   }
 })

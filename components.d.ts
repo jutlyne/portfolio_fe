@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AnchorItem: typeof import('./src/components/users/anchor/AnchorItem.vue')['default']
+    BlogInfo: typeof import('./src/components/users/blog_info/BlogInfo.vue')['default']
     BreadcrumbItem: typeof import('./src/components/admins/breadcrumb/BreadcrumbItem.vue')['default']
     FooterItem: typeof import('./src/components/users/footer/FooterItem.vue')['default']
     HomeTitleItem: typeof import('./src/components/users/home_title/HomeTitleItem.vue')['default']

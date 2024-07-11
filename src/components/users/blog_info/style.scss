@@ -1,0 +1,39 @@
+.info-header {
+    color: rgb(226 232 240/var(--tw-text-opacity));
+    letter-spacing: -.025em;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.info-author {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 1.75rem;
+
+    a {
+        display: flex;
+
+        img {
+            color: transparent;
+            object-fit: cover;
+            border-radius: 9999px;
+            width: 2.25rem;
+            height: 2.25rem;
+            margin-top: .25rem;
+            margin-right: .5rem;
+        }
+
+        .author-name {
+            color: rgb(56 189 248/var(--tw-text-opacity));
+            font-weight: 500;
+
+            .created-date {
+                color: rgb(226 232 240/var(--tw-text-opacity));
+                font-size: .875rem;
+                line-height: 1.25rem;
+                margin-top: .25rem;
+            }
+        }
+    }
+}

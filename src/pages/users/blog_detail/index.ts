@@ -1,5 +1,6 @@
 import { getDetail, getListByTag } from '@/api/blog'
 import AnchorItem from '@/components/users/anchor/AnchorItem.vue'
+import BlogInfo from '@/components/users/blog_info/BlogInfo.vue'
 import ProseItem from '@/components/users/prose/ProseItem.vue'
 import RightScrollbar from '@/components/users/right_scrollbar/RightScrollbar.vue'
 import paginationControls from '@/composables/paginationControls'
@@ -15,7 +16,8 @@ export default defineComponent({
     LeftOutlined,
     RightScrollbar,
     AnchorItem,
-    ProseItem
+    ProseItem,
+    BlogInfo
   },
   setup() {
     const route = useRoute()

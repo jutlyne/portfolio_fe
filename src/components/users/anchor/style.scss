@@ -29,27 +29,11 @@
     display: none;
 }
 
+.transparent {
+    display: none;
+}
+
 @media screen and (max-width: 992px) {
-    .customscroll {
-        height: 14rem;
-        overflow: hidden;
-        position: relative;
-
-        .transparent {
-            --tw-gradient-from: #1e293b var(--tw-gradient-from-position);
-            --tw-gradient-to: rgba(30, 41, 59, 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-            transition-property: all;
-            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-            transition-duration: .15s;
-            background-image: linear-gradient(to top, var(--tw-gradient-stops));
-            width: 100%;
-            height: 4rem;
-            position: absolute;
-            bottom: 0;
-        }
-    }
-
     .loadmore {
         width: 100%;
         text-align: center;
@@ -76,7 +60,45 @@
 
             .rotare {
                 transform: rotate(90deg);
+                transition: transform 0.3s ease;
                 margin-top: 3px;
+            }
+
+            .rotare-active {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    .anchor-container {
+        transition: transform 0.3s ease;
+        max-height: unset !important;
+    }
+
+    .scrollbar:not(:has(.readmore-active)) {
+        .customscroll {
+            height: 14rem;
+            overflow: hidden;
+            position: relative;
+
+            .transparent {
+                --tw-gradient-from: #1e293b var(--tw-gradient-from-position);
+                --tw-gradient-to: rgba(30, 41, 59, 0) var(--tw-gradient-to-position);
+                --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+                transition-property: all;
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                transition-duration: .15s;
+                background-image: linear-gradient(to top, var(--tw-gradient-stops));
+                width: 100%;
+                height: 4rem;
+                position: absolute;
+                bottom: 0;
+                display: block;
+            }
+
+            .anchor-container {
+                transition: transform 0.3s ease;
+                max-height: 100vh !important;
             }
         }
     }

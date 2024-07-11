@@ -16,6 +16,7 @@
   .detail-content {
 
     .action-group a {
+      height: 5rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -38,9 +39,26 @@
   }
 }
 
+.anchor-sm {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.anchor-md {
+  display: block;
+}
+
 @media screen and (max-width: 992px) {
   .w-100-sm {
     width: 100%;
+  }
+
+  .anchor-sm {
+    display: block;
+  }
+  
+  .anchor-md {
+    display: none;
   }
 
   .blog-detail-container .ant-col {
