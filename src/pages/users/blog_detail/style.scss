@@ -16,7 +16,8 @@
   .detail-content {
 
     .action-group a {
-      height: 5rem;
+      height: 3rem;
+      margin-bottom: 2rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -62,6 +63,12 @@
   }
 
   .blog-detail-container .ant-col {
-    padding: 16px 0;
+    padding: 0 0 16px 0;
+  }
+
+  .blog-detail-container .detail-content .action-group a {
+    height: 1.5rem;
+    margin-bottom: 1.5rem;
+
   }
 }
