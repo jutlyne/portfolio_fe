@@ -14,7 +14,7 @@ export default defineComponent({
   },
   setup() {
     const readmoreActive = ref<boolean>(false)
-    const targetOffset = ref<number>(100)
+    const targetOffset = ref<number>(95)
 
     const readmore = () => {
       readmoreActive.value = !readmoreActive.value
@@ -22,7 +22,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (window.innerWidth >= 992) {
-        targetOffset.value = 125
+        targetOffset.value = 110
       }
     })
 
