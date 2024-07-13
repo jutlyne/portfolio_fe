@@ -33,7 +33,10 @@ export default defineComponent({
 
     const fetchBlogDetail = async (id: number) => {
       isLoading.value = true
-
+      window.scrollTo({
+        top: 100,
+        behavior: 'smooth',
+      })
       try {
         const data = await getDetail(id)
         anchor.value = anchorSample
@@ -41,7 +44,7 @@ export default defineComponent({
           releatedBlogs.value = (await getListByTag(data.tags)).posts
         }
       } finally {
-        window.scrollTo(0, 0)
+        
         isLoading.value = false
       }
     }
