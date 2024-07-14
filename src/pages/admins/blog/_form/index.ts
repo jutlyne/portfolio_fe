@@ -19,7 +19,7 @@ import { formRules } from '@/validations/blog'
 
 import { ClassicEditor } from 'ckeditor5'
 import CKEditor from '@ckeditor/ckeditor5-vue'
-import { editorConfig } from '@/constants/constant'
+import { editorConfig } from '@/utils/ckeditor'
 
 import 'ckeditor5/ckeditor5.css'
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css'
