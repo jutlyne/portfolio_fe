@@ -76,11 +76,8 @@ export default class UploadAdapter {
         return response
       },
       (error: AxiosError) => {
-        reject(
-          error.response && error.response.data && (error.response.data as any).message
-            ? (error.response.data as any).message
-            : `Couldn't upload file.`
-        )
+        const errorMessage = (error.response?.data as { message?: string })?.message || 'An error occurred';
+        reject(errorMessage)
         return Promise.reject(error)
       }
     )
