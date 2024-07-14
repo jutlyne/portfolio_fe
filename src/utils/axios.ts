@@ -125,4 +125,4 @@ api.interceptors.request.use((config) => config)
 
 api.interceptors.response.use((response) => response, handleResponseError)
 
-export { api, saveTokenInfo, clearTokenInfo }
+export { api, saveTokenInfo, clearTokenInfo, axios }
