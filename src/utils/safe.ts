@@ -1,11 +1,11 @@
 export interface SafeInterface<T> {
-  result: T | null
+  result: any
   errorResult: any | null
 }
 
 const safe = async <T>(promise: Promise<T>, muteError = false): Promise<SafeInterface<T>> => {
   try {
-    const result = await promise
+    const result = ((await promise) as any)?.data
 
     return { result, errorResult: null }
   } catch (error) {

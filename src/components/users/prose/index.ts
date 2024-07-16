@@ -1,7 +1,12 @@
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent, onUpdated } from 'vue'
 
 export default defineComponent({
   components: {},
+  props: {
+    body: {
+      required: true
+    }
+  },
   setup() {
     const copyCode = async (event: { target: any }) => {
       if (event.target.classList.contains('copyCode')) {
@@ -16,7 +21,7 @@ export default defineComponent({
       }
     }
 
-    onMounted(() => {
+    onUpdated(() => {
       const copyButtons = document.querySelectorAll('.copyCode')
       copyButtons.forEach((button) => {
         button.addEventListener('click', copyCode)

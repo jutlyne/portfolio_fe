@@ -4,7 +4,7 @@ import { safe, safeRead } from '@/utils/safe'
 
 export const login = async (params: FormLoginStateInterface) => {
   return await safe(
-    api.post('/auth/login', {
+    api.post('/admin/login', {
       ...params,
       expiresInMins: 1
     })
@@ -12,9 +12,9 @@ export const login = async (params: FormLoginStateInterface) => {
 }
 
 export const getProfile = async () => {
-  return await safeRead(api.get('/auth/me'))
+  return await safeRead(api.get('/admin/me'))
 }
 
 export const refreshToken = async (refreshToken: string) => {
-  return await safe(api.post('/auth/refresh', { refreshToken, expiresInMins: 1 }))
+  return await safe(api.post('/admin/refresh-token', { refresh_token: refreshToken }))
 }

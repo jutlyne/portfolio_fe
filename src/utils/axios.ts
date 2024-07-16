@@ -45,9 +45,9 @@ const handleResponseError = async (error: { response: { status: number }; config
   const { config } = error
   const statusCode = error.response?.status ?? HttpStatusCode.InternalServerError
 
-  if (validErrorStatus.includes(statusCode)) {
-    await router.push({ name: 'error', params: { statusCode } })
-  }
+  // if (validErrorStatus.includes(statusCode)) {
+  //   await router.push({ name: 'error', params: { statusCode } })
+  // }
 
   if (statusCode == HttpStatusCode.Unauthorized && !config._retry) {
     if (!isRefreshing) {

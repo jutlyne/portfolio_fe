@@ -21,7 +21,7 @@
         </div>
 
         <div class="rendered-article">
-          <ProseItem />
+          <ProseItem :body="blogBody" />
         </div>
       </div>
     </a-col>

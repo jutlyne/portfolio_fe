@@ -40,6 +40,10 @@ export default defineComponent({
     handleFinish: {
       type: Function,
       required: true
+    },
+    buttonText: {
+      type: String,
+      required: true
     }
   },
   components: {
@@ -70,7 +74,7 @@ export default defineComponent({
       treeData.value = tagResponse.map((tag: TagInterface) => {
         return {
           label: tag.name,
-          value: tag.slug
+          value: tag.id
         }
       })
     }

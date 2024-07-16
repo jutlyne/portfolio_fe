@@ -5,7 +5,6 @@ import {
   Italic,
   Paragraph,
   Undo,
-  Code,
   Strikethrough,
   Alignment,
   Underline,
@@ -24,9 +23,13 @@ import {
   ImageResizeEditing,
   ImageResizeButtons,
   ImageToolbar,
-  ImageResize
+  ImageResize,
+  CodeBlock,
+  Code
+  // Code,
+  // CodeBlock
 } from 'ckeditor5'
-import UploadAdapter from '@/utils/upload-file'
+import UploadAdapter from '@/plugins/ckeditor/upload-file'
 import type { EditorConfig, FileLoader } from 'ckeditor5'
 import type { Options } from '@/interfaces/CkeditorInterface'
 
@@ -46,7 +49,6 @@ export const editorConfig: EditorConfig = {
     Essentials,
     Italic,
     Paragraph,
-    Code,
     Strikethrough,
     Underline,
     Alignment,
@@ -66,7 +68,9 @@ export const editorConfig: EditorConfig = {
     ImageResizeButtons,
     ImageToolbar,
     ImageCaption,
-    ImageResize
+    ImageResize,
+    Code,
+    CodeBlock
   ],
   image: {
     resizeUnit: 'px',
@@ -110,6 +114,7 @@ export const editorConfig: EditorConfig = {
       'italic',
       'strikethrough',
       'code',
+      'codeBlock',
       '|',
       'heading',
       '|',

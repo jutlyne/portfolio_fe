@@ -61,11 +61,11 @@
     </a-form-item>
 
     <a-form-item label="Content" class="form-item">
-      <ckeditor :editor="editor" v-model="formState.content" :config="editorConfig"></ckeditor>
+      <ckeditor :editor="editor" v-model="formState.body" :config="editorConfig"></ckeditor>
     </a-form-item>
 
     <a-form-item class="form-item" :wrapper-col="{ span: 24 }">
-      <a-button html-type="submit" type="primary">Create</a-button>
+      <a-button html-type="submit" type="primary">{{ buttonText }}</a-button>
     </a-form-item>
   </a-form>
 </template>

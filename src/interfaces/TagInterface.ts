@@ -1,4 +1,4 @@
 export interface TagInterface {
-  slug: string
+  id: number
   name: string
 }

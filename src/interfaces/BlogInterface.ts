@@ -20,8 +20,8 @@ export interface DataItem {
 export interface CreateBlogInterface {
   title: string
   short_text: string
-  content: string
-  tags: string[]
+  body: string
+  tags: number[]
   image: File | string | null
 }
 

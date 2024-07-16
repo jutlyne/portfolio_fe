@@ -1,4 +1,4 @@
-import { getDetail, getListByTag } from '@/api/blog'
+import { getDetail, getDetailBlogByUser, getListByTag } from '@/api/blog'
 import AnchorItem from '@/components/users/anchor/AnchorItem.vue'
 import BlogInfo from '@/components/users/blog_info/BlogInfo.vue'
 import ProseItem from '@/components/users/prose/ProseItem.vue'
@@ -27,6 +27,8 @@ export default defineComponent({
     const releatedBlogs = ref<Object[]>([])
     const anchor = ref<BlogAnchorInterface[]>([])
 
+    const blogBody = ref<string>()
+
     const { setCategory, activePaginate } = paginationControls()
     setCategory([])
     activePaginate(false)
@@ -35,16 +37,20 @@ export default defineComponent({
       isLoading.value = true
       window.scrollTo({
         top: 100,
-        behavior: 'smooth',
+        behavior: 'smooth'
       })
       try {
-        const data = await getDetail(id)
+        const data = await getDetailBlogByUser(
+          'huong-dan-full-deploy-website-nextjs-hoac-nodejs-len-vps-1721103044'
+        )
+        blogBody.value = data.body
+        console.log(data)
+
         anchor.value = anchorSample
-        if (Object.keys(data).length !== 0) {
-          releatedBlogs.value = (await getListByTag(data.tags)).posts
-        }
+        // if (Object.keys(data).length !== 0) {
+        //   releatedBlogs.value = (await getListByTag(data.tags)).posts
+        // }
       } finally {
-        
         isLoading.value = false
       }
     }
@@ -65,7 +71,8 @@ export default defineComponent({
 
     return {
       releatedBlogs,
-      anchor
+      anchor,
+      blogBody
     }
   }
 })
