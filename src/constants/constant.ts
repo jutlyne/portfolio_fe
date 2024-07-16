@@ -1,8 +1,10 @@
 import { h } from 'vue'
 import { BookOutlined, CommentOutlined, ProfileOutlined } from '@ant-design/icons-vue'
 import type { MenuItem } from '@/interfaces/MenuInterface'
+import type { TagInterface } from '@/interfaces/TagInterface'
 
 export const pageSize = 5
+export const pageSizeRightbar = 15
 export const pageSizeAdmin = 10
 export const limitString = 120
 
@@ -55,3 +57,8 @@ export const menuItemAdmin: MenuItem[] = [
     to: 'admin.profile'
   }
 ]
+
+export const initSkill: TagInterface = {
+  id: null,
+  name: 'All'
+}

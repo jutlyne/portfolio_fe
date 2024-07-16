@@ -5,10 +5,10 @@
         <template #dot>
           <img class="dot" v-lazy="'/dot.gif'" alt="" />
         </template>
-        <RouterLink :to="'/blogs/' + d.id" class="item">
+        <RouterLink :to="'/blogs/' + d.slug" class="item">
           <span class="item-title font-large">{{ d.title }}</span>
           <span class="item-sort-text font-medium line-clamp-2">
-            {{ d.body }}
+            {{ d.short_text }}
           </span>
           <span class="read-more">
             Đọc thêm

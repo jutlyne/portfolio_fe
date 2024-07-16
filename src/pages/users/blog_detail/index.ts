@@ -1,9 +1,10 @@
-import { getDetailBlogByUser, getListByTag } from '@/api/blog'
+import { getDetailBlogByUser, getListByUser } from '@/api/blog'
 import AnchorItem from '@/components/users/anchor/AnchorItem.vue'
 import BlogInfo from '@/components/users/blog_info/BlogInfo.vue'
 import ProseItem from '@/components/users/prose/ProseItem.vue'
 import RightScrollbar from '@/components/users/right_scrollbar/RightScrollbar.vue'
 import paginationControls from '@/composables/paginationControls'
+import { pageSizeRightbar } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import { anchorSample } from '@/constants/sample'
 import type { BlogAnchorInterface } from '@/interfaces/BlogInterface'
@@ -23,7 +24,7 @@ export default defineComponent({
     const route = useRoute()
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
 
-    const blogId = ref<number>()
+    const blogId = ref<string>()
     const releatedBlogs = ref<Object[]>([])
     const anchor = ref<BlogAnchorInterface[]>([])
 
@@ -33,35 +34,37 @@ export default defineComponent({
     setCategory([])
     activePaginate(false)
 
-    const fetchBlogDetail = async (id: number) => {
+    const fetchBlogDetail = async (slug: string) => {
       isLoading.value = true
       window.scrollTo({
         top: 100,
         behavior: 'smooth'
       })
       try {
-        const data = await getDetailBlogByUser(
-          'huong-dan-full-deploy-website-nextjs-hoac-nodejs-len-vps-1721103044'
-        )
+        const data = await getDetailBlogByUser(slug)
         blogBody.value = data.body
-        console.log(data)
 
         anchor.value = anchorSample
-        // if (Object.keys(data).length !== 0) {
-        //   releatedBlogs.value = (await getListByTag(data.tags)).posts
-        // }
+        if (Object.keys(data).length !== 0) {
+          const params = {
+            tag: data.tag_resource[0].id,
+            limit: pageSizeRightbar,
+            skip: 0
+          }
+          releatedBlogs.value = (await getListByUser(params)).blogs
+        }
       } finally {
         isLoading.value = false
       }
     }
 
     onBeforeMount(async () => {
-      blogId.value = route.params?.id as unknown as number
+      blogId.value = route.params?.id as unknown as string
       await fetchBlogDetail(blogId.value)
     })
 
     watch(route, async () => {
-      const id = route.params?.id as unknown as number
+      const id = route.params?.id as unknown as string
 
       if (id != blogId.value) {
         blogId.value = id

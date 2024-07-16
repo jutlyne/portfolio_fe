@@ -5,10 +5,13 @@ import NavHeader from '@/components/users/nav_header/NavHeader.vue'
 import { getList } from '@/api/blog'
 import { injectionKeys } from '@/constants/injectionKeys'
 import PaginateItem from '@/components/users/paginate/PaginateItem.vue'
-import { pageSize } from '@/constants/constant'
+import { initSkill, pageSize } from '@/constants/constant'
 import paginationControls from '@/composables/paginationControls'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+import { getAllTagsByUser } from '@/api/tag'
+import type { TagInterface } from '@/interfaces/TagInterface'
+import type { BlogQueryInterface } from '@/interfaces/QueryInterface'
 
 export default defineComponent({
   components: {
@@ -24,16 +27,15 @@ export default defineComponent({
     const totalItem = inject<Ref<number>>(injectionKeys.totalItem)!
     const onPageChange = inject<Ref<any>>(injectionKeys.onPageChange)!
     const categories = inject<Ref<string[]>>(injectionKeys.categories)!
-    const tagRef = inject<Ref<string>>(injectionKeys.skillTag)!
+    const tagRef = inject<Ref<TagInterface>>(injectionKeys.skillTag)!
 
     const route = useRoute()
     const router = useRouter()
-    const getTag = () => {
-      return tagRef.value || store.state.blogs.tagRef || ''
+    const getTag = (): TagInterface => {
+      return tagRef.value || store.state.blogs.tagRef
     }
 
     const { setCategory, activePaginate } = paginationControls()
-    setCategory(['All', 'PHP', 'NodeJs', 'VueJs', 'AWS', 'CICD', 'Life'])
     activePaginate(true)
 
     const fetchBlogData = async (limit: number, skip: number) => {
@@ -41,11 +43,18 @@ export default defineComponent({
 
       try {
         store.commit('blogs/setCurrentPage', Math.floor(skip / limit) + 1)
+        const params: BlogQueryInterface = {
+          limit,
+          skip
+        }
+        const { id: tag } = getTag()
+        if (tag) {
+          params.tag = tag
+        }
 
-        const tag = getTag()
-        const data = await getList({ limit, skip, tag })
+        const data = await getList(params)
         if (Object.keys(data).length !== 0) {
-          blogs.value = data.posts
+          blogs.value = data.blogs
           totalItem.value = data.total
         }
       } finally {
@@ -53,15 +62,30 @@ export default defineComponent({
       }
     }
 
+    const fetchTagData = async () => {
+      const tags = [initSkill]
+      const response = await getAllTagsByUser()
+
+      response.map((res: TagInterface) => {
+        return tags.push({
+          id: res.id,
+          name: res.name
+        })
+      })
+
+      setCategory(tags)
+    }
+
     onBeforeMount(async () => {
       if (route.query?.ref) {
         store.commit('blogs/setCurrentPage', 1)
         store.commit('blogs/setTagRef', '')
-        tagRef.value = ''
-        router.replace('blog')
+        tagRef.value = initSkill
+        router.replace('blogs')
       }
 
       const skip = (store.state.blogs.currentPage - 1) * pageSize
+      await fetchTagData()
       await fetchBlogData(pageSize, skip)
     })
 

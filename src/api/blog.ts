@@ -15,16 +15,6 @@ export const getDetail = async (id: number) => {
   return await safeRead(api.get('/admin/blogs/' + id))
 }
 
-export const getListByTag = async (tags: string[], limit = 16) => {
-  return await safeRead(
-    api.get('/posts/tag/' + tags[0], {
-      params: {
-        limit
-      }
-    })
-  )
-}
-
 export const addBlog = async (params: CreateBlogInterface) => {
   return await safe(api.post('/admin/blogs', params))
 }
@@ -44,4 +34,12 @@ export const deleteBlog = async (id: number) => {
 
 export const getDetailBlogByUser = async (slug: string) => {
   return await safeRead(api.get('/blogs/' + slug))
+}
+
+export const getListByUser = async (params: BlogQueryInterface) => {
+  return await safeRead(
+    api.get('/blogs', {
+      params
+    })
+  )
 }

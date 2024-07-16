@@ -5,7 +5,6 @@ import App from './App.vue'
 import router from './router'
 
 import 'ant-design-vue/dist/reset.css'
-import { limitString } from './constants/constant'
 
 import Particles from '@tsparticles/vue3'
 
@@ -40,18 +39,6 @@ app.use(Particles, {
 })
 
 app.use(store)
-
-app.config.globalProperties.$filters = {
-  str_limit(value: string, size = limitString) {
-    if (!value) return ''
-    value = value.toString()
-
-    if (value.length <= size) {
-      return value
-    }
-    return value.substr(0, size) + '...'
-  }
-}
 
 app.config.globalProperties.$isLocalEnvironment = import.meta.env.DEV
 
