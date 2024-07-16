@@ -25,8 +25,8 @@ const safeRead = async <T>(
   muteError = false
 ): Promise<any> => {
   const { result, errorResult } = await safe(promise, muteError)
-  if (result !== null && typeof (result as any).data !== 'undefined') {
-    return (result as any).data
+  if (result !== null && typeof result.data !== 'undefined') {
+    return result.data
   }
 
   if (typeof errorCallback === 'function') {

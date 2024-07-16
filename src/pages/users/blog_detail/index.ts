@@ -1,4 +1,4 @@
-import { getDetail, getDetailBlogByUser, getListByTag } from '@/api/blog'
+import { getDetailBlogByUser, getListByTag } from '@/api/blog'
 import AnchorItem from '@/components/users/anchor/AnchorItem.vue'
 import BlogInfo from '@/components/users/blog_info/BlogInfo.vue'
 import ProseItem from '@/components/users/prose/ProseItem.vue'
