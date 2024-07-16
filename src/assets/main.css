@@ -8,6 +8,7 @@ body {
   background: rgb(15 23 42 / var(--tw-bg-opacity));
   --scrollbarBG: transparent;
   --thumbBG: #5a6072;
+  font-family: Inter, sans-serif;
 }
 
 #app {
