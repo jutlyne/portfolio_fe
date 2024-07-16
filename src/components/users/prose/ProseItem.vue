@@ -1,5 +1,5 @@
 <template>
-  <div class="rendered-article prose mt-6" v-html="body"></div>
+  <div class="rendered-article prose mt-6" v-dompurify-html="body"></div>
 </template>
 
 <script lang="ts" src="./index.ts" default />

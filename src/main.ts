@@ -13,6 +13,8 @@ import { loadFull } from 'tsparticles'
 import { authenticateMiddleware } from './middleware/auth'
 
 import VueLazyload from 'vue-lazyload'
+import VueDOMPurifyHTML from 'vue-dompurify-html'
+
 
 import { Flex, Col, Row } from 'ant-design-vue'
 
@@ -20,6 +22,7 @@ const app = createApp(App)
 
 router.beforeEach(authenticateMiddleware)
 
+app.use(VueDOMPurifyHTML)
 app.use(router)
 
 app.use(Flex)
