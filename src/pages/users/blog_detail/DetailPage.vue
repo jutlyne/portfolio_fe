@@ -13,7 +13,7 @@
         </div>
 
         <div class="blog-info">
-          <BlogInfo />
+          <BlogInfo v-if="blogInfo" :blogInfo="blogInfo" />
         </div>
 
         <div class="anchor-sm">

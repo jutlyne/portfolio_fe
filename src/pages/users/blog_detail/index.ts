@@ -6,10 +6,11 @@ import RightScrollbar from '@/components/users/right_scrollbar/RightScrollbar.vu
 import paginationControls from '@/composables/paginationControls'
 import { pageSizeRightbar } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
-import type { BlogAnchorInterface } from '@/interfaces/BlogInterface'
+import type { BlogAnchorInterface, BlogInfoInterface } from '@/interfaces/BlogInterface'
 import { LeftOutlined } from '@ant-design/icons-vue'
 import { defineComponent, inject, onBeforeMount, ref, watch, type Ref } from 'vue'
 import { useRoute } from 'vue-router'
+import moment from 'moment'
 
 export default defineComponent({
   components: {
@@ -28,6 +29,7 @@ export default defineComponent({
     const anchor = ref<BlogAnchorInterface[]>([])
 
     const blogBody = ref<string>()
+    const blogInfo = ref<BlogInfoInterface>()
 
     const { setCategory, activePaginate } = paginationControls()
     setCategory([])
@@ -42,6 +44,11 @@ export default defineComponent({
       try {
         const data = await getDetailBlogByUser(slug)
         blogBody.value = data.body
+        blogInfo.value = {
+          name: data.title,
+          readtime: 30,
+          created_at: moment(data.created_at).format('DD [tháng] MM YYYY')
+        }
 
         anchor.value = data.headings
         if (Object.keys(data).length !== 0) {
@@ -74,7 +81,8 @@ export default defineComponent({
     return {
       releatedBlogs,
       anchor,
-      blogBody
+      blogBody,
+      blogInfo
     }
   }
 })

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="info-header">[Hướng dẫn full] Deploy website Next.Js hoặc Node.Js lên VPS</h1>
+    <h1 class="info-header">{{ blogInfo?.name }}</h1>
     <div class="info-author">
       <a title="Thông tin tác giả"
         ><img
@@ -13,14 +13,13 @@
           src="/profile.webp"
         />
         <div class="author-name">
-          <div>
-            Võ Cao Kỳ
-          </div>
+          <div>Võ Cao Kỳ</div>
           <div class="created-date">
-            <time datetime="2023-12-18"
-              >18 tháng 12 2023<!-- -->
+            <time :datetime="blogInfo?.created_at"
+              >{{ blogInfo?.created_at
+              }}<!-- -->
               🎉 </time
-            ><span>30 phút đọc</span>
+            ><span>{{ blogInfo?.readtime }} phút đọc</span>
           </div>
         </div></a
       >

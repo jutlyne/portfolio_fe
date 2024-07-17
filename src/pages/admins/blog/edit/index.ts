@@ -17,6 +17,7 @@ export default defineComponent({
     const formState = reactive<CreateBlogInterface>({
       title: '',
       short_text: '',
+      read_minutes: 0,
       tags: [],
       body: '',
       image: '',
@@ -46,6 +47,7 @@ export default defineComponent({
       formState.title = blog.title
       formState.short_text = blog.title
       formState.headings = blog.headings
+      formState.read_minutes = blog.read_minutes
       fileUrl.value = blog.image
 
       blog.tag_resource.map((tag: TagInterface) => {

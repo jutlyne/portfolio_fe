@@ -23,10 +23,10 @@ export const formRules = {
       message: 'Chọn vào nhãn của bài viết!'
     }
   ],
-  headingRules: [
+  readRules: [
     {
       required: true,
-      message: 'Nhập vào tiêu đề bài viết!'
+      message: 'Nhập vào thời gian đọc bài viết!'
     }
   ]
 }

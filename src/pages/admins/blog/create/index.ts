@@ -15,6 +15,7 @@ export default defineComponent({
     const formState = reactive<CreateBlogInterface>({
       title: '',
       short_text: '',
+      read_minutes: 0,
       tags: [],
       body: '',
       image: null,

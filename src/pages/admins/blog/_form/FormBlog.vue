@@ -19,6 +19,15 @@
       <a-input v-model:value="formState.short_text" />
     </a-form-item>
 
+    <a-form-item
+      :rules="formRules.readRules"
+      name="read_minutes"
+      label="Read minutes"
+      class="form-item"
+    >
+      <a-input-number v-model:value="formState.read_minutes" :min="0" :max="60" />
+    </a-form-item>
+
     <a-form-item label="Tags" name="tags" :rules="formRules.tagRules" class="form-item">
       <a-tree-select
         v-model:value="formState.tags"
