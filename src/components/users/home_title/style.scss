@@ -118,6 +118,7 @@
 
     .home-container .title-container .skill .skill-item {
         inset: unset;
+        max-width: 280px;
     }
 
     .home-container .max-width-md {
@@ -127,17 +128,19 @@
 
 @media screen and (max-width: 560px) {
     .home-container .title-container h1 {
-        font-size: 40px;
+        font-size: 34px;
         word-spacing: -5px;
-        line-height: 2.5rem;
+        line-height: 2.3rem;
     }
 
     .home-container .title-container p {
         margin-left: 0;
+        font-size: 16px;
     }
 
     .home-container .title-container .button {
         margin-left: 0;
         width: 100%;
+        padding: 12px 45px;
     }
 }

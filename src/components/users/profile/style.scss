@@ -54,7 +54,7 @@
 }
 
 @media screen and (max-width: 1440px) {
-    .profile-name {
+    .profile-container .profile-name {
         font-size: 45px;
     }
 
@@ -64,8 +64,8 @@
 }
 
 @media screen and (max-width: 960px) {
-    .profile-name {
-        font-size: 40px;
+    .profile-container .profile-name {
+        font-size: 36px;
     }
 
     .profile-content p {

@@ -36,3 +36,14 @@
         }
     }
 }
+
+@media screen and (max-width: 960px) {
+    .home-container section {
+        padding-bottom: 2rem;
+    }
+
+    .home-container section:not(:first-of-type) {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+}
