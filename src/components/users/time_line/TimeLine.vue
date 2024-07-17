@@ -3,7 +3,7 @@
     <template v-for="d in data" :key="d">
       <a-timeline-item class="timeline-item font-medium">
         <template #dot>
-          <img class="dot" src="/dot.gif" alt="" />
+          <img class="dot" v-lazy="'/dot.gif'" alt="" />
         </template>
         <RouterLink :to="'/blogs/' + d.id" class="item">
           <span class="item-title font-large">{{ d.title }}</span>

@@ -8,7 +8,9 @@
         class="dmca-badge"
       >
         <img
-          src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=3d2c2208-65dc-4510-b592-07a8f99e208b"
+          v-lazy="
+            'https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=3d2c2208-65dc-4510-b592-07a8f99e208b'
+          "
           alt="DMCA.com Protection Status"
       /></a>
     </span>

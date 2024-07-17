@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import ParticleItem from '@/components/users/particle/ParticleItem.vue'
 
 export default defineComponent({
@@ -29,7 +29,7 @@ export default defineComponent({
       window.open(url, '_blank')
     }
 
-    startClassTransition()
+    onMounted(startClassTransition)
 
     return {
       currentIndex,

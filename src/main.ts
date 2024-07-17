@@ -14,12 +14,19 @@ import { store } from './store'
 import { loadFull } from 'tsparticles'
 import { authenticateMiddleware } from './middleware/auth'
 
+import VueLazyload from 'vue-lazyload'
+
 const app = createApp(App)
 
 router.beforeEach(authenticateMiddleware)
 
 app.use(router)
 app.use(Antd)
+app.use(VueLazyload, {
+  preLoad: 1.3,
+  attempt: 1,
+  lazyComponent: true
+})
 
 app.use(Particles, {
   init: async (engine) => {
@@ -41,6 +48,6 @@ app.config.globalProperties.$filters = {
   }
 }
 
-app.config.globalProperties.$isLocalEnvironment = import.meta.env.DEV;
+app.config.globalProperties.$isLocalEnvironment = import.meta.env.DEV
 
 app.mount('#app')

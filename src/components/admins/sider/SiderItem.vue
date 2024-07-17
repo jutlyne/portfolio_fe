@@ -1,7 +1,7 @@
 <template>
   <a-layout-sider class="sider-container" v-model:collapsed="collapsed" collapsible>
     <div class="logo">
-      <img src="/logo.svg" alt="" />
+      <img v-lazy="logo" alt="" />
     </div>
     <a-menu
       v-model:selectedKeys="selectedKeys"

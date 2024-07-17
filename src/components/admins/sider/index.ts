@@ -13,6 +13,8 @@ export default defineComponent({
     const selectedKeys = ref<(RouteRecordName | null | undefined)[]>([route.name])
     const openKeys = ref<string[]>([route.meta.routeParent as string])
 
+    const logo = '/logo.svg'
+
     const handleSiderClick = async ({ item }: MenuEvent) => {
       await router.push({ name: item.to })
     }
@@ -26,7 +28,8 @@ export default defineComponent({
       openKeys,
       menuItemAdmin,
       handleSiderClick,
-      collapsed
+      collapsed,
+      logo
     }
   }
 })
