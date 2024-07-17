@@ -1,6 +1,6 @@
 <template>
   <div class="create-blog-container">
-    <FormBlog :formState="formState" :handleFinish="handleFinish" />
+    <!-- <FormBlog :formState="formState" :handleFinish="handleFinish" /> -->
   </div>
 </template>
 

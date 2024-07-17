@@ -1,17 +1,14 @@
 import paginationControls from '@/composables/paginationControls'
-import { defineAsyncComponent, defineComponent } from 'vue'
+import ParticleItem from '@/components/users/particle/ParticleItem.vue'
+import ProfileItem from '@/components/users/profile/ProfileItem.vue'
+import HomeTitleItem from '@/components/users/particle/ParticleItem.vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   components: {
-    ParticleItem: defineAsyncComponent(() =>
-      import('@/components/users/particle/ParticleItem.vue')
-    ),
-    HomeTitleItem: defineAsyncComponent(() =>
-      import('@/components/users/particle/ParticleItem.vue')
-    ),
-    ProfileItem: defineAsyncComponent(() =>
-      import('@/components/users/profile/ProfileItem.vue')
-    )
+    ParticleItem,
+    ProfileItem,
+    HomeTitleItem
   },
   setup() {
     const { setCategory, activePaginate } = paginationControls()

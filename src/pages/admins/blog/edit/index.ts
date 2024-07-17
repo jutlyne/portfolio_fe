@@ -1,12 +1,13 @@
-import { defineComponent, onBeforeMount, reactive, ref } from 'vue'
+import { defineAsyncComponent, defineComponent, onBeforeMount, reactive, ref } from 'vue'
 import type { CreateBlogInterface } from '@/interfaces/BlogInterface'
 import { useRoute } from 'vue-router'
-import FormBlog from '../_form/FormBlog.vue'
 import { getDetail } from '@/api/blog'
 
 export default defineComponent({
   components: {
-    FormBlog
+    FormBlog: defineAsyncComponent(() =>
+      import('../_form/FormBlog.vue')
+    )
   },
   setup() {
     const route = useRoute()

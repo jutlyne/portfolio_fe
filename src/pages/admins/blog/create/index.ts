@@ -1,10 +1,11 @@
-import { defineComponent, reactive } from 'vue'
+import { defineAsyncComponent, defineComponent, reactive } from 'vue'
 import type { CreateBlogInterface } from '@/interfaces/BlogInterface'
-import FormBlog from '../_form/FormBlog.vue'
 
 export default defineComponent({
   components: {
-    FormBlog
+    FormBlog: defineAsyncComponent(() =>
+      import('../_form/FormBlog.vue')
+    )
   },
   setup() {
     const formState = reactive<CreateBlogInterface>({

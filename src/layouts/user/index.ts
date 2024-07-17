@@ -1,14 +1,15 @@
 import { defineAsyncComponent, defineComponent, provide, ref, type Ref } from 'vue'
 import { injectionKeys } from '@/constants/injectionKeys'
+import FooterItem from '@/components/users/footer/FooterItem.vue'
+import HotNotice from '@/components/users/hot_notice/HotNotice.vue'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   components: {
+    HotNotice,
+    FooterItem,
     NavHeader: defineAsyncComponent(() =>
       import('@/components/users/nav_header/NavHeader.vue')
-    ),
-    FooterItem: defineAsyncComponent(() =>
-      import('@/components/users/footer/FooterItem.vue')
     ),
     LoadingItem: defineAsyncComponent(() =>
       import('@/components/users/loading/LoadingItem.vue')
@@ -19,9 +20,6 @@ export default defineComponent({
     SkillHeader: defineAsyncComponent(() =>
       import('@/components/users/skill_header/SkillHeader.vue')
     ),
-    HotNotice: defineAsyncComponent(() =>
-      import('@/components/users/hot_notice/HotNotice.vue')
-    )
   },
   setup() {
     const isLoading = ref<boolean>(false)
