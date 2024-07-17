@@ -46,7 +46,7 @@ export default defineComponent({
         blogBody.value = data.body
         blogInfo.value = {
           name: data.title,
-          readtime: 30,
+          readtime: data.read_minutes,
           created_at: moment(data.created_at).format('DD [tháng] MM YYYY')
         }
 
