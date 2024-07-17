@@ -6,7 +6,6 @@ import RightScrollbar from '@/components/users/right_scrollbar/RightScrollbar.vu
 import paginationControls from '@/composables/paginationControls'
 import { pageSizeRightbar } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
-import { anchorSample } from '@/constants/sample'
 import type { BlogAnchorInterface } from '@/interfaces/BlogInterface'
 import { LeftOutlined } from '@ant-design/icons-vue'
 import { defineComponent, inject, onBeforeMount, ref, watch, type Ref } from 'vue'
@@ -44,7 +43,7 @@ export default defineComponent({
         const data = await getDetailBlogByUser(slug)
         blogBody.value = data.body
 
-        anchor.value = anchorSample
+        anchor.value = data.headings
         if (Object.keys(data).length !== 0) {
           const params = {
             tag: data.tag_resource[0].id,

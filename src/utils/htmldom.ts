@@ -48,7 +48,7 @@ export const processHeaders = () => {
   const headers = document.querySelectorAll('.prose h1, .prose h2, .prose h3')
 
   headers.forEach((header) => {
-    const text = header.textContent?.replace(/^[^\w\s]+/, '').trim()
+    const text = header.textContent?.replace(/🥈|🥇/g, '').trim()
     if (text) {
       const id = generateIdFromText(text)
       header.id = id

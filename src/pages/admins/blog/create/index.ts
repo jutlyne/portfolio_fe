@@ -17,7 +17,8 @@ export default defineComponent({
       short_text: '',
       tags: [],
       body: '',
-      image: null
+      image: null,
+      headings: []
     })
 
     const handleFinish = async () => {

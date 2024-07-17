@@ -26,17 +26,17 @@ import {
   ImageResize,
   CodeBlock,
   Code
-  // Code,
-  // CodeBlock
 } from 'ckeditor5'
 import UploadAdapter from '@/plugins/ckeditor/upload-file'
 import type { EditorConfig, FileLoader } from 'ckeditor5'
 import type { Options } from '@/interfaces/CkeditorInterface'
 
+const uploadUrl = import.meta.env.VITE_BASE_API_URL + 'blogs/upload-file'
+
 function UploadAdapterPlugin(editor: Editor) {
   editor.plugins.get('FileRepository').createUploadAdapter = (loader: FileLoader) => {
     const config: Options = {
-      uploadUrl: 'https://v2.convertapi.com/upload'
+      uploadUrl
     }
     return new UploadAdapter(loader, config)
   }

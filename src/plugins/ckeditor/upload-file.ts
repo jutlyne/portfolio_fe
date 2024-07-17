@@ -68,7 +68,9 @@ export default class UploadAdapter {
 
     axios.interceptors.response.use(
       (response: AxiosResponse) => {
-        const urls = response.data.Url ? { default: response.data.Url } : response.data.urls
+        const urls = response.data?.data?.url
+          ? { default: response.data?.data?.url }
+          : response.data?.data?.url
         resolve({
           ...response.data,
           urls

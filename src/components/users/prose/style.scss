@@ -134,6 +134,8 @@
         border-radius: 15px;
         object-fit: cover;
         max-height: 100vh;
+        width: 100% !important;
+        height: 100% !important;
     }
 
     figure {

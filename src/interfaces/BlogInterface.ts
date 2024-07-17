@@ -23,6 +23,7 @@ export interface CreateBlogInterface {
   body: string
   tags: number[]
   image: File | string | null
+  headings: BlogAnchorInterface[]
 }
 
 export interface SearchStateInterface {
@@ -34,7 +35,7 @@ export interface SearchStateInterface {
 
 export interface BlogAnchorInterface {
   key: string | number
-  href: string
+  href?: string
   title: string
   children?: BlogAnchorInterface[]
 }

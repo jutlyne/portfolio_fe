@@ -19,7 +19,8 @@ export default defineComponent({
       short_text: '',
       tags: [],
       body: '',
-      image: ''
+      image: '',
+      headings: []
     })
 
     const blogId = route.params?.id as unknown as number
@@ -44,6 +45,7 @@ export default defineComponent({
       formState.body = blog.body
       formState.title = blog.title
       formState.short_text = blog.title
+      formState.headings = blog.headings
       fileUrl.value = blog.image
 
       blog.tag_resource.map((tag: TagInterface) => {
