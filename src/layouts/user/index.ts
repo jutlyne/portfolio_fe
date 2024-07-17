@@ -1,21 +1,27 @@
-import { defineComponent, provide, ref, type Ref } from 'vue'
-import NavHeader from '@/components/users/nav_header/NavHeader.vue'
-import FooterItem from '@/components/users/footer/FooterItem.vue'
-import LoadingItem from '@/components/users/loading/LoadingItem.vue'
+import { defineAsyncComponent, defineComponent, provide, ref, type Ref } from 'vue'
 import { injectionKeys } from '@/constants/injectionKeys'
-import PaginateItem from '@/components/users/paginate/PaginateItem.vue'
-import SkillHeader from '@/components/users/skill_header/SkillHeader.vue'
-import HotNotice from '@/components/users/hot_notice/HotNotice.vue'
 import { useStore } from 'vuex'
 
 export default defineComponent({
   components: {
-    NavHeader,
-    FooterItem,
-    LoadingItem,
-    PaginateItem,
-    SkillHeader,
-    HotNotice
+    NavHeader: defineAsyncComponent(() =>
+      import('@/components/users/nav_header/NavHeader.vue')
+    ),
+    FooterItem: defineAsyncComponent(() =>
+      import('@/components/users/footer/FooterItem.vue')
+    ),
+    LoadingItem: defineAsyncComponent(() =>
+      import('@/components/users/loading/LoadingItem.vue')
+    ),
+    PaginateItem: defineAsyncComponent(() =>
+      import('@/components/users/paginate/PaginateItem.vue')
+    ),
+    SkillHeader: defineAsyncComponent(() =>
+      import('@/components/users/skill_header/SkillHeader.vue')
+    ),
+    HotNotice: defineAsyncComponent(() =>
+      import('@/components/users/hot_notice/HotNotice.vue')
+    )
   },
   setup() {
     const isLoading = ref<boolean>(false)
