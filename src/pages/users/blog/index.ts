@@ -2,7 +2,7 @@ import { defineComponent, inject, onBeforeMount, ref, watch, type Ref } from 'vu
 import TimeLine from '@/components/users/time_line/TimeLine.vue'
 import SkillHeader from '@/components/users/skill_header/SkillHeader.vue'
 import NavHeader from '@/components/users/nav_header/NavHeader.vue'
-import { getList } from '@/api/blog'
+import { getListByUser } from '@/api/blog'
 import { injectionKeys } from '@/constants/injectionKeys'
 import PaginateItem from '@/components/users/paginate/PaginateItem.vue'
 import { initSkill, pageSize } from '@/constants/constant'
@@ -52,7 +52,7 @@ export default defineComponent({
           params.tag = tag
         }
 
-        const data = await getList(params)
+        const data = await getListByUser(params)
         if (Object.keys(data).length !== 0) {
           blogs.value = data.blogs
           totalItem.value = data.total

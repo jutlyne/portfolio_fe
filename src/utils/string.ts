@@ -12,3 +12,17 @@ export const getEnumKeyByValue = (value: number, object = {}): string | undefine
   }
   return undefined
 }
+
+export const removeVietnameseTones = (str: string) => {
+  str = str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  str = str.replace(/đ/g, 'd').replace(/Đ/g, 'D')
+  return str
+}
+
+export const generateIdFromText = (text: string) => {
+  return removeVietnameseTones(text)
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+}
