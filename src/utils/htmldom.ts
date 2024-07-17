@@ -1,3 +1,4 @@
+import { codeLanguage } from '@/constants/constant'
 import { generateIdFromText } from './string'
 
 export const processCodeBlocks = (copyCode: (event: { target: any }) => Promise<void>) => {
@@ -14,7 +15,15 @@ export const processCodeBlocks = (copyCode: (event: { target: any }) => Promise<
     const language = languageClass ? languageClass.split('-')[1] : 'plaintext'
     const languageCodeDiv = document.createElement('div')
     languageCodeDiv.classList.add('languageCode')
-    languageCodeDiv.textContent = language === 'plaintext' ? 'bash' : language
+
+    const languageText = () => {
+      if (Object.prototype.hasOwnProperty.call(codeLanguage, language)) {
+        return codeLanguage[language]
+      } else {
+        return language
+      }
+    }
+    languageCodeDiv.textContent = languageText()
 
     const copyButton = document.createElement('button')
     copyButton.classList.add('copyCode')
@@ -32,14 +41,12 @@ export const processCodeBlocks = (copyCode: (event: { target: any }) => Promise<
     spanElement.classList.add('token', 'plain')
     spanElement.textContent = codeContent || ''
 
-    // Append elements to form the new structure
     tokenLineDiv.appendChild(spanElement)
     preElement.appendChild(tokenLineDiv)
     newCodeBlock.appendChild(languageCodeDiv)
     newCodeBlock.appendChild(copyButton)
     newCodeBlock.appendChild(preElement)
 
-    // Replace the old <pre> element with the new structure
     codeBlock.parentElement?.replaceWith(newCodeBlock)
   })
 }

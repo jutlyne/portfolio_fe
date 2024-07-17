@@ -62,3 +62,9 @@ export const initSkill: TagInterface = {
   id: null,
   name: 'All'
 }
+
+export const codeLanguage: { [key: string]: string } = {
+  plaintext: 'bash',
+  javascript: 'js',
+  typescript: 'ts'
+}
