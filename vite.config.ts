@@ -19,8 +19,9 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks(id) {                    
-          if (id.includes('node_modules')) {            
+        manualChunks(id) {   
+                           
+          if (id.includes('node_modules') && !id.includes('ckeditor')) {            
             return id.toString().split('node_modules/')[1].split('/')[0].toString()
           }
         }
