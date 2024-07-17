@@ -24,7 +24,7 @@ export default defineComponent({
     const totalItem = ref<number>(0)
     const categories = ref<TagInterface[]>([])
     const skillTag = ref<string>('')
-    const onPageChange: Ref<() => void> = ref(() => {})
+    const onPageChange: Ref<(...agrs: any) => Promise<void>> = ref(async () => {})
 
     const store = useStore()
 

@@ -47,7 +47,7 @@ export default defineComponent({
       fileUrl.value = blog.image
 
       blog.tag_resource.map((tag: TagInterface) => {
-        return formState.tags.push(tag.id)
+        return formState.tags.push(tag.id as number)
       })
     }
 

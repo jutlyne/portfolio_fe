@@ -27,7 +27,7 @@ export interface CreateBlogInterface {
 
 export interface SearchStateInterface {
   title?: string
-  tag?: string
+  tag?: number
   start_date?: string
   end_date?: string
 }

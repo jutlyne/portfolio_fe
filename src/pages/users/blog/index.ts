@@ -25,7 +25,7 @@ export default defineComponent({
     const blogs = ref({})
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
     const totalItem = inject<Ref<number>>(injectionKeys.totalItem)!
-    const onPageChange = inject<Ref<any>>(injectionKeys.onPageChange)!
+    const onPageChange = inject<Ref<(...agrs: any) => Promise<void>>>(injectionKeys.onPageChange)!
     const categories = inject<Ref<string[]>>(injectionKeys.categories)!
     const tagRef = inject<Ref<TagInterface>>(injectionKeys.skillTag)!
 
