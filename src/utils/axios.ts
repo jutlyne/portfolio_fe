@@ -4,6 +4,7 @@ import { useCookies } from 'vue3-cookies'
 import { HttpStatusCode } from 'axios'
 import { refreshToken } from '@/api/auth'
 import { message } from 'ant-design-vue'
+import { validErrorStatus } from '@/constants/constant'
 
 let isRefreshing = false
 let refreshSubscribers: ((token: string) => void)[] = []
@@ -43,6 +44,10 @@ const api = axios.create({
 const handleResponseError = async (error: { response: { status: number }; config: any }) => {
   const { config } = error
   const statusCode = error.response?.status ?? HttpStatusCode.InternalServerError
+
+  if (validErrorStatus.includes(statusCode)) {
+    await router.push({ name: 'error', params: { statusCode } })
+  }
 
   if (statusCode == HttpStatusCode.Unauthorized && !config._retry) {
     if (!isRefreshing) {
