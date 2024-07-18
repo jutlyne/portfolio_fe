@@ -3,8 +3,16 @@ import { getAllTags } from '@/api/tag'
 import type { TagInterface } from '@/interfaces/TagInterface'
 import type { SearchStateInterface } from '@/interfaces/BlogInterface'
 
+import { Input, Select, RangePicker, Form, Button } from 'ant-design-vue'
+
 export default defineComponent({
-  components: {},
+  components: {
+    AInput: Input,
+    ASelect: Select,
+    ARangePicker: RangePicker,
+    AForm: Form,
+    AButton: Button
+  },
   props: {
     searchState: {
       type: Object as PropType<SearchStateInterface>,

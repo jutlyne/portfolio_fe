@@ -7,12 +7,17 @@ import LoadingItem from '@/components/users/loading/LoadingItem.vue'
 import { injectionKeys } from '@/constants/injectionKeys'
 import BreadcrumbItem from '@/components/admins/breadcrumb/BreadcrumbItem.vue'
 
+import { Layout } from 'ant-design-vue'
+
 export default defineComponent({
   components: {
     NavHeaderItem,
     SiderItem,
     LoadingItem,
-    BreadcrumbItem
+    BreadcrumbItem,
+    ALayout: Layout,
+    ALayoutContent: Layout.Content,
+    ALayoutFooter: Layout.Footer
   },
   setup() {
     const isLoading = ref<boolean>(true)

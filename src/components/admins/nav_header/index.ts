@@ -1,12 +1,16 @@
 import { clearTokenInfo } from '@/utils/axios'
-import { message } from 'ant-design-vue'
+import { Menu, message } from 'ant-design-vue'
 import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import ModalConfirm from '../modal/ModalConfirm.vue'
 
+import { LayoutHeader } from 'ant-design-vue'
+
 export default defineComponent({
   components: {
-    ModalConfirm
+    ModalConfirm,
+    ALayoutHeader: LayoutHeader,
+    AMenu: Menu
   },
   setup() {
     const router = useRouter()

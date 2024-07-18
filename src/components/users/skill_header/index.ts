@@ -1,9 +1,12 @@
 import { injectionKeys } from '@/constants/injectionKeys'
+import { Button } from 'ant-design-vue'
 import { defineComponent, inject, type PropType, type Ref } from 'vue'
 import { useStore } from 'vuex'
 
 export default defineComponent({
-  components: {},
+  components: {
+    AButton: Button
+  },
   props: {
     data: {
       type: Array as PropType<string[]>,

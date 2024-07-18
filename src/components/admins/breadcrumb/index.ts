@@ -1,13 +1,18 @@
 import { useRoute, type RouteLocationMatched } from 'vue-router'
 import { defineComponent, onBeforeMount, ref, watch, type Ref } from 'vue'
 
+import { Breadcrumb } from 'ant-design-vue'
+
 interface Route {
   path: string
   breadcrumbName: string
 }
 
 export default defineComponent({
-  components: {},
+  components: {
+    ABreadcrumb: Breadcrumb,
+    ABreadcrumbItem: Breadcrumb.Item
+  },
   setup() {
     const route = useRoute()
     const routes = ref<Route[]>([])

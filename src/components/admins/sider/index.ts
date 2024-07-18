@@ -3,8 +3,13 @@ import { defineComponent, ref, watch } from 'vue'
 import { useRoute, useRouter, type RouteRecordName } from 'vue-router'
 import { menuItemAdmin } from '@/constants/constant'
 
+import { LayoutSider, Menu } from 'ant-design-vue'
+
 export default defineComponent({
-  components: {},
+  components: {
+    ALayoutSider: LayoutSider,
+    AMenu: Menu
+  },
   setup() {
     const router = useRouter()
     const route = useRoute()

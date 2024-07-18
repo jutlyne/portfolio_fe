@@ -2,9 +2,12 @@ import { defineComponent, h, ref, watch } from 'vue'
 import { FacebookOutlined, InstagramOutlined, GithubOutlined } from '@ant-design/icons-vue'
 import type { MenuEvent, MenuItem } from '@/interfaces/MenuInterface'
 import { useRoute, useRouter, type RouteRecordName } from 'vue-router'
+import { Menu } from 'ant-design-vue'
 
 export default defineComponent({
-  components: {},
+  components: {
+    AMenu: Menu
+  },
   setup() {
     const route = useRoute()
     const router = useRouter()

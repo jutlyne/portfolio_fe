@@ -4,7 +4,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css'
 import { limitString } from './constants/constant'
 
@@ -16,12 +15,18 @@ import { authenticateMiddleware } from './middleware/auth'
 
 import VueLazyload from 'vue-lazyload'
 
+import { Flex, Col, Row } from 'ant-design-vue'
+
 const app = createApp(App)
 
 router.beforeEach(authenticateMiddleware)
 
 app.use(router)
-app.use(Antd)
+
+app.use(Flex)
+app.use(Col)
+app.use(Row)
+
 app.use(VueLazyload, {
   preLoad: 1.3,
   attempt: 1,

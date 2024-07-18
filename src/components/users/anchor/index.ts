@@ -2,9 +2,12 @@ import type { BlogAnchorInterface } from '@/interfaces/BlogInterface'
 import { DoubleRightOutlined } from '@ant-design/icons-vue'
 import { defineComponent, onMounted, ref, type PropType } from 'vue'
 
+import { Anchor } from 'ant-design-vue'
+
 export default defineComponent({
   components: {
-    DoubleRightOutlined
+    DoubleRightOutlined,
+    AAnchor: Anchor
   },
   props: {
     items: {

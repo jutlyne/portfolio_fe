@@ -13,7 +13,6 @@ declare module 'vue' {
     FooterItem: typeof import('./src/components/users/footer/FooterItem.vue')['default']
     HomeTitleItem: typeof import('./src/components/users/home_title/HomeTitleItem.vue')['default']
     HotNotice: typeof import('./src/components/users/hot_notice/HotNotice.vue')['default']
-    InputForm: typeof import('./src/components/input/InputForm.vue')['default']
     LoadingItem: typeof import('./src/components/users/loading/LoadingItem.vue')['default']
     ModalConfirm: typeof import('./src/components/admins/modal/ModalConfirm.vue')['default']
     NavHeader: typeof import('./src/components/users/nav_header/NavHeader.vue')['default']

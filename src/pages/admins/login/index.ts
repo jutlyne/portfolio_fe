@@ -1,18 +1,23 @@
 import { defineComponent, reactive, computed, ref } from 'vue'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import type { FormLoginStateInterface } from '@/interfaces/FormInterface'
-import InputForm from '@/components/input/InputForm.vue'
 import { login } from '@/api/auth'
 import { useRouter } from 'vue-router'
 import { saveTokenInfo } from '@/utils/axios'
-import { message } from 'ant-design-vue'
+import { Button, message } from 'ant-design-vue'
 import { usernameRules, passwordRules } from '@/validations/login'
+
+import { Form, Input } from 'ant-design-vue'
 
 export default defineComponent({
   components: {
     UserOutlined,
     LockOutlined,
-    InputForm
+    AForm: Form,
+    AFormItem: Form.Item,
+    AInput: Input,
+    AInputPassword: Input.Password,
+    AButton: Button
   },
   setup() {
     const router = useRouter()

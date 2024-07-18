@@ -9,7 +9,7 @@ import {
   type Ref
 } from 'vue'
 import { PlusOutlined } from '@ant-design/icons-vue'
-import { message, type UploadChangeParam, type UploadProps } from 'ant-design-vue'
+import { Button, message, type UploadChangeParam, type UploadProps } from 'ant-design-vue'
 import type { CreateBlogInterface } from '@/interfaces/BlogInterface'
 import { injectionKeys } from '@/constants/injectionKeys'
 import { getAllTags } from '@/api/tag'
@@ -23,6 +23,8 @@ import { editorConfig } from '@/utils/ckeditor'
 
 import 'ckeditor5/ckeditor5.css'
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css'
+
+import { Input, Upload, TreeSelect, Form, Space } from 'ant-design-vue'
 
 export default defineComponent({
   props: {
@@ -42,7 +44,14 @@ export default defineComponent({
   },
   components: {
     PlusOutlined,
-    ckeditor: CKEditor.component
+    ckeditor: CKEditor.component,
+    AInput: Input,
+    AForm: Form,
+    AFormItem: Form.Item,
+    ATreeSelect: TreeSelect,
+    AUpload: Upload,
+    ASpace: Space,
+    AButton: Button
   },
   setup(props) {
     const { formState, fileUrl } = toRefs(props)

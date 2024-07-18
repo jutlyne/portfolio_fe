@@ -1,9 +1,12 @@
 import { defineComponent } from 'vue'
 import { RightOutlined } from '@ant-design/icons-vue'
+import { Timeline } from 'ant-design-vue'
 
 export default defineComponent({
   components: {
-    RightOutlined
+    RightOutlined,
+    ATimeline: Timeline,
+    ATimelineItem: Timeline.Item
   },
   props: {
     data: {

@@ -14,11 +14,17 @@ import { useRouter } from 'vue-router'
 import { getProfile } from '@/api/auth'
 import SearchComponent from '@/components/admins/search/SearchComponent.vue'
 
+import { Space, Tag, Table, Button } from 'ant-design-vue'
+
 export default defineComponent({
   components: {
     CheckOutlined,
     ModalConfirm,
-    SearchComponent
+    SearchComponent,
+    ASpace: Space,
+    ATag: Tag,
+    ATable: Table,
+    AButton: Button
   },
   setup() {
     const router = useRouter()

@@ -1,6 +1,11 @@
 import { defineComponent, ref } from 'vue'
 
+import { Modal } from 'ant-design-vue'
+
 export default defineComponent({
+  components: {
+    AModal: Modal
+  },
   props: {
     title: {
       type: String,

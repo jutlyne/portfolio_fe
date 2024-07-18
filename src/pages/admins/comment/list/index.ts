@@ -5,17 +5,23 @@ import type { DataItem, TablePaginateInterface } from '@/interfaces/BlogInterfac
 import { pageSizeAdmin } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
-import { message } from 'ant-design-vue'
+import { Button, message } from 'ant-design-vue'
 import type { CommentInterface, StoreCommentInterface } from '@/interfaces/CommentInterface'
+
+import { Input, Table, Space } from 'ant-design-vue'
 
 export default defineComponent({
   components: {
     CheckOutlined,
-    ModalConfirm
+    ModalConfirm,
+    AInput: Input,
+    ASpace: Space,
+    ATable: Table,
+    AButton: Button
   },
   setup() {
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
-    const modalContent = ref<string | null>(null)
+    const modalContent = ref<string | null>('')
     const modalInputPlaceholder = ref<string | null>(null)
     const modalRef = ref<InstanceType<typeof ModalConfirm> | null>(null)
     const handleOk = ref<() => Promise<void>>()

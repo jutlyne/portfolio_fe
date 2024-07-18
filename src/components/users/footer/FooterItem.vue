@@ -17,4 +17,16 @@
   </a-layout-footer>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+import { LayoutFooter } from 'ant-design-vue'
+
+export default defineComponent({
+  components: {
+    ALayoutFooter: LayoutFooter
+  }
+})
+</script>
+
 <style lang="scss" src="./style.scss" />

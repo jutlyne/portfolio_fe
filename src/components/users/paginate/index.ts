@@ -1,7 +1,12 @@
 import { pageSize } from '@/constants/constant'
 import { defineComponent } from 'vue'
 
+import { Pagination } from 'ant-design-vue'
+
 export default defineComponent({
+  components: {
+    APagination: Pagination
+  },
   props: {
     total: {
       type: Number,
