@@ -84,7 +84,7 @@
       <a target="_blank" rel="noopener" title="Tạo mới instance vultr"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Tạo mới instance vultr"
           loading="lazy"
       /></a>
@@ -97,7 +97,7 @@
         title="Có khá nhiều loại VPS cho anh em chọn dựa vào nhu cầu, rẻ nhất thì chọn Cloud Compute (mình chọn cái này)"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Có khá nhiều loại VPS cho anh em chọn dựa vào nhu cầu, rẻ nhất thì chọn Cloud Compute (mình chọn cái này)"
           loading="lazy"
       /></a>
@@ -113,7 +113,7 @@
         title="Chọn loại CPU và vị trí đặt Server tùy nhu cầu các bạn"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Chọn loại CPU và vị trí đặt Server tùy nhu cầu các bạn"
           loading="lazy"
       /></a>
@@ -128,7 +128,7 @@
         title="Chọn hệ điều hành cho server. Các bạn chọn Ubuntu 22.04 LTS x64 nhé"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Chọn hệ điều hành cho server. Các bạn chọn Ubuntu 22.04 LTS x64 nhé"
           loading="lazy"
       /></a>
@@ -143,7 +143,7 @@
         title="Chọn dung lượng/tốc độ server. Mình chọn 5$/tháng cho rẻ nhất nhé."
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Chọn dung lượng/tốc độ server. Mình chọn 5$/tháng cho rẻ nhất nhé."
           loading="lazy"
       /></a>
@@ -156,7 +156,7 @@
       <a target="_blank" rel="noopener" title="Auto backup và dịch vụ thêm."
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Auto backup và dịch vụ thêm."
           loading="lazy"
       /></a>
@@ -172,7 +172,7 @@
       <a target="_blank" rel="noopener" title="Click add new để thêm SSH Key vào nhé"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Click add new để thêm SSH Key vào nhé"
           loading="lazy"
       /></a>
@@ -195,7 +195,7 @@
         title="Thêm ssh key các bạn vào đây, nhập cái name là tên ssh key các bạn. Ví dụ: Máy tính Windows 11"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Thêm ssh key các bạn vào đây, nhập cái name là tên ssh key các bạn. Ví dụ: Máy tính Windows 11"
           loading="lazy"
       /></a>
@@ -216,7 +216,7 @@
       <a target="_blank" rel="noopener" title="Deploy vps thôi anh em"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Deploy vps thôi anh em"
           loading="lazy"
       /></a>
@@ -400,7 +400,7 @@
       <a target="_blank" rel="noopener" title="Thông tin instance sau khi tạo"
         ><img
           class="m-auto block max-h-screen max-w-full rounded-xl object-cover shadow-md"
-          src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/03/anh-meo-5.jpg.webp"
+          v-lazy="'/meo.webp'"
           alt="Thông tin instance sau khi tạo"
           loading="lazy"
       /></a>
