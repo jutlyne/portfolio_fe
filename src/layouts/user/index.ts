@@ -1,21 +1,21 @@
-import { defineAsyncComponent, defineComponent, provide, ref, type Ref } from 'vue'
+import { defineComponent, provide, ref, type Ref } from 'vue'
 import { injectionKeys } from '@/constants/injectionKeys'
 import FooterItem from '@/components/users/footer/FooterItem.vue'
 import HotNotice from '@/components/users/hot_notice/HotNotice.vue'
 import { useStore } from 'vuex'
+import NavHeader from '@/components/users/nav_header/NavHeader.vue'
+import LoadingItem from '@/components/users/loading/LoadingItem.vue'
+import PaginateItem from '@/components/users/paginate/PaginateItem.vue'
+import SkillHeader from '@/components/users/skill_header/SkillHeader.vue'
 
 export default defineComponent({
   components: {
     HotNotice,
     FooterItem,
-    NavHeader: defineAsyncComponent(() => import('@/components/users/nav_header/NavHeader.vue')),
-    LoadingItem: defineAsyncComponent(() => import('@/components/users/loading/LoadingItem.vue')),
-    PaginateItem: defineAsyncComponent(
-      () => import('@/components/users/paginate/PaginateItem.vue')
-    ),
-    SkillHeader: defineAsyncComponent(
-      () => import('@/components/users/skill_header/SkillHeader.vue')
-    )
+    NavHeader,
+    LoadingItem,
+    PaginateItem,
+    SkillHeader
   },
   setup() {
     const isLoading = ref<boolean>(false)
