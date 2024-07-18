@@ -14,14 +14,25 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  optimizeDeps: {
+    include: [
+      'fetch-jsonp',
+      '@ant-design/icons-vue',
+      'lodash-es',
+      'dayjs',
+      'vue',
+      'vue-router',
+      'vue-i18n',
+      'async-validator'
+    ]
+  },
   build: {
     minify: true,
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks(id) {   
-                           
-          if (id.includes('node_modules') && !id.includes('ckeditor')) {            
+        manualChunks(id) {
+          if (id.includes('node_modules') && !id.includes('ckeditor')) {
             return id.toString().split('node_modules/')[1].split('/')[0].toString()
           }
         }
