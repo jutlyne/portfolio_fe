@@ -25,7 +25,7 @@ import 'ckeditor5/ckeditor5.css'
 import 'ckeditor5-premium-features/ckeditor5-premium-features.css'
 import { generateIdFromText } from '@/utils/string'
 
-import { Input, Upload, TreeSelect, Form, Space } from 'ant-design-vue'
+import { Input, Upload, TreeSelect, Form, Space, InputNumber } from 'ant-design-vue'
 
 export default defineComponent({
   props: {
@@ -51,23 +51,23 @@ export default defineComponent({
     PlusOutlined,
     ckeditor: CKEditor.component,
     AInput: Input,
+    AForm: Form,
     AFormItem: Form.Item,
     ATreeSelect: TreeSelect,
     AUpload: Upload,
     ASpace: Space,
     AButton: Button,
+    AInputNumber: InputNumber,
     CloseOutlined,
-    EnterOutlined,
+    EnterOutlined
   },
   setup(props) {
-
+    let startHeadingId = 0
     const { formState, fileUrl } = toRefs(props)
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
     const headings = ref<BlogAnchorInterface[]>([])
 
     isLoading.value = true
-    const labelCol = { span: 3 }
-    const wrapperCol = { span: 21 }
     const treeData = ref([])
 
     const editor = ClassicEditor
@@ -180,8 +180,6 @@ export default defineComponent({
     onBeforeMount(fetchAllTag)
 
     return {
-      labelCol,
-      wrapperCol,
       treeData,
       beforeUpload,
       fileListItem,

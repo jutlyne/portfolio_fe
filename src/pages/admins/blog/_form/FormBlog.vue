@@ -1,8 +1,8 @@
 <template>
   <a-form
-    :label-col="labelCol"
+    :label-col="{ span: 3 }"
     @finish="handleFinish"
-    :wrapper-col="wrapperCol"
+    :wrapper-col="{ span: 21 }"
     layout="horizontal"
     :model="formState"
   >

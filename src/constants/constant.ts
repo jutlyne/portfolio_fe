@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import { BookOutlined, CommentOutlined, ProfileOutlined } from '@ant-design/icons-vue'
+import { BookOutlined, CommentOutlined, ProfileOutlined, TagsOutlined } from '@ant-design/icons-vue'
 import type { MenuItem } from '@/interfaces/MenuInterface'
 import type { TagInterface } from '@/interfaces/TagInterface'
 
@@ -46,6 +46,20 @@ export const menuItemAdmin: MenuItem[] = [
         label: 'List',
         title: 'List',
         to: 'admin.comments.index'
+      }
+    ]
+  },
+  {
+    key: 'tag',
+    label: 'Tags',
+    title: 'Tags',
+    icon: () => h(TagsOutlined),
+    children: [
+      {
+        key: 'admin.tags.index',
+        label: 'List',
+        title: 'List',
+        to: 'admin.tags.index'
       }
     ]
   },

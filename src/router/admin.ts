@@ -5,6 +5,7 @@ const BlogCreate = () => import('../pages/admins/blog/create/CreatePage.vue')
 const BlogEdit = () => import('../pages/admins/blog/edit/EditPage.vue')
 const Auth = () => import('../pages/admins/login/LoginPage.vue')
 const Comment = () => import('../pages/admins/comment/list/ListPage.vue')
+const Tag = () => import('../pages/admins/tags/list/ListPage.vue')
 const Profile = () => import('../pages/admins/profile/ProfilePage.vue')
 
 export default [
@@ -54,6 +55,15 @@ export default [
     component: Comment,
     meta: {
       routeParent: 'comment',
+      routeType: ROUTE_TYPE.AUTH
+    }
+  },
+  {
+    path: 'tags',
+    name: 'admin.tags.index',
+    component: Tag,
+    meta: {
+      routeParent: 'tag',
       routeType: ROUTE_TYPE.AUTH
     }
   },
