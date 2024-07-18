@@ -61,7 +61,7 @@ export default defineComponent({
           density: {
             enable: true
           },
-          value: 650
+          value: 500
         },
         opacity: {
           value: 0.5
@@ -70,7 +70,7 @@ export default defineComponent({
           type: 'circle'
         },
         size: {
-          value: { min: 1, max: 1 }
+          value: { min: 0.5, max: 1 }
         }
       },
       detectRetina: true,
