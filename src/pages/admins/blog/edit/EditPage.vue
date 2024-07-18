@@ -1,6 +1,6 @@
 <template>
   <div class="update-blog-container">
-    <!-- <FormBlog :formState="formState" :fileUrl="fileUrl" :handleFinish="handleFinish" /> -->
+    <FormBlog :formState="formState" :fileUrl="fileUrl" :handleFinish="handleFinish" />
   </div>
 </template>
 
