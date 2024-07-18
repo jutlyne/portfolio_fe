@@ -56,7 +56,7 @@ export default defineComponent({
 
     const columns = [
       { title: 'ID', dataIndex: 'id', width: '70px' },
-      { title: 'Title', dataIndex: 'body', ellipsis: true },
+      { title: 'Title', dataIndex: 'title', ellipsis: true },
       { title: 'Tags', dataIndex: 'tags', width: '300px' },
       { title: 'Operation', dataIndex: 'operation', width: '250px' }
     ]
@@ -86,7 +86,7 @@ export default defineComponent({
         }
         const response = await getList(params)
 
-        dataSource.value = response.posts
+        dataSource.value = response.blogs
         paginationConfig.value.total = response.total
       } catch (error) {
         message.error('Failed to load data')

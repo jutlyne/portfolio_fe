@@ -1,7 +1,9 @@
 <template>
   <div class="blog-header">
     <h1>
-      <span v-if="store.state.blogs.tagRef"> Chuyên mục #{{ store.state.blogs.tagRef }} | </span>
+      <span v-if="store.state.blogs.tagRef">
+        Chuyên mục #{{ store.state.blogs.tagRef.name }} |
+      </span>
       <span> JutLy Blog </span>
     </h1>
     <p class="font-large">The best way to learn is to share.</p>
@@ -9,11 +11,11 @@
   <a-flex class="custom-skill" wrap="wrap" gap="10" justify="center" align="flex-start">
     <a-button
       class="button-skill font-large"
-      :class="getActiveClass(d)"
+      :class="getActiveClass(d.id)"
       v-for="d in data"
-      :key="d"
+      :key="d.id"
       @click="handleSkillClick(d)"
-      >{{ d }}</a-button
+      >{{ d.name }}</a-button
     >
   </a-flex>
 </template>

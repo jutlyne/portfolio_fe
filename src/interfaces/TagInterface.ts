@@ -1,4 +1,5 @@
 export interface TagInterface {
-  slug: string
+  id?: number | null
   name: string
+  created_at?: string | moment.Moment
 }

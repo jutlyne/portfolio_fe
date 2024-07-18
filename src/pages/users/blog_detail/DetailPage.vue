@@ -1,7 +1,7 @@
 <template>
   <a-row class="blog-detail-container">
     <a-col :md="24" :lg="6" class="w-100-sm anchor-md">
-      <AnchorItem :items="anchor" />
+      <AnchorItem v-if="anchor" :items="anchor" />
     </a-col>
     <a-col :md="24" :lg="12">
       <div class="detail-content">
@@ -13,20 +13,20 @@
         </div>
 
         <div class="blog-info">
-          <BlogInfo />
+          <BlogInfo v-if="blogInfo" :blogInfo="blogInfo" />
         </div>
 
         <div class="anchor-sm">
-          <AnchorItem :items="anchor" />
+          <AnchorItem v-if="anchor" :items="anchor" />
         </div>
 
         <div class="rendered-article">
-          <ProseItem />
+          <ProseItem :body="blogBody" />
         </div>
       </div>
     </a-col>
     <a-col :md="24" :lg="6">
-      <RightScrollbar :items="releatedBlogs" />
+      <RightScrollbar v-if="releatedBlogs" :items="releatedBlogs" />
     </a-col>
   </a-row>
 </template>

@@ -1,0 +1,37 @@
+.table-tags {
+    .ant-table-cell {
+        width: 450px;
+        height: 68px;
+    }
+
+    .editable-cell {
+        .editable-cell-input-wrapper.input-group {
+            position: relative;
+
+            input {
+                max-width: 25rem;
+                padding-right: 25px;
+            }
+
+            span {
+                position: absolute;
+                left: 23.5rem;
+                top: 8px;
+            }
+        }
+
+        .editable-cell-text-wrapper {
+            .editable-cell-icon {
+                display: none;
+            }
+
+            &:hover .editable-cell-icon {
+                display: inline;
+            }
+        }
+    }
+}
+
+.editable-add-btn {
+    margin-bottom: 8px;
+}

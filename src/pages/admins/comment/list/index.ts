@@ -54,17 +54,16 @@ export default defineComponent({
       }
 
       try {
-        const currentPageValue = currentPage.value ? currentPage.value - 1 : currentPage.value
-        const skip = currentPageValue * pageSizeAdmin
-        const response = await getList({ limit: pageSizeAdmin, skip })
-
-        paginationConfig.value.total = response.total
-        dataSource.value = response.comments.map((comment: CommentInterface) => ({
-          id: comment.id,
-          body: comment.body,
-          postId: comment.postId,
-          username: comment.user.username
-        }))
+        // const currentPageValue = currentPage.value ? currentPage.value - 1 : currentPage.value
+        // const skip = currentPageValue * pageSizeAdmin
+        // const response = await getList({ limit: pageSizeAdmin, skip })
+        // paginationConfig.value.total = response.total
+        // dataSource.value = response.comments.map((comment: CommentInterface) => ({
+        //   id: comment.id,
+        //   body: comment.body,
+        //   postId: comment.postId,
+        //   username: comment.user.username
+        // }))
       } catch (error) {
         message.error('Failed to load data')
       } finally {

@@ -7,6 +7,7 @@ import NavHeader from '@/components/users/nav_header/NavHeader.vue'
 import LoadingItem from '@/components/users/loading/LoadingItem.vue'
 import PaginateItem from '@/components/users/paginate/PaginateItem.vue'
 import SkillHeader from '@/components/users/skill_header/SkillHeader.vue'
+import type { TagInterface } from '@/interfaces/TagInterface'
 
 export default defineComponent({
   components: {
@@ -21,9 +22,9 @@ export default defineComponent({
     const isLoading = ref<boolean>(false)
     const needPaginate = ref<boolean>(false)
     const totalItem = ref<number>(0)
-    const categories = ref<string[]>([])
+    const categories = ref<TagInterface[]>([])
     const skillTag = ref<string>('')
-    const onPageChange: Ref<() => void> = ref(() => {})
+    const onPageChange: Ref<(...agrs: any) => Promise<void>> = ref(async () => {})
 
     const store = useStore()
 

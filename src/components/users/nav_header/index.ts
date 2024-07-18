@@ -16,7 +16,7 @@ export default defineComponent({
     const current = ref<(RouteRecordName | null | undefined)[]>([route.name])
     const items = ref<MenuItem[]>([
       {
-        key: 'blogs',
+        key: 'blogs.index',
         label: 'Blogs',
         title: 'Blogs',
         to: 'blogs.index'
@@ -49,7 +49,7 @@ export default defineComponent({
 
     const handleMenuClick = async ({ item }: MenuEvent) => {
       if (item.to && route.name != item.to) {
-        const query = item.to == 'blogs' ? { ref: 1 } : {}
+        const query = item.to == 'blogs.index' ? { ref: 1 } : {}
         await router.push({ name: item.to, query })
       } else if (item.url) {
         window.open(item.url, '_blank')

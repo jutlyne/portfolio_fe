@@ -1,8 +1,8 @@
 <template>
   <a-form
-    :label-col="labelCol"
+    :label-col="{ span: 3 }"
     @finish="handleFinish"
-    :wrapper-col="wrapperCol"
+    :wrapper-col="{ span: 21 }"
     layout="horizontal"
     :model="formState"
   >
@@ -17,6 +17,15 @@
       class="form-item"
     >
       <a-input v-model:value="formState.short_text" />
+    </a-form-item>
+
+    <a-form-item
+      :rules="formRules.readRules"
+      name="read_minutes"
+      label="Read minutes"
+      class="form-item"
+    >
+      <a-input-number v-model:value="formState.read_minutes" :min="0" :max="60" />
     </a-form-item>
 
     <a-form-item label="Tags" name="tags" :rules="formRules.tagRules" class="form-item">
@@ -60,12 +69,41 @@
       </a-space>
     </a-form-item>
 
+    <a-form-item label="Heading" class="form-item">
+      <template v-for="heading in headings" :key="heading.key">
+        <div class="heading-item">
+          <a-input v-model:value="heading.title" required />
+          <div v-for="child in heading.children" :key="child.key">
+            <EnterOutlined />
+            <a-input v-model:value="child.title" />
+            <a-button class="btn-remove" @click="handleRemoveHeader(child.key)">
+              <CloseOutlined />
+            </a-button>
+          </div>
+          <a-button @click="handleAddHeader(heading.key)">
+            <PlusOutlined />
+            Add Child
+          </a-button>
+          <a-button class="btn-remove" @click="handleRemoveHeader(heading.key)">
+            <CloseOutlined />
+            Remove
+          </a-button>
+          <br />
+        </div>
+      </template>
+
+      <a-button @click="handleAddHeader()">
+        <PlusOutlined />
+        Add
+      </a-button>
+    </a-form-item>
+
     <a-form-item label="Content" class="form-item">
-      <ckeditor :editor="editor" v-model="formState.content" :config="editorConfig"></ckeditor>
+      <ckeditor :editor="editor" v-model="formState.body" :config="editorConfig"></ckeditor>
     </a-form-item>
 
     <a-form-item class="form-item" :wrapper-col="{ span: 24 }">
-      <a-button html-type="submit" type="primary">Create</a-button>
+      <a-button html-type="submit" @click="assignHeading" type="primary">{{ buttonText }}</a-button>
     </a-form-item>
   </a-form>
 </template>

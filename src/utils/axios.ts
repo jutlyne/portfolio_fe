@@ -1,10 +1,10 @@
 import axios from 'axios'
 import router from '@/router'
 import { useCookies } from 'vue3-cookies'
-import { validErrorStatus } from '@/constants/constant'
 import { HttpStatusCode } from 'axios'
 import { refreshToken } from '@/api/auth'
 import { message } from 'ant-design-vue'
+import { validErrorStatus } from '@/constants/constant'
 
 let isRefreshing = false
 let refreshSubscribers: ((token: string) => void)[] = []

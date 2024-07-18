@@ -1,11 +1,11 @@
 export interface SafeInterface<T> {
-  result: T | null
+  result: any
   errorResult: any | null
 }
 
 const safe = async <T>(promise: Promise<T>, muteError = false): Promise<SafeInterface<T>> => {
   try {
-    const result = await promise
+    const result = ((await promise) as any)?.data
 
     return { result, errorResult: null }
   } catch (error) {
@@ -25,8 +25,8 @@ const safeRead = async <T>(
   muteError = false
 ): Promise<any> => {
   const { result, errorResult } = await safe(promise, muteError)
-  if (result !== null && typeof (result as any).data !== 'undefined') {
-    return (result as any).data
+  if (result !== null && typeof result.data !== 'undefined') {
+    return result.data
   }
 
   if (typeof errorCallback === 'function') {

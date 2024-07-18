@@ -20,21 +20,29 @@ export interface DataItem {
 export interface CreateBlogInterface {
   title: string
   short_text: string
-  content: string
-  tags: string[]
+  read_minutes: number
+  body: string
+  tags: number[]
   image: File | string | null
+  headings: BlogAnchorInterface[]
 }
 
 export interface SearchStateInterface {
   title?: string
-  tag?: string
+  tag?: number
   start_date?: string
   end_date?: string
 }
 
 export interface BlogAnchorInterface {
   key: string | number
-  href: string
+  href?: string
   title: string
   children?: BlogAnchorInterface[]
+}
+
+export interface BlogInfoInterface {
+  name: string
+  readtime: number
+  created_at: string
 }

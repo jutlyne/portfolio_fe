@@ -5,30 +5,41 @@ import { safe, safeRead } from '@/utils/safe'
 
 export const getList = async (params?: BlogQueryInterface) => {
   return await safeRead(
-    api.get('/posts', {
+    api.get('/admin/blogs', {
       params
     })
   )
 }
 
 export const getDetail = async (id: number) => {
-  return await safeRead(api.get('/posts/' + id))
+  return await safeRead(api.get('/admin/blogs/' + id))
 }
 
-export const getListByTag = async (tags: string[], limit = 16) => {
-  return await safeRead(
-    api.get('/posts/tag/' + tags[0], {
-      params: {
-        limit
-      }
+export const addBlog = async (params: CreateBlogInterface) => {
+  return await safe(api.post('/admin/blogs', params))
+}
+
+export const updateBlog = async (id: number, params: CreateBlogInterface) => {
+  return await safe(
+    api.post('/admin/blogs/' + id, {
+      ...params,
+      _method: 'PUT'
     })
   )
 }
 
-export const addBlog = async (params: CreateBlogInterface) => {
-  return await safe(api.post('/posts/add', params))
+export const deleteBlog = async (id: number) => {
+  return await safe(api.delete(`/admin/blogs/${id}`))
 }
 
-export const deleteBlog = async (id: number) => {
-  return await safe(api.delete(`/posts/${id}`))
+export const getDetailBlogByUser = async (slug: string) => {
+  return await safeRead(api.get('/blogs/' + slug))
+}
+
+export const getListByUser = async (params: BlogQueryInterface) => {
+  return await safeRead(
+    api.get('/blogs', {
+      params
+    })
+  )
 }

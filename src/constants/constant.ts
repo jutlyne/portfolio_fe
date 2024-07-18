@@ -1,8 +1,10 @@
 import { h } from 'vue'
-import { BookOutlined, CommentOutlined, ProfileOutlined } from '@ant-design/icons-vue'
+import { BookOutlined, CommentOutlined, ProfileOutlined, TagsOutlined } from '@ant-design/icons-vue'
 import type { MenuItem } from '@/interfaces/MenuInterface'
+import type { TagInterface } from '@/interfaces/TagInterface'
 
 export const pageSize = 5
+export const pageSizeRightbar = 15
 export const pageSizeAdmin = 10
 export const limitString = 120
 
@@ -48,6 +50,20 @@ export const menuItemAdmin: MenuItem[] = [
     ]
   },
   {
+    key: 'tag',
+    label: 'Tags',
+    title: 'Tags',
+    icon: () => h(TagsOutlined),
+    children: [
+      {
+        key: 'admin.tags.index',
+        label: 'List',
+        title: 'List',
+        to: 'admin.tags.index'
+      }
+    ]
+  },
+  {
     key: 'admin.profile',
     label: 'Profile',
     title: 'Profile',
@@ -55,3 +71,14 @@ export const menuItemAdmin: MenuItem[] = [
     to: 'admin.profile'
   }
 ]
+
+export const initSkill: TagInterface = {
+  id: null,
+  name: 'All'
+}
+
+export const codeLanguage: { [key: string]: string } = {
+  plaintext: 'bash',
+  javascript: 'js',
+  typescript: 'ts'
+}
