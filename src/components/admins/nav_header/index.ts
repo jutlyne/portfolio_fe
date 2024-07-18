@@ -10,7 +10,8 @@ export default defineComponent({
   components: {
     ModalConfirm,
     ALayoutHeader: LayoutHeader,
-    AMenu: Menu
+    AMenu: Menu,
+    AMenuItem: Menu.Item
   },
   setup() {
     const router = useRouter()
