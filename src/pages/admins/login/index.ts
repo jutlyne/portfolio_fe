@@ -4,10 +4,8 @@ import type { FormLoginStateInterface } from '@/interfaces/FormInterface'
 import { login } from '@/api/auth'
 import { useRouter } from 'vue-router'
 import { saveTokenInfo } from '@/utils/axios'
-import { Button, message } from 'ant-design-vue'
+import { Button, message, Form, Input } from 'ant-design-vue'
 import { usernameRules, passwordRules } from '@/validations/login'
-
-import { Form, Input } from 'ant-design-vue'
 
 export default defineComponent({
   components: {

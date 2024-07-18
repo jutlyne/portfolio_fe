@@ -5,10 +5,8 @@ import type { DataItem, TablePaginateInterface } from '@/interfaces/BlogInterfac
 import { pageSizeAdmin } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
-import { Button, message } from 'ant-design-vue'
+import { Button, message, Input, Table, Space } from 'ant-design-vue'
 import type { CommentInterface, StoreCommentInterface } from '@/interfaces/CommentInterface'
-
-import { Input, Table, Space } from 'ant-design-vue'
 
 export default defineComponent({
   components: {
