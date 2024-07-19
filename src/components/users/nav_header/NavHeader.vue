@@ -2,7 +2,7 @@
   <header class="header-container">
     <a-flex class="logo-container" gap="middle" align="center">
       <RouterLink to="/">
-        <img v-lazy="'/logo.svg'" alt="" srcset="" />
+        <img v-lazy="'/logo.svg'" width="48" height="48" alt="Võ Cao Kỳ Logo" />
       </RouterLink>
     </a-flex>
 
