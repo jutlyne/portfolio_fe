@@ -38,8 +38,7 @@ export default defineConfig(({ mode }) => {
             }
           }
         }
-      },
-      ssr: true
+      }
     },
     esbuild: {
       drop: mode === 'production' ? ['console', 'debugger'] : []
