@@ -1,7 +1,7 @@
 .title-container {
 
     h1 {
-        font-size: 119px;
+        font-size: 120px;
         line-height: 1em;
         color: rgb(241 245 249/var(--tw-text-opacity));
         word-spacing: -25px;
@@ -92,15 +92,36 @@
 
 @media screen and (max-width: 1440px) {
     .home-container .title-container h1 {
-        font-size: 80px;
-        word-spacing: -12px;
+        font-size: 96px;
+        word-spacing: -8px;
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 992px) {
     .home-container .title-container h1 {
-        font-size: 70px;
-        word-spacing: -16px;
+        font-size: 60px;
+    }
+
+    .title-container .button {
+        padding: 16px 36px;
+    }
+
+    .title-container .skill .skill-item {
+        width: 14rem;
+        inset: unset;
+    }
+
+    .title-container .skill>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-container .title-container h1 {
+        font-size: 68px;
+        word-spacing: -12px;
     }
 
     .home-container .title-container {
@@ -119,6 +140,7 @@
     .home-container .title-container .skill .skill-item {
         inset: unset;
         max-width: 280px;
+        width: unset;
     }
 
     .home-container .max-width-md {
@@ -129,8 +151,8 @@
 @media screen and (max-width: 560px) {
     .home-container .title-container h1 {
         font-size: 36px;
+        line-height: 40px;
         word-spacing: -6px;
-        line-height: 2.3rem;
     }
 
     .home-container .title-container p {

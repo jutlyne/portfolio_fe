@@ -1,5 +1,5 @@
 <template>
-  <a-timeline class="timeline-container" mode="alternate">
+  <a-timeline class="timeline-container" id="timeLine" mode="alternate">
     <template v-for="d in data" :key="d">
       <a-timeline-item class="timeline-item font-medium">
         <template #dot>

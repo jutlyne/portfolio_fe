@@ -1,6 +1,6 @@
 <template>
   <a-row class="title-container">
-    <a-col :span="16" class="max-width-md">
+    <a-col :sm="24" :md="16" class="max-width-md">
       <h1>
         <span>H</span>
         <span>i</span>
@@ -40,7 +40,7 @@
         >Nhắn messenger cho mình</a-button
       >
     </a-col>
-    <a-col :span="8" class="skill">
+    <a-col :sm="24" :md="8" class="skill">
       <div>
         <div class="skill-item" :class="[{ active: currentIndex === 1 }]">
           <svg
