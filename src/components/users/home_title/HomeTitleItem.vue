@@ -32,8 +32,8 @@
         <span>e</span>
         <span>r</span>
       </h1>
-      <p>Backend Developer</p>
-      <a-button class="button" @click="blankUrl('https://www.facebook.com/JutLyNee')"
+      <p class="mt-2">Backend Developer</p>
+      <a-button class="button mt-2" @click="blankUrl('https://www.facebook.com/JutLyNee')"
         >Liên hệ Facebook</a-button
       >
       <a-button class="button" @click="blankUrl('https://m.me/JutLyNee')"

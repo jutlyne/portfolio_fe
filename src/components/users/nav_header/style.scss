@@ -72,8 +72,17 @@
     }
 
     .nav-header {
-      padding-top: 0.7rem;
-      padding-bottom: 0.7rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      .ant-menu-title-content {
+        font-size: 14px;
+      }
+
+      .ant-menu-item .social {
+        font-size: 1rem;
+      }
     }
+
   }
 }

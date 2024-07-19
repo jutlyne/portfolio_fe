@@ -113,7 +113,7 @@
         text-align: center;
         justify-content: center;
         display: flex;
-        margin-top: 30px;
+        margin-top: 4rem;
     }
 
     .home-container .title-container .skill .skill-item {
@@ -129,7 +129,7 @@
 @media screen and (max-width: 560px) {
     .home-container .title-container h1 {
         font-size: 34px;
-        word-spacing: -5px;
+        word-spacing: -7px;
         line-height: 2.3rem;
     }
 
@@ -142,5 +142,15 @@
         margin-left: 0;
         width: 100%;
         padding: 12px 45px;
+    }
+
+    .home-container .title-container {
+        .mt-2 {
+            margin-top: 2.45rem;
+        }
+
+        p.mt-2 {
+            margin-top: 2rem;
+        }
     }
 }
