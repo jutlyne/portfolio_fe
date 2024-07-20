@@ -25,6 +25,12 @@ import { LayoutFooter } from 'ant-design-vue'
 export default defineComponent({
   components: {
     ALayoutFooter: LayoutFooter
+  },
+  mounted() {
+    const script = document.createElement('script')
+    script.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js'
+    script.async = true
+    document.body.appendChild(script)
   }
 })
 </script>
