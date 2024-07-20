@@ -1,10 +1,8 @@
 import { defineComponent, onMounted, ref } from 'vue'
-import ParticleItem from '@/components/users/particle/ParticleItem.vue'
 import { Button } from 'ant-design-vue'
 
 export default defineComponent({
   components: {
-    ParticleItem,
     AButton: Button
   },
   setup() {

@@ -1,11 +1,11 @@
 <template>
   <div class="home-container">
     <section class="page-title">
-      <ParticleItem />
-      <HomeTitleItem />
+      <LazyParticleItem />
+      <LazyHomeTitleItem />
     </section>
     <section class="page-profile">
-      <ProfileItem />
+      <LazyProfileItem />
     </section>
   </div>
 </template>
