@@ -7,7 +7,8 @@ simpleSitemapAndIndex({
   sourceData: [
     { url: '/', changefreq: EnumChangefreq.DAILY },
     { url: '/blogs', changefreq: EnumChangefreq.DAILY }
-  ]
+  ],
+  gzip: false
 })
   .then(() => {
     console.log('Sitemap and index generated!')
