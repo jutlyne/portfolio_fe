@@ -9,13 +9,14 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "run-p type-check \"build-only {@}\" -- && npm run sitemap",
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "node --max-old-space-size=4096 ./node_modules/.bin/vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "sitemap": "node sitemap.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
@@ -28,6 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "scheduler": "^0.23.2",
+    "sitemap": "^8.0.0",
     "tsparticles": "^3.4.0",
     "vue": "^3.4.21",
     "vue-lazyload": "^3.0.0",
