@@ -2,10 +2,10 @@
   <div class="home-container">
     <section class="page-title">
       <LazyParticleItem />
-      <LazyHomeTitleItem />
+      <HomeTitleItem />
     </section>
     <section class="page-profile">
-      <LazyProfileItem />
+      <ProfileItem />
     </section>
   </div>
 </template>
