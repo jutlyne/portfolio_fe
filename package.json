@@ -21,6 +21,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "@ckeditor/ckeditor5-vue": "^6.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "@tsparticles/vue3": "^3.0.1",
     "ant-design-vue": "^4.2.2",
     "axios": "^1.7.2",
@@ -30,7 +31,6 @@
     "react-dom": "^18.2.0",
     "scheduler": "^0.23.2",
     "sitemap": "^8.0.0",
-    "tsparticles": "^3.4.0",
     "vue": "^3.4.21",
     "vue-lazyload": "^3.0.0",
     "vue-router": "^4.3.0",

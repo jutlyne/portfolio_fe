@@ -10,12 +10,12 @@ import { limitString } from './constants/constant'
 import Particles from '@tsparticles/vue3'
 
 import { store } from './store'
-import { loadFull } from 'tsparticles'
 import { authenticateMiddleware } from './middleware/auth'
 
 import VueLazyload from 'vue-lazyload'
 
 import { Flex, Col, Row } from 'ant-design-vue'
+import { loadSlim } from '@tsparticles/slim'
 
 const app = createApp(App)
 
@@ -35,7 +35,7 @@ app.use(VueLazyload, {
 
 app.use(Particles, {
   init: async (engine) => {
-    await loadFull(engine)
+    await loadSlim(engine)
   }
 })
 
