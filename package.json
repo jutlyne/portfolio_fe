@@ -60,7 +60,6 @@
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.2",
     "vite": "^5.2.8",
-    "vite-plugin-purgecss": "^0.2.12",
     "vite-plugin-style-import": "^2.0.0",
     "vite-plugin-vue-devtools": "^7.0.25",
     "vitest": "^1.4.0",

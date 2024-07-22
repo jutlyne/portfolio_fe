@@ -1,13 +1,5 @@
 .title-container {
 
-    .header-md {
-        display: block;
-    }
-
-    .header-sm {
-        display: none;
-    }
-
     h1 {
         font-size: 120px;
         line-height: 1em;
@@ -128,14 +120,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .home-container .title-container .header-md {
-        display: none;
-    }
-
-    .home-container .title-container .header-sm {
-        display: block;
-    }
-
     .home-container .title-container h1 {
         font-size: 68px;
         word-spacing: -12px;

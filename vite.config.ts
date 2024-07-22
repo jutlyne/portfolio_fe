@@ -13,12 +13,6 @@ import {
   NutuiResolve,
   AntdResolve
 } from 'vite-plugin-style-import'
-import PurgeCSS from 'vite-plugin-purgecss'
-import path from 'node:path'
-
-const PATHS = {
-  src: path.join(__dirname, 'src')
-}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -52,10 +46,6 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             }
           }
         ]
-      }),
-      PurgeCSS({
-        content: [`${PATHS.src}/**/*.{js,ts,jsx,tsx,vue}`],
-        safelist: ['safelist-class']
       })
     ],
     css: {
