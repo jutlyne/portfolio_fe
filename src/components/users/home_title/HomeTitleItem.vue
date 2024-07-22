@@ -1,7 +1,7 @@
 <template>
   <a-row class="title-container">
     <a-col :sm="24" :md="16" class="max-width-md">
-      <h1>
+      <h1 class="header-md">
         <span>H</span>
         <span>i</span>
         <span>,</span>
@@ -31,6 +31,12 @@
         <span>p</span>
         <span>e</span>
         <span>r</span>
+      </h1>
+
+      <h1 class="header-sm">
+        Hi,<br />
+        Mình là <span class="color-red">K</span>ỳ,<br />
+        web developer
       </h1>
       <p class="mt-2">Backend Developer</p>
       <a-button class="button mt-2" @click="blankUrl('https://www.facebook.com/JutLyNee')"
