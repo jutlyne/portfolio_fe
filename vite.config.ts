@@ -11,8 +11,14 @@ import {
   VantResolve,
   ElementPlusResolve,
   NutuiResolve,
-  AntdResolve,
+  AntdResolve
 } from 'vite-plugin-style-import'
+import PurgeCSS from 'vite-plugin-purgecss'
+import path from 'node:path'
+
+const PATHS = {
+  src: path.join(__dirname, 'src')
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
@@ -28,7 +34,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           VantResolve(),
           ElementPlusResolve(),
           NutuiResolve(),
-          AntdResolve(),
+          AntdResolve()
         ],
         libs: [
           {
@@ -43,17 +49,21 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
                 oName = 'date-picker'
               }
               return `ant-design-vue/es/${oName}/style/index`
-            },
-          },
-        ],
+            }
+          }
+        ]
       }),
+      PurgeCSS({
+        content: [`${PATHS.src}/**/*.{js,ts,jsx,tsx,vue}`],
+        safelist: ['safelist-class']
+      })
     ],
     css: {
       preprocessorOptions: {
         less: {
-          javascriptEnabled: true,
-        },
-      },
+          javascriptEnabled: true
+        }
+      }
     },
     resolve: {
       alias: {
