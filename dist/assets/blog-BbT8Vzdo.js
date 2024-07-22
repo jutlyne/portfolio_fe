@@ -1,1 +1,0 @@
-import{s,a as t,b as n}from"./axios-CXJOSD7X.js";const r=async a=>await s(t.get("/posts",{params:a})),g=async a=>await s(t.get("/posts/"+a)),i=async(a,e=16)=>await s(t.get("/posts/tag/"+a[0],{params:{limit:e}})),c=async a=>await n(t.delete(`/posts/${a}`));export{g as a,i as b,c as d,r as g};
