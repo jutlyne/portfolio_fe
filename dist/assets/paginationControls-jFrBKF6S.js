@@ -1,0 +1,1 @@
+import{i as t}from"./injectionKeys-h8wMimST.js";import{i as n}from"./@vue-BAN-rWwc.js";function g(){const a=n(t.needPaginate),i=n(t.categories);function o(e=!1){a.value=e}function r(e){i.value=e}return{activePaginate:o,setCategory:r}}export{g as p};
