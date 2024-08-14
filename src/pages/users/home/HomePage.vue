@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <section class="page-title">
+    <section class="page-title" v-once>
       <LazyParticleItem />
       <HomeTitleItem />
     </section>
