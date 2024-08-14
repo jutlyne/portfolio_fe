@@ -6,6 +6,7 @@
         href="//www.dmca.com/Protection/Status.aspx?ID=3d2c2208-65dc-4510-b592-07a8f99e208b"
         title="DMCA.com Protection Status"
         class="dmca-badge"
+        target="_blank"
       >
         <img
           v-lazy="
