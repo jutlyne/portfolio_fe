@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.vocaoky.site
+
+# Sitemaps
+Sitemap: https://www.vocaoky.site/sitemap-index.xml
