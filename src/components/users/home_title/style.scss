@@ -1,7 +1,8 @@
 .title-container {
 
     h1 {
-        font-size: 120px;
+        font-family: Inter, sans-serif;
+        font-size: 96px;
         line-height: 1em;
         color: rgb(241 245 249/var(--tw-text-opacity));
         word-spacing: -25px;
@@ -10,7 +11,7 @@
         font-display: swap;
 
         span {
-            font-weight: bold;
+            font-weight: 800;
             transition-duration: .2s;
             transition-property: all;
             transition-timing-function: cubic-bezier(.4, 0, .2, 1);
