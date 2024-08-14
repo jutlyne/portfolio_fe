@@ -57,6 +57,7 @@
     }
 
     p {
+        margin-top: 2.5rem;
         font-size: 16px;
         color: rgb(203 213 225/var(--tw-text-opacity));
         font-weight: 400;
@@ -172,7 +173,9 @@
     }
 
     .home-container .title-container p {
+        margin-top: 2rem;
         margin-left: 0;
+        font-size: 14px;
     }
 
     .home-container .title-container .button {
