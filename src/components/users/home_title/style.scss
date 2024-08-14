@@ -1,4 +1,5 @@
 .title-container {
+    font-family: Inter, sans-serif;
 
     h1 {
         font-family: Inter, sans-serif;
@@ -58,7 +59,8 @@
     p {
         font-size: 20px;
         color: rgb(203 213 225/var(--tw-text-opacity));
-        font-weight: bold;
+        font-weight: 400;
+        font-family: Inter, sans-serif;
         margin-left: 10px;
         width: fit-content;
         border-radius: 5px;
@@ -167,7 +169,7 @@
     }
 
     .title-container .button {
-        padding: .75rem 1.25rem;
+        padding: 1rem 1.25rem;
     }
 
     .home-container .title-container p {
