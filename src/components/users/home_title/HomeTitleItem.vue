@@ -30,12 +30,12 @@
         <span>r</span>
       </h1>
       <p class="mt-2">Backend Developer</p>
-      <a-button class="button mt-2" @click="blankUrl('https://www.facebook.com/JutLyNee')"
-        >Liên hệ Facebook</a-button
-      >
-      <a-button class="button" @click="blankUrl('https://m.me/JutLyNee')"
-        >Nhắn messenger cho mình</a-button
-      >
+      <div class="social">
+        <a class="button mt-2" @click="blankUrl('https://www.facebook.com/JutLyNee')">
+          Liên hệ Facebook
+        </a>
+        <a class="button" @click="blankUrl('https://m.me/JutLyNee')">Nhắn messenger cho mình</a>
+      </div>
     </a-col>
     <a-col :sm="24" :md="8" class="skill">
       <div>
