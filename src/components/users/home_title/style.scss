@@ -157,6 +157,10 @@
 }
 
 @media screen and (max-width: 560px) {
+    .home-container .title-container {
+        align-items: unset;
+    }
+
     .home-container .title-container h1 {
         font-size: 36px;
         line-height: 40px;
