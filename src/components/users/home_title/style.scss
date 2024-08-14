@@ -5,7 +5,8 @@
         font-size: 96px;
         line-height: 1em;
         color: rgb(241 245 249/var(--tw-text-opacity));
-        word-spacing: -20px;
+        word-spacing: normal;
+        letter-spacing: normal;
         margin-bottom: 1rem;
         text-wrap: nowrap;
         font-display: swap;
@@ -20,6 +21,10 @@
 
             &.color-red {
                 color: #d35400;
+            }
+
+            &.mr-1 {
+                margin-right: .8rem;
             }
 
             &:hover {
@@ -95,7 +100,6 @@
 @media screen and (max-width: 1440px) {
     .home-container .title-container h1 {
         font-size: 92px;
-        word-spacing: -18px;
     }
 }
 
@@ -123,7 +127,6 @@
 @media screen and (max-width: 768px) {
     .home-container .title-container h1 {
         font-size: 68px;
-        word-spacing: -12px;
     }
 
     .home-container .title-container {
@@ -154,7 +157,6 @@
     .home-container .title-container h1 {
         font-size: 36px;
         line-height: 40px;
-        word-spacing: -8px;
     }
 
     .home-container .title-container p {

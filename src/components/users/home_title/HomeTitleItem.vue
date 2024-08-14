@@ -9,19 +9,16 @@
         <span>M</span>
         <span>ì</span>
         <span>n</span>
-        <span>h</span>
-        &nbsp;
+        <span class="mr-1">h</span>
         <span>l</span>
-        <span>à</span>
-        &nbsp;
+        <span class="mr-1">à</span>
         <span class="color-red">K</span>
         <span>ỳ</span>
         <span>,</span>
         <br />
         <span>w</span>
         <span>e</span>
-        <span>b</span>
-        &nbsp;
+        <span class="mr-1">b</span>
         <span>d</span>
         <span>e</span>
         <span>v</span>
@@ -192,4 +189,4 @@
 </template>
 
 <script lang="ts" src="./index.ts" default />
-<style lang="scss" src="./style.scss" />
+<style lang="scss" scoped src="./style.scss" />
