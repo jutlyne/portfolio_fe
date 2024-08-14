@@ -5,16 +5,17 @@ import App from './App.vue'
 import router from './router'
 
 import 'ant-design-vue/dist/reset.css'
-import { limitString } from './constants/constant'
+import { Flex, Col, Row } from 'ant-design-vue'
 
-import Particles from '@tsparticles/vue3'
+import { limitString } from './constants/constant'
 
 import { store } from './store'
 import { authenticateMiddleware } from './middleware/auth'
 
 import VueLazyload from 'vue-lazyload'
 
-import { Flex, Col, Row } from 'ant-design-vue'
+
+import Particles from '@tsparticles/vue3'
 import { loadSlim } from '@tsparticles/slim'
 
 const app = createApp(App)
