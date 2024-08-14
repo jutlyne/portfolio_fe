@@ -5,7 +5,7 @@
         font-size: 96px;
         line-height: 1em;
         color: rgb(241 245 249/var(--tw-text-opacity));
-        word-spacing: -25px;
+        word-spacing: -20px;
         margin-bottom: 1rem;
         text-wrap: nowrap;
         font-display: swap;
@@ -95,7 +95,7 @@
 @media screen and (max-width: 1440px) {
     .home-container .title-container h1 {
         font-size: 92px;
-        word-spacing: -8px;
+        word-spacing: -18px;
     }
 }
 
@@ -154,7 +154,7 @@
     .home-container .title-container h1 {
         font-size: 36px;
         line-height: 40px;
-        word-spacing: -6px;
+        word-spacing: -8px;
     }
 
     .home-container .title-container p {
