@@ -11,6 +11,8 @@
           v-lazy="
             'https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=3d2c2208-65dc-4510-b592-07a8f99e208b'
           "
+          height="24"
+          width="121"
           alt="DMCA.com Protection Status"
       /></a>
     </span>

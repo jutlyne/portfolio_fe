@@ -25,7 +25,7 @@
 
       <a-col :span="8" class="profile-image">
         <div class="img">
-          <img v-lazy="'/profile.webp'" alt="profile" />
+          <img v-lazy="'/profile.webp'" alt="profile" width="960" height="1280" />
         </div>
       </a-col>
     </a-row>
