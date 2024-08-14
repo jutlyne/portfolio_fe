@@ -16,7 +16,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "sitemap": "node sitemap.js"
+    "sitemap": "npx tsx tsitemap.ts"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
