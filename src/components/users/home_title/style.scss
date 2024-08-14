@@ -58,7 +58,8 @@
 
     p {
         margin-top: 2.5rem;
-        font-size: 16px;
+        font-size: .875rem;
+        line-height: 1.25rem;
         color: rgb(203 213 225/var(--tw-text-opacity));
         font-weight: 400;
         font-family: Inter, sans-serif;
@@ -175,7 +176,6 @@
     .home-container .title-container p {
         margin-top: 2rem;
         margin-left: 0;
-        font-size: 14px;
     }
 
     .home-container .title-container .button {

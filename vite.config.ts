@@ -72,7 +72,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     build: {
       minify: true,
-      sourcemap: false,
+      sourcemap: true,
       rollupOptions: {
         output: {
           manualChunks(id) {

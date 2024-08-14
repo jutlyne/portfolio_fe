@@ -25,15 +25,10 @@ export default defineComponent({
       requestAnimationFrame(transition)
     }
 
-    const blankUrl = (url: string) => {
-      window.open(url, '_blank')
-    }
-
     onMounted(startClassTransition)
 
     return {
-      currentIndex,
-      blankUrl
+      currentIndex
     }
   }
 })
