@@ -29,7 +29,9 @@
         <span>e</span>
         <span>r</span>
       </h1>
-      <p class="mt-2">Junior Backend Developer</p>
+      <p class="mt-2">
+        <span>Junior Backend Developer</span>
+      </p>
       <div class="social">
         <a class="button mt-2" @click="blankUrl('https://www.facebook.com/JutLyNee')">
           Liên hệ Facebook

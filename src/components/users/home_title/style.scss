@@ -57,20 +57,19 @@
     }
 
     p {
-        font-size: 20px;
+        font-size: 16px;
         color: rgb(203 213 225/var(--tw-text-opacity));
         font-weight: 400;
         font-family: Inter, sans-serif;
         margin-left: 10px;
-        width: fit-content;
-        border-radius: 5px;
-        transition-duration: .2s;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 
-        &:hover {
+        span:hover {
             color: #f42a52;
+            border-radius: 5px;
             box-shadow: 0 1px 0 4px rgba(255, 56, 96, .1), inset 0 -2em 0 rgba(255, 56, 96, .1);
+            transition-duration: .2s;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
         }
     }
 
@@ -174,7 +173,6 @@
 
     .home-container .title-container p {
         margin-left: 0;
-        font-size: 16px;
     }
 
     .home-container .title-container .button {
