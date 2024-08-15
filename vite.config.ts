@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import viteCompression from 'vite-plugin-compression'
 import {
   createStyleImportPlugin,
   AndDesignVueResolve,
@@ -46,7 +47,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             }
           }
         ]
-      })
+      }),
+      viteCompression({ algorithm: 'brotliCompress' })
     ],
     css: {
       preprocessorOptions: {
@@ -71,7 +73,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       ]
     },
     build: {
-      minify: true,
+      minify: 'esbuild',
       sourcemap: true,
       rollupOptions: {
         output: {
