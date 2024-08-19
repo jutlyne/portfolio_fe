@@ -14,7 +14,6 @@ import { authenticateMiddleware } from './middleware/auth'
 
 import VueLazyload from 'vue-lazyload'
 
-
 import Particles from '@tsparticles/vue3'
 import { loadSlim } from '@tsparticles/slim'
 
