@@ -35,7 +35,7 @@ jobs:
       - name: Upload dist folder as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist-${{ matrix.node-version }}
+          name: dist-${{ matrix.node-version }}-${{ github.run_id }}
           path: dist/
 
   deploy-job:
@@ -52,7 +52,7 @@ jobs:
       - name: Download dist artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist-20
+          name: dist-lts-${{ github.run_id }}
           path: ./dist
 
       - name: Configure AWS Credentials
