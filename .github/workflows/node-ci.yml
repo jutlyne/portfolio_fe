@@ -66,6 +66,8 @@ jobs:
         run: |
           aws s3 sync ./dist s3://${{ secrets.S3_BUCKET }} --delete
           aws s3 cp s3://${{ secrets.S3_BUCKET }}/index.html s3://${{ secrets.S3_BUCKET }}/ --cache-control 'no-cache, no-store, must-revalidate' --content-type 'text/html' --metadata-directive REPLACE
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDTFRONT_ID }} --paths "/*" >/dev/null
+
       # - name: Executing remote ssh commands using ssh key and checkout source
       #   uses: appleboy/ssh-action@v1.0.3
       #   with:
