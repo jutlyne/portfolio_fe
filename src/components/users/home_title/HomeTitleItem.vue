@@ -33,10 +33,17 @@
         <span>Junior Backend Developer</span>
       </p>
       <div class="social">
-        <a class="button mt-2" href="https://www.facebook.com/JutLyNee" target="_blank">
+        <a
+          class="button mt-2"
+          href="https://www.facebook.com/JutLyNee"
+          rel="noreferrer"
+          target="_blank"
+        >
           Liên hệ Facebook
         </a>
-        <a class="button" href="https://m.me/JutLyNee" target="_blank">Nhắn messenger cho mình</a>
+        <a class="button" href="https://m.me/JutLyNee" rel="noreferrer" target="_blank">
+          Nhắn messenger cho mình
+        </a>
       </div>
     </a-col>
     <a-col :sm="24" :md="8" class="skill">
