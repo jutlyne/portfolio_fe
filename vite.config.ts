@@ -48,7 +48,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           }
         ]
       }),
-      viteCompression({ algorithm: 'brotliCompress' })
+      viteCompression({ algorithm: 'gzip' })
     ],
     css: {
       preprocessorOptions: {
