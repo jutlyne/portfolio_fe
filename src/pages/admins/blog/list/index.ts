@@ -57,7 +57,7 @@ export default defineComponent({
     const columns = [
       { title: 'ID', dataIndex: 'id', width: '70px' },
       { title: 'Title', dataIndex: 'title', ellipsis: true },
-      { title: 'Tags', dataIndex: 'tags', width: '300px' },
+      { title: 'Tags', dataIndex: 'categories', width: '300px' },
       { title: 'Operation', dataIndex: 'operation', width: '250px' }
     ]
 

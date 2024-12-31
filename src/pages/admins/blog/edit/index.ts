@@ -4,6 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { getDetail, updateBlog } from '@/api/blog'
 import { message } from 'ant-design-vue'
 import type { TagInterface } from '@/interfaces/TagInterface'
+import { remapAnchorIds } from '@/utils/string'
 
 export default defineComponent({
   components: {
@@ -12,47 +13,51 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const router = useRouter()
+    const maxHeadingId = ref<number>(0)
 
     const fileUrl = ref<string | null>(null)
     const formState = reactive<CreateBlogInterface>({
       title: '',
       short_text: '',
       read_minutes: 0,
-      tags: [],
+      categories: [],
       body: '',
       image: '',
-      headings: []
+      anchors: []
     })
 
-    const blogId = route.params?.id as unknown as number
+    const blogSlug = route.params?.id as unknown as string
 
     const handleFinish = async () => {
-      const { result, errorResult } = await updateBlog(blogId, formState)
+      console.log(blogSlug, formState)
 
-      if (errorResult) {
-        const errorData = errorResult.response.data
-        message.error(errorData.messages || 'Failed')
-      }
+      // const { result, errorResult } = await updateBlog(blogSlug, formState)
 
-      if (result) {
-        message.success(result.messages || 'Success')
-        await router.push({ name: 'admin.blogs.index' })
-      }
+      // if (errorResult) {
+      //   const errorData = errorResult.response.data
+      //   message.error(errorData.messages || 'Failed')
+      // }
+
+      // if (result) {
+      //   message.success(result.messages || 'Success')
+      //   await router.push({ name: 'admin.blogs.index' })
+      // }
     }
 
     const getBlog = async () => {
-      const blog = await getDetail(blogId)
-
+      const blog = await getDetail(blogSlug)
+      const { remappedAnchor, maxCounter } = remapAnchorIds(blog.anchors)
+      maxHeadingId.value = maxCounter
       formState.body = blog.body
       formState.title = blog.title
       formState.short_text = blog.title
-      formState.headings = blog.headings
+      formState.anchors = remappedAnchor
       formState.read_minutes = blog.read_minutes
       fileUrl.value = blog.image
 
-      blog.tag_resource.map((tag: TagInterface) => {
-        if (tag.id) {
-          return formState.tags.push(tag.id)
+      blog.categories.map((category: TagInterface) => {
+        if (category.id) {
+          return formState.categories.push(category.id)
         }
       })
     }
@@ -62,7 +67,8 @@ export default defineComponent({
     return {
       handleFinish,
       formState,
-      fileUrl
+      fileUrl,
+      maxHeadingId
     }
   }
 })

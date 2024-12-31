@@ -1,4 +1,4 @@
-export const usernameRules = [
+export const emailRules = [
   {
     required: true,
     whitespace: true,

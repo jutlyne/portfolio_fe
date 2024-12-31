@@ -3,16 +3,11 @@ import { api } from '@/utils/axios'
 import { safe, safeRead } from '@/utils/safe'
 
 export const login = async (params: FormLoginStateInterface) => {
-  return await safe(
-    api.post('/admin/login', {
-      ...params,
-      expiresInMins: 1
-    })
-  )
+  return await safe(api.post('/auth/login', params))
 }
 
 export const getProfile = async () => {
-  return await safeRead(api.get('/admin/me'))
+  return await safeRead(api.get('/auth/profile'))
 }
 
 export const refreshToken = async (refreshToken: string) => {

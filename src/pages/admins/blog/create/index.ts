@@ -6,9 +6,7 @@ import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
-    FormBlog: defineAsyncComponent(() =>
-      import('../_form/FormBlog.vue')
-    )
+    FormBlog: defineAsyncComponent(() => import('../_form/FormBlog.vue'))
   },
   setup() {
     const router = useRouter()
@@ -16,10 +14,10 @@ export default defineComponent({
       title: '',
       short_text: '',
       read_minutes: 0,
-      tags: [],
+      categories: [],
       body: '',
       image: null,
-      headings: []
+      anchors: []
     })
 
     const handleFinish = async () => {

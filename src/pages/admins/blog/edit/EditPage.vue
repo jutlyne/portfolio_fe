@@ -1,6 +1,12 @@
 <template>
   <div class="update-blog-container">
-    <FormBlog :formState="formState" :fileUrl="fileUrl" :handleFinish="handleFinish" buttonText='Update' />
+    <FormBlog
+      :formState="formState"
+      :fileUrl="fileUrl"
+      :maxHeadingId="maxHeadingId"
+      :handleFinish="handleFinish"
+      buttonText="Update"
+    />
   </div>
 </template>
 

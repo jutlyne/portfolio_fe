@@ -28,9 +28,9 @@
       <a-input-number v-model:value="formState.read_minutes" :min="0" :max="60" />
     </a-form-item>
 
-    <a-form-item label="Tags" name="tags" :rules="formRules.tagRules" class="form-item">
+    <a-form-item label="Categories" name="categories" :rules="formRules.tagRules" class="form-item">
       <a-tree-select
-        v-model:value="formState.tags"
+        v-model:value="formState.categories"
         show-search
         style="width: 100%"
         :dropdown-style="{ maxHeight: '400px', overflow: 'auto' }"
@@ -70,21 +70,21 @@
     </a-form-item>
 
     <a-form-item label="Heading" class="form-item">
-      <template v-for="heading in headings" :key="heading.key">
+      <template v-for="anchor in anchors" :key="anchor.id">
         <div class="heading-item">
-          <a-input v-model:value="heading.title" required />
-          <div v-for="child in heading.children" :key="child.key">
+          <a-input v-model:value="anchor.title" required />
+          <div v-for="child in anchor.children" :key="child.id">
             <EnterOutlined />
             <a-input v-model:value="child.title" />
-            <a-button class="btn-remove" @click="handleRemoveHeader(child.key)">
+            <a-button class="btn-remove" @click="handleRemoveHeader(child.id)">
               <CloseOutlined />
             </a-button>
           </div>
-          <a-button @click="handleAddHeader(heading.key)">
+          <a-button @click="handleAddHeader(anchor.id)">
             <PlusOutlined />
             Add Child
           </a-button>
-          <a-button class="btn-remove" @click="handleRemoveHeader(heading.key)">
+          <a-button class="btn-remove" @click="handleRemoveHeader(anchor.id)">
             <CloseOutlined />
             Remove
           </a-button>

@@ -11,8 +11,8 @@
     >
       <h1 class="title">Login Form</h1>
 
-      <a-form-item label="Username" name="username" :rules="usernameRules">
-        <a-input v-model:value="formState.username">
+      <a-form-item label="Username" name="email" :rules="emailRules">
+        <a-input v-model:value="formState.email">
           <template #prefix>
             <UserOutlined class="site-form-item-icon" />
           </template>

@@ -26,3 +26,33 @@ export const generateIdFromText = (text: string) => {
     .trim()
     .replace(/\s+/g, '-')
 }
+
+export const remapAnchorIds = (
+  anchors: any[],
+  parentId: number | null = null,
+  idCounter: number = 1
+) => {
+  let maxCounter = idCounter
+
+  const remappedAnchor = anchors.map((anchor) => {
+    const remappedAnchor = { ...anchor, id: idCounter, parent_id: parentId }
+
+    idCounter++
+
+    if (remappedAnchor.children) {
+      const childResult = remapAnchorIds(remappedAnchor.children, remappedAnchor.id, idCounter)
+
+      remappedAnchor.children = childResult.remappedAnchor
+      idCounter = childResult.maxCounter
+    }
+
+    maxCounter = Math.max(maxCounter, idCounter)
+
+    return remappedAnchor
+  })
+
+  return {
+    remappedAnchor,
+    maxCounter
+  }
+}

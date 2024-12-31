@@ -22,9 +22,9 @@ export interface CreateBlogInterface {
   short_text: string
   read_minutes: number
   body: string
-  tags: number[]
+  categories: number[]
   image: File | string | null
-  headings: BlogAnchorInterface[]
+  anchors: BlogAnchorInterface[]
 }
 
 export interface SearchStateInterface {
@@ -35,7 +35,7 @@ export interface SearchStateInterface {
 }
 
 export interface BlogAnchorInterface {
-  key: string | number
+  id: string | number
   href?: string
   title: string
   children?: BlogAnchorInterface[]

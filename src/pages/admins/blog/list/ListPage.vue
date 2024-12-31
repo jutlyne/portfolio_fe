@@ -17,14 +17,14 @@
       <template #bodyCell="{ column, record }">
         <template v-if="column.dataIndex === 'operation'">
           <a-space warp>
-            <a-button type="primary" @click="edit(record.id)">Edit</a-button>
-            <a-button type="primary" danger @click="openModal(record.id)">Delete</a-button>
+            <a-button type="primary" @click="edit(record.slug)">Edit</a-button>
+            <a-button type="primary" danger @click="openModal(record.slug)">Delete</a-button>
           </a-space>
         </template>
-        <template v-else-if="column.dataIndex === 'tags'">
+        <template v-else-if="column.dataIndex === 'categories'">
           <span>
-            <a-tag v-for="tag in record.tags" :key="tag" :color="getRandomColor()">
-              {{ tag.toUpperCase() }}
+            <a-tag v-for="tag in record.categories" :key="tag.id" :color="getRandomColor()">
+              {{ tag.name.toUpperCase() }}
             </a-tag>
           </span>
         </template>

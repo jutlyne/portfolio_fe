@@ -1,7 +1,6 @@
-import axios from 'axios'
+import axios, { HttpStatusCode } from 'axios'
 import router from '@/router'
 import { useCookies } from 'vue3-cookies'
-import { HttpStatusCode } from 'axios'
 import { refreshToken } from '@/api/auth'
 import { message } from 'ant-design-vue'
 import { validErrorStatus } from '@/constants/constant'
@@ -13,7 +12,9 @@ const baseApiUrl = import.meta.env.VITE_BASE_API_URL
 const { cookies } = useCookies()
 
 const onRefreshed = (token: string) => {
-  refreshSubscribers.map((cb) => cb(token))
+  refreshSubscribers.forEach((cb) => {
+    cb(token)
+  })
   refreshSubscribers = []
 }
 const addRefreshSubscriber = (cb: (token: string) => void) => {
@@ -36,7 +37,7 @@ const api = axios.create({
   baseURL: baseApiUrl,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'multipart/form-data',
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${getAccessToken()}`
   }
 })
@@ -44,6 +45,10 @@ const api = axios.create({
 const handleResponseError = async (error: { response: { status: number }; config: any }) => {
   const { config } = error
   const statusCode = error.response?.status ?? HttpStatusCode.InternalServerError
+
+  if (config.url?.includes('/auth/login')) {
+    return Promise.reject(error)
+  }
 
   if (validErrorStatus.includes(statusCode)) {
     await router.push({ name: 'error', params: { statusCode } })
@@ -116,7 +121,7 @@ const setTokenInStorage = (
 
 const clearTokenInfo = () => {
   localStorage.clear()
-  cookies.keys().map((key: string) => {
+  cookies.keys().forEach((key: string) => {
     cookies.remove(key)
   })
 }

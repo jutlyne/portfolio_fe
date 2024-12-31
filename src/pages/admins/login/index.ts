@@ -4,10 +4,8 @@ import type { FormLoginStateInterface } from '@/interfaces/FormInterface'
 import { login } from '@/api/auth'
 import { useRouter } from 'vue-router'
 import { saveTokenInfo } from '@/utils/axios'
-import { Button, message } from 'ant-design-vue'
-import { usernameRules, passwordRules } from '@/validations/login'
-
-import { Form, Input } from 'ant-design-vue'
+import { Button, message, Form, Input } from 'ant-design-vue'
+import { emailRules, passwordRules } from '@/validations/login'
 
 export default defineComponent({
   components: {
@@ -23,7 +21,7 @@ export default defineComponent({
     const router = useRouter()
     const onFetchData = ref<boolean>(false)
     const formState = reactive<FormLoginStateInterface>({
-      username: '',
+      email: '',
       password: ''
     })
 
@@ -49,8 +47,8 @@ export default defineComponent({
       return onFetchData.value
     })
 
-    const handleSuccessfulLogin = async (data: { token: string; refreshToken: string }) => {
-      saveTokenInfo(data.token, data.refreshToken)
+    const handleSuccessfulLogin = async (data: { access_token: string; refresh_token: string }) => {
+      saveTokenInfo(data.access_token, data.refresh_token)
 
       message.success('Login Success!', 2.5)
       await router.push({ name: 'admin.blogs.index' })
@@ -64,7 +62,7 @@ export default defineComponent({
       formState,
       onFinish,
       disabled,
-      usernameRules,
+      emailRules,
       passwordRules
     }
   }

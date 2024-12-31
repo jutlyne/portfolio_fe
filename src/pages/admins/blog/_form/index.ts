@@ -2,6 +2,7 @@ import {
   defineComponent,
   inject,
   onBeforeMount,
+  onMounted,
   ref,
   toRefs,
   watch,
@@ -38,6 +39,11 @@ export default defineComponent({
       default: null,
       required: false
     },
+    maxHeadingId: {
+      type: Number,
+      default: null,
+      required: true
+    },
     handleFinish: {
       type: Function,
       required: true
@@ -62,10 +68,11 @@ export default defineComponent({
     EnterOutlined
   },
   setup(props) {
-    let startHeadingId = 0
-    const { formState, fileUrl } = toRefs(props)
+    const { formState, fileUrl, maxHeadingId } = toRefs(props)
+    let startHeadingId = Number(maxHeadingId.value) || 0
+
     const isLoading = inject<Ref<boolean>>(injectionKeys.isLoading)!
-    const headings = ref<BlogAnchorInterface[]>([])
+    const anchors = ref<BlogAnchorInterface[]>([])
 
     isLoading.value = true
     const treeData = ref([])
@@ -82,7 +89,7 @@ export default defineComponent({
         }
       })
 
-      headings.value = formState.value.headings
+      anchors.value = formState.value.anchors
     }
 
     const fileListItem = ref<UploadProps['fileList']>([])
@@ -101,16 +108,17 @@ export default defineComponent({
     }
 
     const findHeadingByKey = (key: number | string) => {
-      return headings.value.find((heading) => heading.key === key)
+      return anchors.value.find((anchor) => anchor.id === key)
     }
 
     const addHeaderItem = () => {
       const headingItem: BlogAnchorInterface = {
-        key: startHeadingId++,
+        id: startHeadingId++,
         title: '',
         children: []
       }
-      headings.value.push(headingItem)
+
+      anchors.value.push(headingItem)
     }
 
     const addChildHeader = (parentHeading: BlogAnchorInterface) => {
@@ -118,7 +126,7 @@ export default defineComponent({
         parentHeading.children = []
       }
       parentHeading.children.push({
-        key: startHeadingId++,
+        id: startHeadingId++,
         title: ''
       })
     }
@@ -138,7 +146,7 @@ export default defineComponent({
       const findAndRemove = (items: BlogAnchorInterface[]) => {
         for (let i = 0; i < items.length; i++) {
           const item = items[i]
-          if (item.key === id) {
+          if (item.id === id) {
             items.splice(i, 1)
             return true
           }
@@ -149,17 +157,17 @@ export default defineComponent({
         return false
       }
 
-      findAndRemove(headings.value)
+      findAndRemove(anchors.value)
     }
 
     const assignHeading = () => {
-      headings.value.map((heading) => {
-        heading.href = '#' + generateIdFromText(heading.title)
-        heading.children?.map((h) => {
+      anchors.value.forEach((anchor) => {
+        anchor.href = '#' + generateIdFromText(anchor.title)
+        anchor.children?.forEach((h) => {
           h.href = '#' + generateIdFromText(h.title)
         })
       })
-      formState.value.headings = headings.value
+      formState.value.anchors = anchors.value
     }
 
     watch(fileUrl, (newUrl: string) => {
@@ -178,6 +186,18 @@ export default defineComponent({
     })
 
     onBeforeMount(fetchAllTag)
+    onMounted(() => {
+      if (fileUrl.value) {
+        fileListItem.value = [
+          {
+            status: 'done',
+            url: fileUrl.value,
+            uid: '',
+            name: ''
+          }
+        ]
+      }
+    })
 
     return {
       treeData,
@@ -188,7 +208,7 @@ export default defineComponent({
       formRules,
       editor,
       editorConfig,
-      headings,
+      anchors,
       handleAddHeader,
       handleRemoveHeader,
       assignHeading

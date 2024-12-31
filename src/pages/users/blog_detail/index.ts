@@ -1,4 +1,4 @@
-import { getDetailBlogByUser, getListByUser } from '@/api/blog'
+import { getDetail, getList } from '@/api/blog'
 import AnchorItem from '@/components/users/anchor/AnchorItem.vue'
 import BlogInfo from '@/components/users/blog_info/BlogInfo.vue'
 import ProseItem from '@/components/users/prose/ProseItem.vue'
@@ -42,7 +42,7 @@ export default defineComponent({
         behavior: 'smooth'
       })
       try {
-        const data = await getDetailBlogByUser(slug)
+        const data = await getDetail(slug)
         blogBody.value = data.body
         blogInfo.value = {
           name: data.title,
@@ -50,14 +50,14 @@ export default defineComponent({
           created_at: moment(data.created_at).format('DD [tháng] MM YYYY')
         }
 
-        anchor.value = data.headings
+        anchor.value = data.anchors
         if (Object.keys(data).length !== 0) {
           const params = {
-            tag: data.tag_resource[0].id,
+            tag: data.categories[0].id,
             limit: pageSizeRightbar,
             skip: 0
           }
-          releatedBlogs.value = (await getListByUser(params)).blogs
+          releatedBlogs.value = (await getList(params)).blogs
         }
       } finally {
         isLoading.value = false
