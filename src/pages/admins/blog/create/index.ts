@@ -3,6 +3,7 @@ import type { CreateBlogInterface } from '@/interfaces/BlogInterface'
 import { addBlog } from '@/api/blog'
 import { message } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
+import { prepareFormDataWithSanitizedAnchors } from '@/utils/string'
 
 export default defineComponent({
   components: {
@@ -21,7 +22,8 @@ export default defineComponent({
     })
 
     const handleFinish = async () => {
-      const { result, errorResult } = await addBlog(formState)
+      const formData = prepareFormDataWithSanitizedAnchors(formState)
+      const { result, errorResult } = await addBlog(formData as unknown as CreateBlogInterface)
 
       if (errorResult) {
         const errorData = errorResult.response.data
