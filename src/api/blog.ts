@@ -25,11 +25,12 @@ export const addBlog = async (params: CreateBlogInterface) => {
   )
 }
 
-export const updateBlog = async (id: string, params: CreateBlogInterface) => {
+export const updateBlog = async (id: number, params: CreateBlogInterface) => {
   return await safe(
-    api.post('/blogs/' + id, {
-      ...params,
-      _method: 'PUT'
+    api.post('/blog/' + id, params, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
     })
   )
 }

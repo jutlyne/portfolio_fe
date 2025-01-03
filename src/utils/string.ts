@@ -73,6 +73,8 @@ export const prepareFormDataWithSanitizedAnchors = (formState: any): FormData =>
   const sanitizedAnchors = removeIdFromAnchors(formState.anchors)
 
   for (const key in formState) {
+    console.log(formState[key])
+
     if (key === 'anchors') {
       sanitizedAnchors.forEach((anchor: any, index: number) => {
         Object.entries(flattenObject(`anchors[${index}]`, anchor)).forEach(([nestedKey, value]) => {
@@ -87,6 +89,8 @@ export const prepareFormDataWithSanitizedAnchors = (formState: any): FormData =>
       formData.append(key, String(formState[key]))
     }
   }
+
+  console.log(formData)
 
   return formData
 }
