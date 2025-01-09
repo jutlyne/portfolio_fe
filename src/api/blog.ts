@@ -36,5 +36,5 @@ export const updateBlog = async (id: number, params: CreateBlogInterface) => {
 }
 
 export const deleteBlog = async (id: number) => {
-  return await safe(api.delete(`/admin/blogs/${id}`))
+  return await safe(api.delete(`/blog/${id}`))
 }

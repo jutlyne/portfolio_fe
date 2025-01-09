@@ -1,6 +1,11 @@
 <template>
   <div class="create-blog-container">
-    <FormBlog :formState="formState" :handleFinish="handleFinish" buttonText='Create' />
+    <FormBlog
+      :formState="formState"
+      :handleFinish="handleFinish"
+      :maxHeadingId="0"
+      buttonText="Create"
+    />
   </div>
 </template>
 

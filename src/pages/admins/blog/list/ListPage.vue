@@ -18,7 +18,7 @@
         <template v-if="column.dataIndex === 'operation'">
           <a-space warp>
             <a-button type="primary" @click="edit(record.slug)">Edit</a-button>
-            <a-button type="primary" danger @click="openModal(record.slug)">Delete</a-button>
+            <a-button type="primary" danger @click="openModal(record.id)">Delete</a-button>
           </a-space>
         </template>
         <template v-else-if="column.dataIndex === 'categories'">

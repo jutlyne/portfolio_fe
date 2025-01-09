@@ -9,12 +9,10 @@ import type {
 import { pageSizeAdmin } from '@/constants/constant'
 import { injectionKeys } from '@/constants/injectionKeys'
 import ModalConfirm from '@/components/admins/modal/ModalConfirm.vue'
-import { message } from 'ant-design-vue'
+import { message, Space, Tag, Table, Button } from 'ant-design-vue'
 import { useRouter } from 'vue-router'
 import { getProfile } from '@/api/auth'
 import SearchComponent from '@/components/admins/search/SearchComponent.vue'
-
-import { Space, Tag, Table, Button } from 'ant-design-vue'
 
 export default defineComponent({
   components: {
